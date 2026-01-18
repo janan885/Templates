@@ -1,0 +1,1097 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tech Savvy Template - Resume Builder Pro</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(-45deg, #0f0f1e, #1a1a2e, #0f0f1e, #16213e);
+            background-size: 400% 400%;
+            animation: gradientBG 15s ease infinite;
+            min-height: 100vh;
+            padding-top: 80px;
+        }
+
+        @keyframes gradientBG {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background: rgba(26, 26, 46, 0.95);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 5px 20px rgba(0, 255, 136, 0.1);
+            z-index: 1000;
+            padding: 15px 0;
+            border-bottom: 1px solid rgba(0, 255, 136, 0.2);
+        }
+
+        .nav-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 1.5em;
+            font-weight: 800;
+            color: #00ff88;
+            text-decoration: none;
+        }
+
+        .back-btn {
+            padding: 10px 25px;
+            background: linear-gradient(135deg, #00ff88 0%, #00d4ff 100%);
+            color: #0f0f1e;
+            border: none;
+            border-radius: 25px;
+            font-weight: 600;
+            font-size: 1em;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            box-shadow: 0 0 20px rgba(0, 255, 136, 0.3);
+        }
+
+        .back-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 25px rgba(0, 255, 136, 0.5);
+        }
+
+        .hud-header {
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            color: white;
+            padding: 20px 0;
+            margin-top: 80px;
+            box-shadow: 0 5px 20px rgba(0, 255, 136, 0.2);
+            border-bottom: 2px solid rgba(0, 255, 136, 0.3);
+        }
+
+        .hud-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 40px;
+        }
+
+        .hud-title {
+            font-size: 2em;
+            font-weight: 800;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            color: #00ff88;
+        }
+
+        .hud-subtitle {
+            font-size: 1em;
+            opacity: 0.95;
+            margin-bottom: 20px;
+            color: #aaa;
+        }
+
+        .hud-stats {
+            display: flex;
+            gap: 25px;
+            flex-wrap: wrap;
+        }
+
+        .hud-stat {
+            background: rgba(0, 255, 136, 0.1);
+            backdrop-filter: blur(10px);
+            padding: 12px 20px;
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 0.9em;
+            border: 1px solid rgba(0, 255, 136, 0.2);
+        }
+
+        .hud-stat-icon {
+            font-size: 1.5em;
+        }
+
+        .hud-stat-label {
+            opacity: 0.9;
+            font-size: 0.85em;
+        }
+
+        .hud-stat-value {
+            font-weight: 700;
+            font-size: 1.1em;
+            color: #00ff88;
+        }
+
+        .hud-progress {
+            margin-top: 15px;
+            background: rgba(0, 255, 136, 0.1);
+            border-radius: 10px;
+            padding: 10px 15px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            border: 1px solid rgba(0, 255, 136, 0.2);
+        }
+
+        .hud-progress-label {
+            font-size: 0.9em;
+            font-weight: 600;
+            min-width: 120px;
+        }
+
+        .hud-progress-bar {
+            flex: 1;
+            height: 8px;
+            background: rgba(0, 255, 136, 0.2);
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .hud-progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #00ff88, #00d4ff);
+            border-radius: 10px;
+            transition: width 0.5s ease;
+            box-shadow: 0 0 10px rgba(0, 255, 136, 0.5);
+        }
+
+        .hud-progress-percent {
+            font-size: 0.9em;
+            font-weight: 700;
+            min-width: 45px;
+            text-align: right;
+            color: #00ff88;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 20px auto;
+            padding: 0 20px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+        }
+
+        .form-section {
+            background: rgba(26, 26, 46, 0.8);
+            backdrop-filter: blur(10px);
+            padding: 30px;
+            border-radius: 20px;
+            box-shadow: 0 10px 40px rgba(0, 255, 136, 0.1);
+            height: fit-content;
+            border: 1px solid rgba(0, 255, 136, 0.2);
+        }
+
+        .form-title {
+            font-size: 2em;
+            color: #00ff88;
+            margin-bottom: 20px;
+            font-weight: 800;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-label {
+            display: block;
+            font-weight: 600;
+            color: #00d4ff;
+            margin-bottom: 8px;
+            font-size: 0.95em;
+        }
+
+        .form-input {
+            width: 100%;
+            padding: 12px 15px;
+            border: 2px solid rgba(0, 255, 136, 0.3);
+            border-radius: 10px;
+            font-size: 1em;
+            transition: all 0.3s ease;
+            background: rgba(0, 0, 0, 0.3);
+            color: white;
+        }
+
+        .form-input:focus {
+            outline: none;
+            border-color: #00ff88;
+            box-shadow: 0 0 0 3px rgba(0, 255, 136, 0.1);
+        }
+
+        .form-input::placeholder {
+            color: #666;
+        }
+
+        textarea.form-input {
+            resize: vertical;
+            min-height: 100px;
+        }
+
+        .section-divider {
+            margin: 30px 0;
+            border: none;
+            border-top: 1px solid rgba(0, 255, 136, 0.2);
+        }
+
+        .section-header {
+            font-size: 1.3em;
+            color: #00ff88;
+            margin-bottom: 15px;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .add-btn {
+            padding: 10px 20px;
+            background: linear-gradient(135deg, #00ff88 0%, #00d4ff 100%);
+            color: #0f0f1e;
+            border: none;
+            border-radius: 10px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin-top: 10px;
+            box-shadow: 0 0 15px rgba(0, 255, 136, 0.3);
+        }
+
+        .add-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 20px rgba(0, 255, 136, 0.5);
+        }
+
+        .entry-box {
+            background: rgba(0, 255, 136, 0.05);
+            padding: 20px;
+            border-radius: 15px;
+            margin-bottom: 15px;
+            border-left: 4px solid #00ff88;
+            position: relative;
+            border: 1px solid rgba(0, 255, 136, 0.2);
+        }
+
+        .remove-btn {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: #ff4757;
+            color: white;
+            border: none;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        .remove-btn:hover {
+            background: #e84118;
+        }
+
+        .preview-section {
+            background: rgba(26, 26, 46, 0.8);
+            backdrop-filter: blur(10px);
+            padding: 30px;
+            border-radius: 20px;
+            box-shadow: 0 10px 40px rgba(0, 255, 136, 0.1);
+            position: sticky;
+            top: 100px;
+            max-height: calc(100vh - 120px);
+            overflow-y: auto;
+            border: 1px solid rgba(0, 255, 136, 0.2);
+        }
+
+        .preview-title {
+            font-size: 1.5em;
+            color: #00ff88;
+            margin-bottom: 20px;
+            font-weight: 800;
+            text-align: center;
+        }
+
+        .preview-container {
+            background: #1a1a2e;
+            border: 2px solid rgba(0, 255, 136, 0.3);
+            border-radius: 15px;
+            overflow: hidden;
+        }
+
+        /* Tech Savvy Resume Styles */
+        .resume-preview {
+            font-family: 'Courier New', monospace;
+            font-size: 0.9em;
+            background: #1a1a2e;
+            color: white;
+            padding: 40px;
+        }
+
+        .resume-header {
+            margin-bottom: 30px;
+        }
+
+        .resume-name {
+            font-size: 2.5em;
+            font-weight: 800;
+            color: #00ff88;
+            margin-bottom: 8px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            text-shadow: 0 0 20px rgba(0, 255, 136, 0.5);
+        }
+
+        .resume-title {
+            font-size: 1.2em;
+            color: #ccc;
+            margin-bottom: 12px;
+            font-weight: 400;
+        }
+
+        .resume-divider {
+            height: 3px;
+            width: 100px;
+            background: linear-gradient(90deg, #00ff88, #00d4ff);
+            margin-bottom: 15px;
+            box-shadow: 0 0 10px rgba(0, 255, 136, 0.5);
+        }
+
+        .resume-contact {
+            font-size: 0.9em;
+            color: #aaa;
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .resume-contact span::before {
+            content: '> ';
+            color: #00ff88;
+        }
+
+        .resume-section {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 20px;
+            border-radius: 12px;
+            border-left: 4px solid #00ff88;
+            margin-bottom: 20px;
+            backdrop-filter: blur(5px);
+        }
+
+        .resume-section.blue-border {
+            border-left-color: #00d4ff;
+        }
+
+        .resume-section-title {
+            color: #00ff88;
+            font-weight: 700;
+            font-size: 0.95em;
+            text-transform: uppercase;
+            margin-bottom: 15px;
+            letter-spacing: 1px;
+        }
+
+        .resume-section-title::before {
+            content: '// ';
+            color: #666;
+        }
+
+        .resume-section.blue-border .resume-section-title {
+            color: #00d4ff;
+        }
+
+        .resume-item {
+            margin-bottom: 18px;
+        }
+
+        .resume-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .resume-item-title {
+            font-weight: 700;
+            color: white;
+            font-size: 1.05em;
+            margin-bottom: 5px;
+        }
+
+        .resume-item-subtitle {
+            color: #00d4ff;
+            font-weight: 600;
+            margin-bottom: 8px;
+            font-size: 0.95em;
+        }
+
+        .resume-item-description {
+            color: #aaa;
+            line-height: 1.7;
+            font-size: 0.95em;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        .skills-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .skill-tag {
+            background: rgba(0, 255, 136, 0.2);
+            color: #00ff88;
+            padding: 8px 16px;
+            border-radius: 18px;
+            font-size: 0.85em;
+            display: inline-block;
+            font-weight: 600;
+            border: 1px solid #00ff88;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        .skill-tag:nth-child(even) {
+            background: rgba(0, 212, 255, 0.2);
+            color: #00d4ff;
+            border-color: #00d4ff;
+        }
+
+        .placeholder-text {
+            text-align: center;
+            color: #666;
+            padding: 40px;
+            font-style: italic;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        .action-buttons {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            display: flex;
+            gap: 15px;
+            z-index: 999;
+        }
+
+        .action-btn {
+            padding: 15px 30px;
+            background: linear-gradient(135deg, #00ff88 0%, #00d4ff 100%);
+            color: #0f0f1e;
+            border: none;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 1em;
+            cursor: pointer;
+            box-shadow: 0 5px 20px rgba(0, 255, 136, 0.4);
+            transition: all 0.3s ease;
+        }
+
+        .action-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 30px rgba(0, 255, 136, 0.6);
+        }
+
+        .action-btn:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+        }
+
+        @media (max-width: 1024px) {
+            .container {
+                grid-template-columns: 1fr;
+            }
+
+            .preview-section {
+                position: relative;
+                top: 0;
+                max-height: none;
+            }
+
+            .hud-stat {
+                flex: 1;
+                min-width: calc(50% - 10px);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-container, .hud-container {
+                padding: 0 20px;
+            }
+
+            .hud-title {
+                font-size: 1.5em;
+            }
+
+            .hud-stat {
+                min-width: calc(50% - 5px);
+                padding: 10px 15px;
+            }
+
+            .hud-progress {
+                flex-direction: column;
+                align-items: stretch;
+                gap: 10px;
+            }
+
+            .hud-progress-label {
+                min-width: auto;
+            }
+
+            .hud-progress-percent {
+                text-align: left;
+            }
+
+            .form-section, .preview-section {
+                padding: 20px;
+            }
+
+            .resume-preview {
+                padding: 20px;
+            }
+
+            .action-buttons {
+                width: calc(100% - 40px);
+                left: 20px;
+                right: 20px;
+                flex-direction: column;
+            }
+
+            .action-btn {
+                width: 100%;
+            }
+        }
+
+        /* Custom scrollbar for dark theme */
+        .preview-section::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        .preview-section::-webkit-scrollbar-track {
+            background: rgba(0, 0, 0, 0.2);
+            border-radius: 10px;
+        }
+
+        .preview-section::-webkit-scrollbar-thumb {
+            background: linear-gradient(180deg, #00ff88, #00d4ff);
+            border-radius: 10px;
+        }
+
+        .preview-section::-webkit-scrollbar-thumb:hover {
+            background: #00ff88;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="../index.html" class="logo">
+                <span>💻</span>
+                <span>Resume Builder Pro</span>
+            </a>
+            <a href="../templates.html" class="back-btn">← Back to Templates</a>
+        </div>
+    </nav>
+
+    <div class="hud-header">
+        <div class="hud-container">
+            <div class="hud-title">
+                <span>💻</span>
+                <span>Tech Savvy Template</span>
+            </div>
+            <div class="hud-subtitle">
+                Create a cutting-edge dark-themed resume with neon accents for tech professionals
+            </div>
+            <div class="hud-stats">
+                <div class="hud-stat">
+                    <div class="hud-stat-icon">📝</div>
+                    <div>
+                        <div class="hud-stat-label">Sections Filled</div>
+                        <div class="hud-stat-value" id="sectionCount">0 / 5</div>
+                    </div>
+                </div>
+                <div class="hud-stat">
+                    <div class="hud-stat-icon">💼</div>
+                    <div>
+                        <div class="hud-stat-label">Work Experience</div>
+                        <div class="hud-stat-value" id="expCount">0</div>
+                    </div>
+                </div>
+                <div class="hud-stat">
+                    <div class="hud-stat-icon">🎓</div>
+                    <div>
+                        <div class="hud-stat-label">Education</div>
+                        <div class="hud-stat-value" id="eduCount">0</div>
+                    </div>
+                </div>
+                <div class="hud-stat">
+                    <div class="hud-stat-icon">⚡</div>
+                    <div>
+                        <div class="hud-stat-label">Skills</div>
+                        <div class="hud-stat-value" id="skillCount">0</div>
+                    </div>
+                </div>
+            </div>
+            <div class="hud-progress">
+                <div class="hud-progress-label">Completion</div>
+                <div class="hud-progress-bar">
+                    <div class="hud-progress-fill" id="progressBar" style="width: 0%"></div>
+                </div>
+                <div class="hud-progress-percent" id="progressPercent">0%</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="form-section">
+            <h1 class="form-title">Tech Savvy Template</h1>
+            
+            <div class="form-group">
+                <label class="form-label">Full Name *</label>
+                <input type="text" class="form-input" id="fullName" placeholder="David Tech" required>
+            </div>
+
+            <div class="form-group">
+                <label class="form-label">Job Title *</label>
+                <input type="text" class="form-input" id="jobTitle" placeholder="Full Stack Developer" required>
+            </div>
+
+            <div class="form-group">
+                <label class="form-label">Email *</label>
+                <input type="email" class="form-input" id="email" placeholder="david@email.com" required>
+            </div>
+
+            <div class="form-group">
+                <label class="form-label">Phone</label>
+                <input type="tel" class="form-input" id="phone" placeholder="+1 234 567 8900">
+            </div>
+
+            <div class="form-group">
+                <label class="form-label">GitHub/Portfolio</label>
+                <input type="text" class="form-input" id="linkedin" placeholder="github.com/davidtech">
+            </div>
+
+            <hr class="section-divider">
+
+            <h2 class="section-header">📝 About</h2>
+            <div class="form-group">
+                <textarea class="form-input" id="summary" placeholder="Write a brief technical summary..."></textarea>
+            </div>
+
+            <hr class="section-divider">
+
+            <h2 class="section-header">💼 Experience</h2>
+            <div id="experienceContainer">
+                <div class="entry-box">
+                    <div class="form-group">
+                        <label class="form-label">Job Title</label>
+                        <input type="text" class="form-input exp-title" placeholder="Senior Full Stack Developer">
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Company</label>
+                        <input type="text" class="form-input exp-company" placeholder="TechStart Inc">
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Start Date</label>
+                        <input type="text" class="form-input exp-start" placeholder="2020">
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">End Date</label>
+                        <input type="text" class="form-input exp-end" placeholder="2024">
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Description</label>
+                        <textarea class="form-input exp-desc" placeholder="Describe your technical achievements..."></textarea>
+                    </div>
+                </div>
+            </div>
+            <button class="add-btn" onclick="addExperience()">+ Add Experience</button>
+
+            <hr class="section-divider">
+
+            <h2 class="section-header">🎓 Education</h2>
+            <div id="educationContainer">
+                <div class="entry-box">
+                    <div class="form-group">
+                        <label class="form-label">Degree</label>
+                        <input type="text" class="form-input edu-degree" placeholder="BS Computer Science">
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Institution</label>
+                        <input type="text" class="form-input edu-institution" placeholder="Tech University">
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Start Year</label>
+                        <input type="text" class="form-input edu-start" placeholder="2016">
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">End Year</label>
+                        <input type="text" class="form-input edu-end" placeholder="2020">
+                    </div>
+                </div>
+            </div>
+            <button class="add-btn" onclick="addEducation()">+ Add Education</button>
+
+            <hr class="section-divider">
+
+            <h2 class="section-header">⚡ Tech Stack</h2>
+            <div class="form-group">
+                <label class="form-label">Skills (comma separated)</label>
+                <textarea class="form-input" id="skills" placeholder="React, Node.js, Python, Docker, MongoDB, AWS"></textarea>
+            </div>
+        </div>
+
+        <div class="preview-section">
+            <h2 class="preview-title">📄 Live Preview</h2>
+            <div class="preview-container">
+                <div class="resume-preview" id="resumePreview">
+                    <div class="placeholder-text">👈 Fill in your information to see live preview</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="action-buttons">
+        <button class="action-btn" onclick="downloadPDF()">📥 Download PDF</button>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <script>
+        let expCount = 1;
+        let eduCount = 1;
+
+        function updateHUDStats() {
+            let sectionsComplete = 0;
+            
+            const fullName = document.getElementById('fullName').value;
+            const jobTitle = document.getElementById('jobTitle').value;
+            const email = document.getElementById('email').value;
+            if (fullName && jobTitle && email) sectionsComplete++;
+            
+            const summary = document.getElementById('summary').value;
+            if (summary) sectionsComplete++;
+            
+            const experiences = document.querySelectorAll('#experienceContainer .entry-box');
+            let hasExperience = false;
+            let expFilledCount = 0;
+            experiences.forEach(exp => {
+                const title = exp.querySelector('.exp-title').value;
+                const company = exp.querySelector('.exp-company').value;
+                if (title || company) {
+                    hasExperience = true;
+                    expFilledCount++;
+                }
+            });
+            if (hasExperience) sectionsComplete++;
+            
+            const educations = document.querySelectorAll('#educationContainer .entry-box');
+            let hasEducation = false;
+            let eduFilledCount = 0;
+            educations.forEach(edu => {
+                const degree = edu.querySelector('.edu-degree').value;
+                const institution = edu.querySelector('.edu-institution').value;
+                if (degree || institution) {
+                    hasEducation = true;
+                    eduFilledCount++;
+                }
+            });
+            if (hasEducation) sectionsComplete++;
+            
+            const skills = document.getElementById('skills').value;
+            const skillArray = skills ? skills.split(',').map(s => s.trim()).filter(s => s) : [];
+            if (skillArray.length > 0) sectionsComplete++;
+            
+            document.getElementById('sectionCount').textContent = sectionsComplete + ' / 5';
+            document.getElementById('expCount').textContent = expFilledCount;
+            document.getElementById('eduCount').textContent = eduFilledCount;
+            document.getElementById('skillCount').textContent = skillArray.length;
+            
+            const progressPercent = (sectionsComplete / 5) * 100;
+            document.getElementById('progressBar').style.width = progressPercent + '%';
+            document.getElementById('progressPercent').textContent = Math.round(progressPercent) + '%';
+        }
+
+        function updatePreview() {
+            const fullName = document.getElementById('fullName').value;
+            const jobTitle = document.getElementById('jobTitle').value;
+            const email = document.getElementById('email').value;
+            const phone = document.getElementById('phone').value;
+            const linkedin = document.getElementById('linkedin').value;
+            const summary = document.getElementById('summary').value;
+            const skills = document.getElementById('skills').value;
+
+            updateHUDStats();
+
+            let html = '';
+
+            if (fullName || jobTitle) {
+                html += `
+                    <div class="resume-header">
+                        ${fullName ? `<div class="resume-name">${fullName}</div>` : ''}
+                        ${jobTitle ? `<div class="resume-title">${jobTitle}</div>` : ''}
+                        <div class="resume-divider"></div>
+                        <div class="resume-contact">
+                            ${email ? `<span>${email}</span>` : ''}
+                            ${phone ? `<span>${phone}</span>` : ''}
+                            ${linkedin ? `<span>${linkedin}</span>` : ''}
+                        </div>
+                    </div>
+                `;
+            }
+
+            if (summary) {
+                html += `
+                    <div class="resume-section">
+                        <div class="resume-section-title">About</div>
+                        <p class="resume-item-description">${summary}</p>
+                    </div>
+                `;
+            }
+
+            const experiences = document.querySelectorAll('#experienceContainer .entry-box');
+            if (experiences.length > 0) {
+                let expHtml = '';
+                experiences.forEach(exp => {
+                    const title = exp.querySelector('.exp-title').value;
+                    const company = exp.querySelector('.exp-company').value;
+                    const start = exp.querySelector('.exp-start').value;
+                    const end = exp.querySelector('.exp-end').value;
+                    const desc = exp.querySelector('.exp-desc').value;
+
+                    if (title || company) {
+                        expHtml += `
+                            <div class="resume-item">
+                                ${title ? `<div class="resume-item-title">${title}</div>` : ''}
+                                ${company ? `<div class="resume-item-subtitle">${company}${start || end ? ' • ' + start + '-' + end : ''}</div>` : ''}
+                                ${desc ? `<div class="resume-item-description">${desc.replace(/\n/g, '<br>')}</div>` : ''}
+                            </div>
+                        `;
+                    }
+                });
+                if (expHtml) {
+                    html += `
+                        <div class="resume-section">
+                            <div class="resume-section-title">Experience</div>
+                            ${expHtml}
+                        </div>
+                    `;
+                }
+            }
+
+            const educations = document.querySelectorAll('#educationContainer .entry-box');
+            if (educations.length > 0) {
+                let eduHtml = '';
+                educations.forEach(edu => {
+                    const degree = edu.querySelector('.edu-degree').value;
+                    const institution = edu.querySelector('.edu-institution').value;
+                    const start = edu.querySelector('.edu-start').value;
+                    const end = edu.querySelector('.edu-end').value;
+
+                    if (degree || institution) {
+                        eduHtml += `
+                            <div class="resume-item">
+                                ${degree ? `<div class="resume-item-title">${degree}</div>` : ''}
+                                ${institution ? `<div class="resume-item-subtitle">${institution}${start || end ? ' • ' + start + '-' + end : ''}</div>` : ''}
+                            </div>
+                        `;
+                    }
+                });
+                if (eduHtml) {
+                    html += `
+                        <div class="resume-section blue-border">
+                            <div class="resume-section-title">Education</div>
+                            ${eduHtml}
+                        </div>
+                    `;
+                }
+            }
+
+            if (skills) {
+                const skillArray = skills.split(',').map(s => s.trim()).filter(s => s);
+                if (skillArray.length > 0) {
+                    html += `
+                        <div class="resume-section blue-border">
+                            <div class="resume-section-title">Tech Stack</div>
+                            <div class="skills-list">
+                                ${skillArray.map(skill => `<span class="skill-tag">${skill}</span>`).join('')}
+                            </div>
+                        </div>
+                    `;
+                }
+            }
+
+            document.getElementById('resumePreview').innerHTML = html || '<div class="placeholder-text">👈 Fill in your information to see live preview</div>';
+        }
+
+        function addExperience() {
+            const container = document.getElementById('experienceContainer');
+            const entry = document.createElement('div');
+            entry.className = 'entry-box';
+            entry.innerHTML = `
+                <button class="remove-btn" onclick="this.parentElement.remove(); updatePreview();">×</button>
+                <div class="form-group">
+                    <label class="form-label">Job Title</label>
+                    <input type="text" class="form-input exp-title" placeholder="Senior Full Stack Developer" oninput="updatePreview()">
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Company</label>
+                    <input type="text" class="form-input exp-company" placeholder="TechStart Inc" oninput="updatePreview()">
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Start Date</label>
+                    <input type="text" class="form-input exp-start" placeholder="2020" oninput="updatePreview()">
+                </div>
+                <div class="form-group">
+                    <label class="form-label">End Date</label>
+                    <input type="text" class="form-input exp-end" placeholder="2024" oninput="updatePreview()">
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Description</label>
+                    <textarea class="form-input exp-desc" placeholder="Describe achievements..." oninput="updatePreview()"></textarea>
+                </div>
+            `;
+            container.appendChild(entry);
+        }
+
+        function addEducation() {
+            const container = document.getElementById('educationContainer');
+            const entry = document.createElement('div');
+            entry.className = 'entry-box';
+            entry.innerHTML = `
+                <button class="remove-btn" onclick="this.parentElement.remove(); updatePreview();">×</button>
+                <div class="form-group">
+                    <label class="form-label">Degree</label>
+                    <input type="text" class="form-input edu-degree" placeholder="BS Computer Science" oninput="updatePreview()">
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Institution</label>
+                    <input type="text" class="form-input edu-institution" placeholder="Tech University" oninput="updatePreview()">
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Start Year</label>
+                    <input type="text" class="form-input edu-start" placeholder="2016" oninput="updatePreview()">
+                </div>
+                <div class="form-group">
+                    <label class="form-label">End Year</label>
+                    <input type="text" class="form-input edu-end" placeholder="2020" oninput="updatePreview()">
+                </div>
+            `;
+            container.appendChild(entry);
+        }
+
+        function downloadPDF() {
+            const fullName = document.getElementById('fullName').value;
+            if (!fullName) {
+                alert('⚠️ Please fill in at least your name before downloading!');
+                return;
+            }
+
+            const downloadBtn = event.target;
+            const originalText = downloadBtn.innerHTML;
+            downloadBtn.innerHTML = '⏳ Generating PDF...';
+            downloadBtn.disabled = true;
+
+            const A4_WIDTH_PX = 794;
+            const A4_HEIGHT_PX = 1123;
+            
+            const renderContainer = document.createElement('div');
+            renderContainer.style.cssText = `
+                position: absolute;
+                left: -9999px;
+                top: 0;
+                width: ${A4_WIDTH_PX}px;
+                background: #1a1a2e;
+                box-sizing: border-box;
+                font-family: 'Courier New', monospace;
+            `;
+            
+            const resumeClone = document.getElementById('resumePreview').cloneNode(true);
+            resumeClone.style.cssText = `
+                width: 100%;
+                font-size: 12px;
+                line-height: 1.4;
+            `;
+            
+            renderContainer.appendChild(resumeClone);
+            document.body.appendChild(renderContainer);
+
+            setTimeout(() => {
+                const contentHeight = renderContainer.scrollHeight;
+                const availableHeight = A4_HEIGHT_PX - 80;
+                
+                let scaleFactor = 1;
+                if (contentHeight > availableHeight) {
+                    scaleFactor = availableHeight / contentHeight;
+                    resumeClone.style.fontSize = (12 * scaleFactor) + 'px';
+                }
+                
+                renderContainer.style.minHeight = A4_HEIGHT_PX + 'px';
+                renderContainer.style.maxHeight = A4_HEIGHT_PX + 'px';
+                renderContainer.style.overflow = 'hidden';
+                
+                setTimeout(() => {
+                    html2canvas(renderContainer, {
+                        scale: 2,
+                        useCORS: true,
+                        logging: false,
+                        backgroundColor: '#1a1a2e',
+                        width: A4_WIDTH_PX,
+                        height: A4_HEIGHT_PX
+                    }).then(canvas => {
+                        document.body.removeChild(renderContainer);
+                        
+                        const { jsPDF } = window.jspdf;
+                        const pdf = new jsPDF({
+                            orientation: 'portrait',
+                            unit: 'mm',
+                            format: 'a4',
+                            compress: true
+                        });
+                        
+                        const imgData = canvas.toDataURL('image/jpeg', 0.95);
+                        pdf.addImage(imgData, 'JPEG', 0, 0, 210, 297, '', 'FAST');
+                        
+                        const fileName = `${fullName.replace(/\s+/g, '_')}_Resume_Tech.pdf`;
+                        pdf.save(fileName);
+                        
+                        downloadBtn.innerHTML = originalText;
+                        downloadBtn.disabled = false;
+                        
+                        alert('✅ Resume downloaded successfully!');
+                    }).catch(error => {
+                        console.error('PDF error:', error);
+                        if (document.body.contains(renderContainer)) {
+                            document.body.removeChild(renderContainer);
+                        }
+                        downloadBtn.innerHTML = originalText;
+                        downloadBtn.disabled = false;
+                        alert('❌ Error generating PDF.');
+                    });
+                }, 200);
+            }, 150);
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            const inputs = document.querySelectorAll('.form-input');
+            inputs.forEach(input => {
+                input.addEventListener('input', updatePreview);
+            });
+        });
+    </script>
+</body>
+</html>
