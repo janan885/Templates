@@ -3,13 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Timeline Style Template - Resume Builder Pro</title>
+    <title>Magazine Style Template - Resume Builder Pro</title>
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
 
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: linear-gradient(-45deg, #e74c3c, #c0392b, #e67e22, #d35400);
+            background: linear-gradient(-45deg, #000000, #1a1a1a, #2d2d2d, #000000);
             background-size: 400% 400%;
             animation: gradientBG 15s ease infinite;
             min-height: 100vh;
@@ -37,27 +37,24 @@
 
         .logo {
             display: flex; align-items: center; gap: 10px;
-            font-size: 1.5em; font-weight: 800;
-            background: linear-gradient(135deg, #e74c3c, #c0392b);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
+            font-size: 1.5em; font-weight: 800; color: #000;
             text-decoration: none;
         }
 
         .back-btn {
             padding: 10px 25px;
-            background: linear-gradient(135deg, #e74c3c 0%, #c0392b 100%);
+            background: #000;
             color: white; border: none; border-radius: 25px;
             font-weight: 600; font-size: 1em; text-decoration: none;
             transition: all 0.3s ease;
         }
 
-        .back-btn:hover { transform: translateY(-2px); box-shadow: 0 5px 15px rgba(231, 76, 60, 0.4); }
+        .back-btn:hover { transform: translateY(-2px); box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4); }
 
         .hud-header {
-            background: linear-gradient(135deg, #e74c3c 0%, #c0392b 100%);
+            background: #000;
             color: white; padding: 20px 0; margin-top: 80px;
-            box-shadow: 0 5px 20px rgba(231, 76, 60, 0.3);
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
         }
 
         .hud-container { max-width: 1400px; margin: 0 auto; padding: 0 40px; }
@@ -71,7 +68,7 @@
         .hud-stats { display: flex; gap: 25px; flex-wrap: wrap; }
 
         .hud-stat {
-            background: rgba(255, 255, 255, 0.2); backdrop-filter: blur(10px);
+            background: rgba(255, 255, 255, 0.1); backdrop-filter: blur(10px);
             padding: 12px 20px; border-radius: 15px;
             display: flex; align-items: center; gap: 10px; font-size: 0.9em;
         }
@@ -81,14 +78,14 @@
         .hud-stat-value { font-weight: 700; font-size: 1.1em; }
 
         .hud-progress {
-            margin-top: 15px; background: rgba(255, 255, 255, 0.2);
+            margin-top: 15px; background: rgba(255, 255, 255, 0.1);
             border-radius: 10px; padding: 10px 15px;
             display: flex; align-items: center; gap: 15px;
         }
 
         .hud-progress-label { font-size: 0.9em; font-weight: 600; min-width: 120px; }
         .hud-progress-bar {
-            flex: 1; height: 8px; background: rgba(255, 255, 255, 0.3);
+            flex: 1; height: 8px; background: rgba(255, 255, 255, 0.2);
             border-radius: 10px; overflow: hidden;
         }
 
@@ -110,10 +107,7 @@
         }
 
         .form-title { 
-            font-size: 2em;
-            background: linear-gradient(135deg, #e74c3c, #c0392b);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
+            font-size: 2em; color: #000;
             margin-bottom: 20px; font-weight: 800; 
         }
         .form-group { margin-bottom: 20px; }
@@ -129,41 +123,41 @@
         }
 
         .form-input:focus {
-            outline: none; border-color: #e74c3c;
-            box-shadow: 0 0 0 3px rgba(231, 76, 60, 0.1);
+            outline: none; border-color: #000;
+            box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.1);
         }
 
-        textarea.form-input { resize: vertical; min-height: 100px; }
+        textarea.form-input { resize: vertical; min-height: 80px; }
         .section-divider { margin: 30px 0; border: none; border-top: 2px solid #f0f0f0; }
 
         .section-header {
-            font-size: 1.3em; color: #e74c3c; margin-bottom: 15px;
+            font-size: 1.3em; color: #000; margin-bottom: 15px;
             font-weight: 700; display: flex; align-items: center; gap: 10px;
         }
 
         .add-btn {
             padding: 10px 20px;
-            background: linear-gradient(135deg, #e74c3c 0%, #c0392b 100%);
+            background: #000;
             color: white; border: none; border-radius: 15px;
             font-weight: 600; cursor: pointer; transition: all 0.3s ease; margin-top: 10px;
         }
 
-        .add-btn:hover { transform: translateY(-2px); box-shadow: 0 5px 15px rgba(231, 76, 60, 0.3); }
+        .add-btn:hover { transform: translateY(-2px); box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3); }
 
         .entry-box {
-            background: linear-gradient(135deg, #fff5f5, #ffe8e8);
+            background: #f5f5f5;
             padding: 20px; border-radius: 15px;
-            margin-bottom: 15px; border-left: 4px solid #e74c3c; position: relative;
+            margin-bottom: 15px; border-left: 4px solid #000; position: relative;
         }
 
         .remove-btn {
             position: absolute; top: 10px; right: 10px;
-            background: #c0392b; color: white; border: none;
+            background: #000; color: white; border: none;
             width: 30px; height: 30px; border-radius: 50%;
             cursor: pointer; font-weight: bold;
         }
 
-        .remove-btn:hover { background: #a93226; }
+        .remove-btn:hover { background: #333; }
 
         .preview-section {
             background: white; padding: 30px; border-radius: 20px;
@@ -172,11 +166,7 @@
         }
 
         .preview-title {
-            font-size: 1.5em;
-            background: linear-gradient(135deg, #e74c3c, #c0392b);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            margin-bottom: 20px;
+            font-size: 1.5em; color: #000; margin-bottom: 20px;
             font-weight: 800; text-align: center;
         }
 
@@ -186,24 +176,24 @@
             border-radius: 15px; overflow: hidden;
         }
 
-        /* Timeline Resume Styles */
+        /* Magazine Resume Styles */
         .resume-preview {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             font-size: 1em;
             background: white;
             color: #333;
-            padding: 35px;
-            border: 3px solid #2c3e50;
+            padding: 0;
+            border: 3px solid #000;
             position: relative;
         }
 
-        /* Decorative corner borders */
+        /* Corner decorations */
         .corner-decoration {
             position: absolute;
-            width: 70px;
-            height: 70px;
-            border: 3px solid #e74c3c;
-            z-index: 1;
+            width: 60px;
+            height: 60px;
+            border: 3px solid #000;
+            z-index: 10;
             pointer-events: none;
         }
 
@@ -221,186 +211,117 @@
             border-top: none;
         }
 
-        .resume-header {
+        .magazine-header {
+            background: #000;
+            color: white;
+            padding: 35px;
             text-align: center;
-            margin-bottom: 30px;
-            padding-bottom: 25px;
-            border-bottom: 3px double #ddd;
             position: relative;
+            z-index: 1;
         }
 
-        .header-gradient-line {
-            position: absolute;
-            bottom: -3px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 200px;
-            height: 3px;
-            background: linear-gradient(90deg, transparent, #e74c3c 20%, #e74c3c 80%, transparent);
-        }
-
-        .resume-name {
-            font-size: 2.5em;
-            font-weight: 800;
-            color: #2c3e50;
-            margin-bottom: 10px;
+        .magazine-name {
+            font-size: 3em;
+            font-weight: 900;
+            letter-spacing: 5px;
             text-transform: uppercase;
-            letter-spacing: 3px;
+            margin-bottom: 10px;
         }
 
-        .resume-title {
-            font-size: 1.3em;
-            color: #e74c3c;
+        .magazine-title {
+            font-size: 1em;
+            letter-spacing: 8px;
+            text-transform: uppercase;
+            opacity: 0.9;
             font-weight: 600;
-            margin-bottom: 15px;
         }
 
-        .resume-contact-line {
-            font-size: 0.95em;
-            color: #7f8c8d;
-            margin-top: 15px;
+        .magazine-content {
+            padding: 35px;
         }
 
-        .resume-contact-line span {
-            margin: 0 12px;
+        /* Stats Boxes */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+            margin-bottom: 30px;
         }
 
-        /* Timeline Container */
-        .timeline-container {
-            position: relative;
-            padding-left: 45px;
+        .stat-box {
+            background: #f5f5f5;
+            padding: 20px;
+            text-align: center;
+            border: 2px solid #e0e0e0;
         }
 
-        /* Vertical Timeline Line */
-        .timeline-line {
-            position: absolute;
-            left: 15px;
-            top: 0;
-            bottom: 0;
-            width: 4px;
-            background: linear-gradient(180deg, #e74c3c 0%, #c0392b 100%);
-            box-shadow: 0 0 5px rgba(231, 76, 60, 0.3);
+        .stat-label {
+            font-size: 0.75em;
+            font-weight: 700;
+            color: #666;
+            margin-bottom: 8px;
+            letter-spacing: 2px;
         }
 
-        /* Timeline Item */
-        .timeline-item {
-            position: relative;
+        .stat-value {
+            font-size: 1.8em;
+            font-weight: 800;
+            color: #000;
+        }
+
+        /* Magazine Sections */
+        .magazine-section {
+            border-top: 3px solid #000;
+            padding-top: 20px;
             margin-bottom: 25px;
         }
 
-        /* Timeline Dot */
-        .timeline-dot {
-            position: absolute;
-            left: -37px;
-            top: 10px;
-            width: 18px;
-            height: 18px;
-            background: #e74c3c;
-            border-radius: 50%;
-            border: 4px solid white;
-            box-shadow: 0 0 0 3px #e74c3c, 0 3px 8px rgba(231, 76, 60, 0.4);
-            z-index: 2;
-        }
-
-        .timeline-dot.education {
-            background: #3498db;
-            box-shadow: 0 0 0 3px #3498db, 0 3px 8px rgba(52, 152, 219, 0.4);
-        }
-
-        /* Timeline Content Card */
-        .timeline-card {
-            background: #fef5f5;
-            padding: 20px;
-            border-radius: 12px;
-            border-left: 4px solid #e74c3c;
-            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
-            border: 2px solid #fdd;
-            border-left: 4px solid #e74c3c;
-        }
-
-        .timeline-card.education {
-            background: #f0f8ff;
-            border: 2px solid #d6eaff;
-            border-left: 4px solid #3498db;
-        }
-
-        .timeline-date {
-            font-size: 0.85em;
-            color: #e74c3c;
-            font-weight: 700;
-            margin-bottom: 10px;
+        .magazine-section-title {
+            font-size: 0.75em;
+            font-weight: 900;
+            letter-spacing: 3px;
+            margin-bottom: 15px;
             text-transform: uppercase;
-            letter-spacing: 0.8px;
         }
 
-        .timeline-date.education {
-            color: #3498db;
-        }
-
-        .timeline-card-title {
-            font-weight: 700;
-            color: #2c3e50;
-            font-size: 1.05em;
-            margin-bottom: 6px;
-            letter-spacing: 0.3px;
-        }
-
-        .timeline-card-subtitle {
-            color: #7f8c8d;
-            font-size: 0.95em;
-            margin-bottom: 12px;
-        }
-
-        .timeline-card-description {
-            color: #555;
-            font-size: 0.95em;
-            line-height: 1.7;
-        }
-
-        /* Skills Section */
-        .skills-section {
-            margin-top: 30px;
-            padding-top: 25px;
-            border-top: 3px double #ddd;
-            position: relative;
-        }
-
-        .skills-divider-line {
-            position: absolute;
-            top: -3px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 200px;
-            height: 3px;
-            background: linear-gradient(90deg, transparent, #e74c3c 20%, #e74c3c 80%, transparent);
-        }
-
-        .skills-title {
-            font-size: 1.1em;
-            color: #2c3e50;
-            font-weight: 700;
+        .magazine-item {
             margin-bottom: 18px;
-            text-transform: uppercase;
-            letter-spacing: 1.5px;
-            text-align: center;
         }
 
-        .skills-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-            gap: 12px;
+        .magazine-item-title {
+            font-weight: 700;
+            font-size: 1em;
+            margin-bottom: 5px;
+            color: #000;
         }
 
-        .skill-item {
-            background: linear-gradient(135deg, #e74c3c, #c0392b);
-            color: white;
-            padding: 12px 18px;
-            border-radius: 10px;
+        .magazine-item-subtitle {
+            color: #666;
             font-size: 0.9em;
+            margin-bottom: 10px;
+        }
+
+        .magazine-item-description {
+            color: #555;
+            line-height: 1.7;
+            font-size: 0.95em;
+        }
+
+        /* Expertise Tags */
+        .expertise-tags {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+        }
+
+        .expertise-tag {
+            background: #000;
+            color: white;
+            padding: 10px 18px;
+            font-size: 0.85em;
             font-weight: 600;
-            text-align: center;
-            box-shadow: 0 3px 8px rgba(231, 76, 60, 0.3);
-            border: 2px solid rgba(255, 255, 255, 0.2);
+            text-transform: uppercase;
+            letter-spacing: 1px;
         }
 
         .placeholder-text {
@@ -414,16 +335,16 @@
 
         .action-btn {
             padding: 15px 30px;
-            background: linear-gradient(135deg, #e74c3c 0%, #c0392b 100%);
+            background: #000;
             color: white; border: none; border-radius: 50px;
             font-weight: 700; font-size: 1em; cursor: pointer;
-            box-shadow: 0 5px 20px rgba(231, 76, 60, 0.4);
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.4);
             transition: all 0.3s ease;
         }
 
         .action-btn:hover {
             transform: translateY(-3px);
-            box-shadow: 0 8px 30px rgba(231, 76, 60, 0.5);
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.5);
         }
 
         .action-btn:disabled { opacity: 0.6; cursor: not-allowed; }
@@ -432,6 +353,7 @@
             .container { grid-template-columns: 1fr; }
             .preview-section { position: relative; top: 0; max-height: none; }
             .hud-stat { flex: 1; min-width: calc(50% - 10px); }
+            .stats-grid { grid-template-columns: 1fr; }
         }
 
         @media (max-width: 768px) {
@@ -439,10 +361,10 @@
             .hud-title { font-size: 1.5em; }
             .hud-stat { min-width: calc(50% - 5px); padding: 10px 15px; }
             .form-section, .preview-section { padding: 20px; }
-            .resume-preview { padding: 25px; font-size: 0.95em; }
-            .timeline-container { padding-left: 30px; }
-            .timeline-line { left: 10px; }
-            .timeline-dot { left: -28px; }
+            .resume-preview { font-size: 0.95em; }
+            .magazine-header { padding: 25px 20px; }
+            .magazine-content { padding: 25px 20px; }
+            .stats-grid { grid-template-columns: 1fr; }
             .action-buttons {
                 width: calc(100% - 40px); left: 20px; right: 20px; flex-direction: column;
             }
@@ -453,21 +375,28 @@
 <body>
     <nav class="navbar">
         <div class="nav-container">
-            <a href="../index.html" class="logo"><span>⏱️</span><span>Resume Builder Pro</span></a>
+            <a href="../index.html" class="logo"><span>📰</span><span>Resume Builder Pro</span></a>
             <a href="../templates.html" class="back-btn">← Back to Templates</a>
         </div>
     </nav>
 
     <div class="hud-header">
         <div class="hud-container">
-            <div class="hud-title"><span>⏱️</span><span>Timeline Style Template</span></div>
-            <div class="hud-subtitle">Create a vertical timeline resume showing career progression</div>
+            <div class="hud-title"><span>📰</span><span>Magazine Style Template</span></div>
+            <div class="hud-subtitle">Create an editorial magazine resume with statistics and bold design</div>
             <div class="hud-stats">
                 <div class="hud-stat">
                     <div class="hud-stat-icon">📝</div>
                     <div>
                         <div class="hud-stat-label">Sections Filled</div>
-                        <div class="hud-stat-value" id="sectionCount">0 / 4</div>
+                        <div class="hud-stat-value" id="sectionCount">0 / 5</div>
+                    </div>
+                </div>
+                <div class="hud-stat">
+                    <div class="hud-stat-icon">📊</div>
+                    <div>
+                        <div class="hud-stat-label">Statistics</div>
+                        <div class="hud-stat-value" id="statCount">0</div>
                     </div>
                 </div>
                 <div class="hud-stat">
@@ -475,13 +404,6 @@
                     <div>
                         <div class="hud-stat-label">Work Experience</div>
                         <div class="hud-stat-value" id="expCount">0</div>
-                    </div>
-                </div>
-                <div class="hud-stat">
-                    <div class="hud-stat-icon">🎓</div>
-                    <div>
-                        <div class="hud-stat-label">Education</div>
-                        <div class="hud-stat-value" id="eduCount">0</div>
                     </div>
                 </div>
                 <div class="hud-stat">
@@ -504,57 +426,68 @@
 
     <div class="container">
         <div class="form-section">
-            <h1 class="form-title">Timeline Style</h1>
+            <h1 class="form-title">Magazine Style</h1>
             
             <div class="form-group">
                 <label class="form-label">Full Name *</label>
-                <input type="text" class="form-input" id="fullName" placeholder="Kevin Martinez" required>
+                <input type="text" class="form-input" id="fullName" placeholder="Sophia Lee" required>
             </div>
 
             <div class="form-group">
                 <label class="form-label">Job Title *</label>
-                <input type="text" class="form-input" id="jobTitle" placeholder="Project Manager" required>
-            </div>
-
-            <div class="form-group">
-                <label class="form-label">Email *</label>
-                <input type="email" class="form-input" id="email" placeholder="kevin@email.com" required>
-            </div>
-
-            <div class="form-group">
-                <label class="form-label">Phone</label>
-                <input type="tel" class="form-input" id="phone" placeholder="+1 234 567 8900">
-            </div>
-
-            <div class="form-group">
-                <label class="form-label">Location</label>
-                <input type="text" class="form-input" id="location" placeholder="Boston, MA">
+                <input type="text" class="form-input" id="jobTitle" placeholder="Fashion Designer" required>
             </div>
 
             <hr class="section-divider">
 
-            <h2 class="section-header">💼 Work Experience</h2>
+            <h2 class="section-header">📊 Statistics (3 stats)</h2>
+            <div class="form-group">
+                <label class="form-label">Stat 1 Label</label>
+                <input type="text" class="form-input" id="stat1Label" placeholder="YEARS">
+            </div>
+            <div class="form-group">
+                <label class="form-label">Stat 1 Value</label>
+                <input type="text" class="form-input" id="stat1Value" placeholder="8+">
+            </div>
+
+            <div class="form-group">
+                <label class="form-label">Stat 2 Label</label>
+                <input type="text" class="form-input" id="stat2Label" placeholder="PROJECTS">
+            </div>
+            <div class="form-group">
+                <label class="form-label">Stat 2 Value</label>
+                <input type="text" class="form-input" id="stat2Value" placeholder="50+">
+            </div>
+
+            <div class="form-group">
+                <label class="form-label">Stat 3 Label</label>
+                <input type="text" class="form-input" id="stat3Label" placeholder="AWARDS">
+            </div>
+            <div class="form-group">
+                <label class="form-label">Stat 3 Value</label>
+                <input type="text" class="form-input" id="stat3Value" placeholder="12">
+            </div>
+
+            <hr class="section-divider">
+
+            <h2 class="section-header">💼 Experience</h2>
             <div id="experienceContainer">
                 <div class="entry-box">
                     <div class="form-group">
                         <label class="form-label">Job Title</label>
-                        <input type="text" class="form-input exp-title" placeholder="Senior Project Manager">
+                        <input type="text" class="form-input exp-title" placeholder="Lead Fashion Designer">
                     </div>
                     <div class="form-group">
                         <label class="form-label">Company</label>
-                        <input type="text" class="form-input exp-company" placeholder="Tech Solutions Inc">
+                        <input type="text" class="form-input exp-company" placeholder="Vogue Studio">
                     </div>
                     <div class="form-group">
-                        <label class="form-label">Start Date</label>
-                        <input type="text" class="form-input exp-start" placeholder="2020">
-                    </div>
-                    <div class="form-group">
-                        <label class="form-label">End Date</label>
-                        <input type="text" class="form-input exp-end" placeholder="Present">
+                        <label class="form-label">Years</label>
+                        <input type="text" class="form-input exp-years" placeholder="2020-2024">
                     </div>
                     <div class="form-group">
                         <label class="form-label">Description</label>
-                        <textarea class="form-input exp-desc" placeholder="Describe your achievements..."></textarea>
+                        <textarea class="form-input exp-desc" placeholder="Describe achievements..."></textarea>
                     </div>
                 </div>
             </div>
@@ -567,19 +500,15 @@
                 <div class="entry-box">
                     <div class="form-group">
                         <label class="form-label">Degree</label>
-                        <input type="text" class="form-input edu-degree" placeholder="MBA Business Administration">
+                        <input type="text" class="form-input edu-degree" placeholder="BFA Fashion Design">
                     </div>
                     <div class="form-group">
                         <label class="form-label">Institution</label>
-                        <input type="text" class="form-input edu-institution" placeholder="Harvard University">
+                        <input type="text" class="form-input edu-institution" placeholder="Parsons School">
                     </div>
                     <div class="form-group">
-                        <label class="form-label">Start Year</label>
-                        <input type="text" class="form-input edu-start" placeholder="2014">
-                    </div>
-                    <div class="form-group">
-                        <label class="form-label">End Year</label>
-                        <input type="text" class="form-input edu-end" placeholder="2016">
+                        <label class="form-label">Year</label>
+                        <input type="text" class="form-input edu-year" placeholder="2016">
                     </div>
                 </div>
             </div>
@@ -587,10 +516,10 @@
 
             <hr class="section-divider">
 
-            <h2 class="section-header">⚡ Skills</h2>
+            <h2 class="section-header">⚡ Expertise</h2>
             <div class="form-group">
                 <label class="form-label">Skills (comma separated)</label>
-                <textarea class="form-input" id="skills" placeholder="Project Management, Agile, Leadership, Budgeting"></textarea>
+                <textarea class="form-input" id="skills" placeholder="Fashion Design, Textile, Pattern Making, Illustration"></textarea>
             </div>
         </div>
 
@@ -615,8 +544,13 @@
             let sectionsComplete = 0;
             const fullName = document.getElementById('fullName').value;
             const jobTitle = document.getElementById('jobTitle').value;
-            const email = document.getElementById('email').value;
-            if (fullName && jobTitle && email) sectionsComplete++;
+            if (fullName && jobTitle) sectionsComplete++;
+            
+            let statsCount = 0;
+            if (document.getElementById('stat1Label').value || document.getElementById('stat1Value').value) statsCount++;
+            if (document.getElementById('stat2Label').value || document.getElementById('stat2Value').value) statsCount++;
+            if (document.getElementById('stat3Label').value || document.getElementById('stat3Value').value) statsCount++;
+            if (statsCount > 0) sectionsComplete++;
             
             const experiences = document.querySelectorAll('#experienceContainer .entry-box');
             let hasExperience = false, expFilledCount = 0;
@@ -628,11 +562,11 @@
             if (hasExperience) sectionsComplete++;
             
             const educations = document.querySelectorAll('#educationContainer .entry-box');
-            let hasEducation = false, eduFilledCount = 0;
+            let hasEducation = false;
             educations.forEach(edu => {
                 const degree = edu.querySelector('.edu-degree').value;
                 const institution = edu.querySelector('.edu-institution').value;
-                if (degree || institution) { hasEducation = true; eduFilledCount++; }
+                if (degree || institution) hasEducation = true;
             });
             if (hasEducation) sectionsComplete++;
             
@@ -640,12 +574,12 @@
             const skillArray = skills ? skills.split(',').map(s => s.trim()).filter(s => s) : [];
             if (skillArray.length > 0) sectionsComplete++;
             
-            document.getElementById('sectionCount').textContent = sectionsComplete + ' / 4';
+            document.getElementById('sectionCount').textContent = sectionsComplete + ' / 5';
+            document.getElementById('statCount').textContent = statsCount;
             document.getElementById('expCount').textContent = expFilledCount;
-            document.getElementById('eduCount').textContent = eduFilledCount;
             document.getElementById('skillCount').textContent = skillArray.length;
             
-            const progressPercent = (sectionsComplete / 4) * 100;
+            const progressPercent = (sectionsComplete / 5) * 100;
             document.getElementById('progressBar').style.width = progressPercent + '%';
             document.getElementById('progressPercent').textContent = Math.round(progressPercent) + '%';
         }
@@ -653,99 +587,116 @@
         function updatePreview() {
             const fullName = document.getElementById('fullName').value;
             const jobTitle = document.getElementById('jobTitle').value;
-            const email = document.getElementById('email').value;
-            const phone = document.getElementById('phone').value;
-            const location = document.getElementById('location').value;
+            const stat1Label = document.getElementById('stat1Label').value;
+            const stat1Value = document.getElementById('stat1Value').value;
+            const stat2Label = document.getElementById('stat2Label').value;
+            const stat2Value = document.getElementById('stat2Value').value;
+            const stat3Label = document.getElementById('stat3Label').value;
+            const stat3Value = document.getElementById('stat3Value').value;
             const skills = document.getElementById('skills').value;
             updateHUDStats();
 
             let html = '';
 
-            // Add corner decorations
+            // Corner decorations
             html += '<div class="corner-decoration corner-top-left"></div>';
             html += '<div class="corner-decoration corner-bottom-right"></div>';
 
             // Header
-            html += '<div class="resume-header">';
-            if (fullName) html += `<div class="resume-name">${fullName}</div>`;
-            if (jobTitle) html += `<div class="resume-title">${jobTitle}</div>`;
-            
-            if (email || phone || location) {
-                html += '<div class="resume-contact-line">';
-                const contacts = [];
-                if (email) contacts.push(`📧 ${email}`);
-                if (phone) contacts.push(`📱 ${phone}`);
-                if (location) contacts.push(`📍 ${location}`);
-                html += contacts.join(' <span>•</span> ');
-                html += '</div>';
-            }
-            html += '<div class="header-gradient-line"></div>';
+            html += '<div class="magazine-header">';
+            if (fullName) html += `<div class="magazine-name">${fullName}</div>`;
+            if (jobTitle) html += `<div class="magazine-title">${jobTitle}</div>`;
             html += '</div>';
 
-            // Timeline Container
-            html += '<div class="timeline-container">';
-            html += '<div class="timeline-line"></div>';
+            html += '<div class="magazine-content">';
 
-            // Experience Items
+            // Stats Grid
+            if (stat1Label || stat1Value || stat2Label || stat2Value || stat3Label || stat3Value) {
+                html += '<div class="stats-grid">';
+                if (stat1Label || stat1Value) {
+                    html += '<div class="stat-box">';
+                    html += `<div class="stat-label">${stat1Label || 'STAT'}</div>`;
+                    html += `<div class="stat-value">${stat1Value || '0'}</div>`;
+                    html += '</div>';
+                }
+                if (stat2Label || stat2Value) {
+                    html += '<div class="stat-box">';
+                    html += `<div class="stat-label">${stat2Label || 'STAT'}</div>`;
+                    html += `<div class="stat-value">${stat2Value || '0'}</div>`;
+                    html += '</div>';
+                }
+                if (stat3Label || stat3Value) {
+                    html += '<div class="stat-box">';
+                    html += `<div class="stat-label">${stat3Label || 'STAT'}</div>`;
+                    html += `<div class="stat-value">${stat3Value || '0'}</div>`;
+                    html += '</div>';
+                }
+                html += '</div>';
+            }
+
+            // Experience Section
             const experiences = document.querySelectorAll('#experienceContainer .entry-box');
+            let hasExp = false;
+            let expHtml = '';
             experiences.forEach(exp => {
                 const title = exp.querySelector('.exp-title').value;
                 const company = exp.querySelector('.exp-company').value;
-                const start = exp.querySelector('.exp-start').value;
-                const end = exp.querySelector('.exp-end').value;
+                const years = exp.querySelector('.exp-years').value;
                 const desc = exp.querySelector('.exp-desc').value;
-                
                 if (title || company) {
-                    html += '<div class="timeline-item">';
-                    html += '<div class="timeline-dot"></div>';
-                    html += '<div class="timeline-card">';
-                    if (start || end) {
-                        html += `<div class="timeline-date">${start}${start && end ? ' - ' : ''}${end}</div>`;
-                    }
-                    if (title) html += `<div class="timeline-card-title">${title}</div>`;
-                    if (company) html += `<div class="timeline-card-subtitle">${company}</div>`;
-                    if (desc) html += `<div class="timeline-card-description">${desc.replace(/\n/g, '<br>')}</div>`;
-                    html += '</div></div>';
+                    hasExp = true;
+                    expHtml += '<div class="magazine-item">';
+                    if (title) expHtml += `<div class="magazine-item-title">${title}</div>`;
+                    if (company || years) expHtml += `<div class="magazine-item-subtitle">${company}${company && years ? ' • ' : ''}${years}</div>`;
+                    if (desc) expHtml += `<div class="magazine-item-description">${desc.replace(/\n/g, '<br>')}</div>`;
+                    expHtml += '</div>';
                 }
             });
+            if (hasExp) {
+                html += '<div class="magazine-section">';
+                html += '<div class="magazine-section-title">EXPERIENCE</div>';
+                html += expHtml;
+                html += '</div>';
+            }
 
-            // Education Items
+            // Education Section
             const educations = document.querySelectorAll('#educationContainer .entry-box');
+            let hasEdu = false;
+            let eduHtml = '';
             educations.forEach(edu => {
                 const degree = edu.querySelector('.edu-degree').value;
                 const institution = edu.querySelector('.edu-institution').value;
-                const start = edu.querySelector('.edu-start').value;
-                const end = edu.querySelector('.edu-end').value;
-                
+                const year = edu.querySelector('.edu-year').value;
                 if (degree || institution) {
-                    html += '<div class="timeline-item">';
-                    html += '<div class="timeline-dot education"></div>';
-                    html += '<div class="timeline-card education">';
-                    html += '<div class="timeline-date education">🎓 EDUCATION</div>';
-                    if (degree) html += `<div class="timeline-card-title">${degree}</div>`;
-                    if (institution) {
-                        html += `<div class="timeline-card-subtitle">${institution}${start || end ? ' • ' + start + (start && end ? '-' : '') + end : ''}</div>`;
-                    }
-                    html += '</div></div>';
+                    hasEdu = true;
+                    eduHtml += '<div class="magazine-item">';
+                    if (degree) eduHtml += `<div class="magazine-item-title">${degree}</div>`;
+                    if (institution || year) eduHtml += `<div class="magazine-item-subtitle">${institution}${institution && year ? ' • ' : ''}${year}</div>`;
+                    eduHtml += '</div>';
                 }
             });
+            if (hasEdu) {
+                html += '<div class="magazine-section">';
+                html += '<div class="magazine-section-title">EDUCATION</div>';
+                html += eduHtml;
+                html += '</div>';
+            }
 
-            html += '</div>'; // End timeline container
-
-            // Skills Section
+            // Expertise Section
             if (skills) {
                 const skillArray = skills.split(',').map(s => s.trim()).filter(s => s);
                 if (skillArray.length > 0) {
-                    html += '<div class="skills-section">';
-                    html += '<div class="skills-divider-line"></div>';
-                    html += '<div class="skills-title">Core Skills</div>';
-                    html += '<div class="skills-grid">';
+                    html += '<div class="magazine-section">';
+                    html += '<div class="magazine-section-title">EXPERTISE</div>';
+                    html += '<div class="expertise-tags">';
                     skillArray.forEach(skill => {
-                        html += `<div class="skill-item">${skill}</div>`;
+                        html += `<div class="expertise-tag">${skill}</div>`;
                     });
                     html += '</div></div>';
                 }
             }
+
+            html += '</div>'; // End content
 
             document.getElementById('resumePreview').innerHTML = html || '<div class="placeholder-text">👈 Fill in your information to see live preview</div>';
         }
@@ -758,19 +709,15 @@
                 <button class="remove-btn" onclick="this.parentElement.remove(); updatePreview();">×</button>
                 <div class="form-group">
                     <label class="form-label">Job Title</label>
-                    <input type="text" class="form-input exp-title" placeholder="Senior Project Manager" oninput="updatePreview()">
+                    <input type="text" class="form-input exp-title" placeholder="Lead Fashion Designer" oninput="updatePreview()">
                 </div>
                 <div class="form-group">
                     <label class="form-label">Company</label>
-                    <input type="text" class="form-input exp-company" placeholder="Tech Solutions Inc" oninput="updatePreview()">
+                    <input type="text" class="form-input exp-company" placeholder="Vogue Studio" oninput="updatePreview()">
                 </div>
                 <div class="form-group">
-                    <label class="form-label">Start Date</label>
-                    <input type="text" class="form-input exp-start" placeholder="2020" oninput="updatePreview()">
-                </div>
-                <div class="form-group">
-                    <label class="form-label">End Date</label>
-                    <input type="text" class="form-input exp-end" placeholder="Present" oninput="updatePreview()">
+                    <label class="form-label">Years</label>
+                    <input type="text" class="form-input exp-years" placeholder="2020-2024" oninput="updatePreview()">
                 </div>
                 <div class="form-group">
                     <label class="form-label">Description</label>
@@ -788,19 +735,15 @@
                 <button class="remove-btn" onclick="this.parentElement.remove(); updatePreview();">×</button>
                 <div class="form-group">
                     <label class="form-label">Degree</label>
-                    <input type="text" class="form-input edu-degree" placeholder="MBA Business Administration" oninput="updatePreview()">
+                    <input type="text" class="form-input edu-degree" placeholder="BFA Fashion Design" oninput="updatePreview()">
                 </div>
                 <div class="form-group">
                     <label class="form-label">Institution</label>
-                    <input type="text" class="form-input edu-institution" placeholder="Harvard University" oninput="updatePreview()">
+                    <input type="text" class="form-input edu-institution" placeholder="Parsons School" oninput="updatePreview()">
                 </div>
                 <div class="form-group">
-                    <label class="form-label">Start Year</label>
-                    <input type="text" class="form-input edu-start" placeholder="2014" oninput="updatePreview()">
-                </div>
-                <div class="form-group">
-                    <label class="form-label">End Year</label>
-                    <input type="text" class="form-input edu-end" placeholder="2016" oninput="updatePreview()">
+                    <label class="form-label">Year</label>
+                    <input type="text" class="form-input edu-year" placeholder="2016" oninput="updatePreview()">
                 </div>
             `;
             container.appendChild(entry);
@@ -847,7 +790,7 @@
                         const pdf = new jsPDF({ orientation: 'portrait', unit: 'mm', format: 'a4', compress: true });
                         const imgData = canvas.toDataURL('image/jpeg', 0.95);
                         pdf.addImage(imgData, 'JPEG', 0, 0, 210, 297, '', 'FAST');
-                        const fileName = `${fullName.replace(/\s+/g, '_')}_Resume_Timeline.pdf`;
+                        const fileName = `${fullName.replace(/\s+/g, '_')}_Resume_Magazine.pdf`;
                         pdf.save(fileName);
                         downloadBtn.innerHTML = originalText;
                         downloadBtn.disabled = false;

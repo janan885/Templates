@@ -3,13 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Timeline Style Template - Resume Builder Pro</title>
+    <title>Retro Vintage Template - Resume Builder Pro</title>
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
 
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: linear-gradient(-45deg, #e74c3c, #c0392b, #e67e22, #d35400);
+            font-family: 'Georgia', 'Times New Roman', serif;
+            background: linear-gradient(-45deg, #8b4513, #a0522d, #cd853f, #8b4513);
             background-size: 400% 400%;
             animation: gradientBG 15s ease infinite;
             min-height: 100vh;
@@ -38,26 +38,26 @@
         .logo {
             display: flex; align-items: center; gap: 10px;
             font-size: 1.5em; font-weight: 800;
-            background: linear-gradient(135deg, #e74c3c, #c0392b);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
+            color: #8b4513;
             text-decoration: none;
+            font-family: 'Georgia', serif;
         }
 
         .back-btn {
             padding: 10px 25px;
-            background: linear-gradient(135deg, #e74c3c 0%, #c0392b 100%);
-            color: white; border: none; border-radius: 25px;
+            background: #8b4513;
+            color: white; border: none; border-radius: 5px;
             font-weight: 600; font-size: 1em; text-decoration: none;
             transition: all 0.3s ease;
+            font-family: 'Georgia', serif;
         }
 
-        .back-btn:hover { transform: translateY(-2px); box-shadow: 0 5px 15px rgba(231, 76, 60, 0.4); }
+        .back-btn:hover { transform: translateY(-2px); box-shadow: 0 5px 15px rgba(139, 69, 19, 0.4); }
 
         .hud-header {
-            background: linear-gradient(135deg, #e74c3c 0%, #c0392b 100%);
+            background: #8b4513;
             color: white; padding: 20px 0; margin-top: 80px;
-            box-shadow: 0 5px 20px rgba(231, 76, 60, 0.3);
+            box-shadow: 0 5px 20px rgba(139, 69, 19, 0.3);
         }
 
         .hud-container { max-width: 1400px; margin: 0 auto; padding: 0 40px; }
@@ -65,6 +65,7 @@
         .hud-title {
             font-size: 2em; font-weight: 800; margin-bottom: 10px;
             display: flex; align-items: center; gap: 15px;
+            font-family: 'Georgia', serif;
         }
 
         .hud-subtitle { font-size: 1em; opacity: 0.95; margin-bottom: 20px; }
@@ -72,7 +73,7 @@
 
         .hud-stat {
             background: rgba(255, 255, 255, 0.2); backdrop-filter: blur(10px);
-            padding: 12px 20px; border-radius: 15px;
+            padding: 12px 20px; border-radius: 8px;
             display: flex; align-items: center; gap: 10px; font-size: 0.9em;
         }
 
@@ -105,302 +106,243 @@
         }
 
         .form-section {
-            background: white; padding: 30px; border-radius: 20px;
+            background: white; padding: 30px; border-radius: 10px;
             box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1); height: fit-content;
+            border: 3px double #8b4513;
         }
 
         .form-title { 
             font-size: 2em;
-            background: linear-gradient(135deg, #e74c3c, #c0392b);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            margin-bottom: 20px; font-weight: 800; 
+            color: #8b4513;
+            margin-bottom: 20px; font-weight: 800;
+            font-family: 'Georgia', serif;
+            text-align: center;
         }
         .form-group { margin-bottom: 20px; }
 
         .form-label {
             display: block; font-weight: 600; color: #333;
             margin-bottom: 8px; font-size: 0.95em;
+            font-family: 'Georgia', serif;
         }
 
         .form-input {
-            width: 100%; padding: 12px 15px; border: 2px solid #e0e0e0;
-            border-radius: 15px; font-size: 1em; transition: all 0.3s ease;
+            width: 100%; padding: 12px 15px; border: 2px solid #8b4513;
+            border-radius: 5px; font-size: 1em; transition: all 0.3s ease;
+            font-family: 'Georgia', serif;
         }
 
         .form-input:focus {
-            outline: none; border-color: #e74c3c;
-            box-shadow: 0 0 0 3px rgba(231, 76, 60, 0.1);
+            outline: none; border-color: #a0522d;
+            box-shadow: 0 0 0 3px rgba(139, 69, 19, 0.1);
         }
 
         textarea.form-input { resize: vertical; min-height: 100px; }
-        .section-divider { margin: 30px 0; border: none; border-top: 2px solid #f0f0f0; }
+        .section-divider { margin: 30px 0; border: none; border-top: 2px double #8b4513; }
 
         .section-header {
-            font-size: 1.3em; color: #e74c3c; margin-bottom: 15px;
+            font-size: 1.3em; color: #8b4513; margin-bottom: 15px;
             font-weight: 700; display: flex; align-items: center; gap: 10px;
+            font-family: 'Georgia', serif;
         }
 
         .add-btn {
             padding: 10px 20px;
-            background: linear-gradient(135deg, #e74c3c 0%, #c0392b 100%);
-            color: white; border: none; border-radius: 15px;
+            background: #8b4513;
+            color: white; border: none; border-radius: 5px;
             font-weight: 600; cursor: pointer; transition: all 0.3s ease; margin-top: 10px;
+            font-family: 'Georgia', serif;
         }
 
-        .add-btn:hover { transform: translateY(-2px); box-shadow: 0 5px 15px rgba(231, 76, 60, 0.3); }
+        .add-btn:hover { transform: translateY(-2px); box-shadow: 0 5px 15px rgba(139, 69, 19, 0.3); }
 
         .entry-box {
-            background: linear-gradient(135deg, #fff5f5, #ffe8e8);
-            padding: 20px; border-radius: 15px;
-            margin-bottom: 15px; border-left: 4px solid #e74c3c; position: relative;
+            background: #f9f3ed;
+            padding: 20px; border-radius: 8px;
+            margin-bottom: 15px; border: 2px solid #8b4513; position: relative;
         }
 
         .remove-btn {
             position: absolute; top: 10px; right: 10px;
-            background: #c0392b; color: white; border: none;
+            background: #8b4513; color: white; border: none;
             width: 30px; height: 30px; border-radius: 50%;
             cursor: pointer; font-weight: bold;
         }
 
-        .remove-btn:hover { background: #a93226; }
+        .remove-btn:hover { background: #a0522d; }
 
         .preview-section {
-            background: white; padding: 30px; border-radius: 20px;
+            background: white; padding: 30px; border-radius: 10px;
             box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
             position: sticky; top: 100px; max-height: calc(100vh - 120px); overflow-y: auto;
+            border: 3px double #8b4513;
         }
 
         .preview-title {
             font-size: 1.5em;
-            background: linear-gradient(135deg, #e74c3c, #c0392b);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
+            color: #8b4513;
             margin-bottom: 20px;
             font-weight: 800; text-align: center;
+            font-family: 'Georgia', serif;
         }
 
         .preview-container {
-            background: white;
-            border: 2px solid #e0e0e0;
-            border-radius: 15px; overflow: hidden;
+            background: #f4e8d8;
+            border: 2px solid #8b4513;
+            border-radius: 8px; overflow: hidden;
         }
 
-        /* Timeline Resume Styles */
+        /* Retro Vintage Resume Styles */
         .resume-preview {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: 'Georgia', 'Times New Roman', serif;
             font-size: 1em;
-            background: white;
+            background: #f4e8d8;
             color: #333;
             padding: 35px;
-            border: 3px solid #2c3e50;
+            border: 8px double #8b4513;
             position: relative;
         }
 
-        /* Decorative corner borders */
-        .corner-decoration {
+        /* Ornamental corners */
+        .ornament-corner {
             position: absolute;
-            width: 70px;
-            height: 70px;
-            border: 3px solid #e74c3c;
-            z-index: 1;
-            pointer-events: none;
+            font-size: 2em;
+            color: #8b4513;
+            font-weight: bold;
         }
 
-        .corner-top-left {
-            top: 10px;
-            left: 10px;
-            border-right: none;
-            border-bottom: none;
-        }
-
-        .corner-bottom-right {
-            bottom: 10px;
-            right: 10px;
-            border-left: none;
-            border-top: none;
-        }
-
-        .resume-header {
-            text-align: center;
-            margin-bottom: 30px;
-            padding-bottom: 25px;
-            border-bottom: 3px double #ddd;
-            position: relative;
-        }
-
-        .header-gradient-line {
-            position: absolute;
-            bottom: -3px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 200px;
-            height: 3px;
-            background: linear-gradient(90deg, transparent, #e74c3c 20%, #e74c3c 80%, transparent);
-        }
-
-        .resume-name {
-            font-size: 2.5em;
-            font-weight: 800;
-            color: #2c3e50;
-            margin-bottom: 10px;
-            text-transform: uppercase;
-            letter-spacing: 3px;
-        }
-
-        .resume-title {
-            font-size: 1.3em;
-            color: #e74c3c;
-            font-weight: 600;
-            margin-bottom: 15px;
-        }
-
-        .resume-contact-line {
-            font-size: 0.95em;
-            color: #7f8c8d;
-            margin-top: 15px;
-        }
-
-        .resume-contact-line span {
-            margin: 0 12px;
-        }
-
-        /* Timeline Container */
-        .timeline-container {
-            position: relative;
-            padding-left: 45px;
-        }
-
-        /* Vertical Timeline Line */
-        .timeline-line {
-            position: absolute;
+        .ornament-top-left {
+            top: 15px;
             left: 15px;
-            top: 0;
-            bottom: 0;
-            width: 4px;
-            background: linear-gradient(180deg, #e74c3c 0%, #c0392b 100%);
-            box-shadow: 0 0 5px rgba(231, 76, 60, 0.3);
         }
 
-        /* Timeline Item */
-        .timeline-item {
-            position: relative;
+        .ornament-top-right {
+            top: 15px;
+            right: 15px;
+        }
+
+        .ornament-bottom-left {
+            bottom: 15px;
+            left: 15px;
+        }
+
+        .ornament-bottom-right {
+            bottom: 15px;
+            right: 15px;
+        }
+
+        /* Header Box */
+        .vintage-header {
+            text-align: center;
+            border: 3px double #8b4513;
+            padding: 25px;
             margin-bottom: 25px;
+            background: white;
+            position: relative;
         }
 
-        /* Timeline Dot */
-        .timeline-dot {
-            position: absolute;
-            left: -37px;
-            top: 10px;
-            width: 18px;
-            height: 18px;
-            background: #e74c3c;
-            border-radius: 50%;
-            border: 4px solid white;
-            box-shadow: 0 0 0 3px #e74c3c, 0 3px 8px rgba(231, 76, 60, 0.4);
-            z-index: 2;
-        }
-
-        .timeline-dot.education {
-            background: #3498db;
-            box-shadow: 0 0 0 3px #3498db, 0 3px 8px rgba(52, 152, 219, 0.4);
-        }
-
-        /* Timeline Content Card */
-        .timeline-card {
-            background: #fef5f5;
-            padding: 20px;
-            border-radius: 12px;
-            border-left: 4px solid #e74c3c;
-            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
-            border: 2px solid #fdd;
-            border-left: 4px solid #e74c3c;
-        }
-
-        .timeline-card.education {
-            background: #f0f8ff;
-            border: 2px solid #d6eaff;
-            border-left: 4px solid #3498db;
-        }
-
-        .timeline-date {
-            font-size: 0.85em;
-            color: #e74c3c;
-            font-weight: 700;
+        .vintage-name {
+            font-size: 2.5em;
+            font-weight: 900;
+            color: #8b4513;
+            letter-spacing: 3px;
             margin-bottom: 10px;
             text-transform: uppercase;
-            letter-spacing: 0.8px;
         }
 
-        .timeline-date.education {
-            color: #3498db;
-        }
-
-        .timeline-card-title {
-            font-weight: 700;
-            color: #2c3e50;
-            font-size: 1.05em;
-            margin-bottom: 6px;
-            letter-spacing: 0.3px;
-        }
-
-        .timeline-card-subtitle {
-            color: #7f8c8d;
-            font-size: 0.95em;
+        .vintage-title {
+            font-size: 1.1em;
+            color: #666;
+            font-style: italic;
             margin-bottom: 12px;
         }
 
-        .timeline-card-description {
-            color: #555;
-            font-size: 0.95em;
-            line-height: 1.7;
+        .vintage-title::before {
+            content: '~ ';
         }
 
-        /* Skills Section */
-        .skills-section {
-            margin-top: 30px;
-            padding-top: 25px;
-            border-top: 3px double #ddd;
-            position: relative;
+        .vintage-title::after {
+            content: ' ~';
         }
 
-        .skills-divider-line {
-            position: absolute;
-            top: -3px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 200px;
-            height: 3px;
-            background: linear-gradient(90deg, transparent, #e74c3c 20%, #e74c3c 80%, transparent);
+        .vintage-contact {
+            font-size: 0.85em;
+            color: #888;
+            margin-top: 15px;
         }
 
-        .skills-title {
-            font-size: 1.1em;
-            color: #2c3e50;
-            font-weight: 700;
+        /* Content Cards */
+        .vintage-card {
+            background: white;
+            border: 2px solid #8b4513;
+            padding: 20px;
             margin-bottom: 18px;
+            box-shadow: 0 3px 8px rgba(139, 69, 19, 0.15);
+        }
+
+        .vintage-card-title {
+            font-size: 0.8em;
+            font-weight: 700;
+            color: #8b4513;
+            margin-bottom: 12px;
+            text-align: center;
             text-transform: uppercase;
-            letter-spacing: 1.5px;
+            letter-spacing: 2px;
+        }
+
+        .vintage-card-title::before {
+            content: '◆ ';
+        }
+
+        .vintage-card-title::after {
+            content: ' ◆';
+        }
+
+        .vintage-item {
             text-align: center;
+            margin-bottom: 12px;
         }
 
-        .skills-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-            gap: 12px;
+        .vintage-item:last-child {
+            margin-bottom: 0;
         }
 
-        .skill-item {
-            background: linear-gradient(135deg, #e74c3c, #c0392b);
-            color: white;
-            padding: 12px 18px;
-            border-radius: 10px;
+        .vintage-item-title {
+            font-weight: 700;
+            color: #333;
+            font-size: 0.95em;
+            margin-bottom: 5px;
+        }
+
+        .vintage-item-subtitle {
+            color: #888;
+            font-size: 0.85em;
+            font-style: italic;
+            margin-bottom: 10px;
+        }
+
+        .vintage-item-description {
+            color: #555;
+            line-height: 1.7;
             font-size: 0.9em;
+            text-align: left;
+        }
+
+        /* Skill Tags */
+        .vintage-skills {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .vintage-skill-tag {
+            border: 2px solid #8b4513;
+            color: #8b4513;
+            padding: 8px 16px;
+            background: #f9f3ed;
+            font-size: 0.85em;
             font-weight: 600;
-            text-align: center;
-            box-shadow: 0 3px 8px rgba(231, 76, 60, 0.3);
-            border: 2px solid rgba(255, 255, 255, 0.2);
         }
 
         .placeholder-text {
@@ -414,16 +356,17 @@
 
         .action-btn {
             padding: 15px 30px;
-            background: linear-gradient(135deg, #e74c3c 0%, #c0392b 100%);
-            color: white; border: none; border-radius: 50px;
+            background: #8b4513;
+            color: white; border: none; border-radius: 8px;
             font-weight: 700; font-size: 1em; cursor: pointer;
-            box-shadow: 0 5px 20px rgba(231, 76, 60, 0.4);
+            box-shadow: 0 5px 20px rgba(139, 69, 19, 0.4);
             transition: all 0.3s ease;
+            font-family: 'Georgia', serif;
         }
 
         .action-btn:hover {
             transform: translateY(-3px);
-            box-shadow: 0 8px 30px rgba(231, 76, 60, 0.5);
+            box-shadow: 0 8px 30px rgba(139, 69, 19, 0.5);
         }
 
         .action-btn:disabled { opacity: 0.6; cursor: not-allowed; }
@@ -440,9 +383,6 @@
             .hud-stat { min-width: calc(50% - 5px); padding: 10px 15px; }
             .form-section, .preview-section { padding: 20px; }
             .resume-preview { padding: 25px; font-size: 0.95em; }
-            .timeline-container { padding-left: 30px; }
-            .timeline-line { left: 10px; }
-            .timeline-dot { left: -28px; }
             .action-buttons {
                 width: calc(100% - 40px); left: 20px; right: 20px; flex-direction: column;
             }
@@ -453,21 +393,21 @@
 <body>
     <nav class="navbar">
         <div class="nav-container">
-            <a href="../index.html" class="logo"><span>⏱️</span><span>Resume Builder Pro</span></a>
+            <a href="../index.html" class="logo"><span>📜</span><span>Resume Builder Pro</span></a>
             <a href="../templates.html" class="back-btn">← Back to Templates</a>
         </div>
     </nav>
 
     <div class="hud-header">
         <div class="hud-container">
-            <div class="hud-title"><span>⏱️</span><span>Timeline Style Template</span></div>
-            <div class="hud-subtitle">Create a vertical timeline resume showing career progression</div>
+            <div class="hud-title"><span>📜</span><span>Retro Vintage Template</span></div>
+            <div class="hud-subtitle">Create a classic vintage resume with traditional styling</div>
             <div class="hud-stats">
                 <div class="hud-stat">
                     <div class="hud-stat-icon">📝</div>
                     <div>
                         <div class="hud-stat-label">Sections Filled</div>
-                        <div class="hud-stat-value" id="sectionCount">0 / 4</div>
+                        <div class="hud-stat-value" id="sectionCount">0 / 5</div>
                     </div>
                 </div>
                 <div class="hud-stat">
@@ -504,21 +444,21 @@
 
     <div class="container">
         <div class="form-section">
-            <h1 class="form-title">Timeline Style</h1>
+            <h1 class="form-title">📜 Retro Vintage</h1>
             
             <div class="form-group">
                 <label class="form-label">Full Name *</label>
-                <input type="text" class="form-input" id="fullName" placeholder="Kevin Martinez" required>
+                <input type="text" class="form-input" id="fullName" placeholder="William Clarke" required>
             </div>
 
             <div class="form-group">
                 <label class="form-label">Job Title *</label>
-                <input type="text" class="form-input" id="jobTitle" placeholder="Project Manager" required>
+                <input type="text" class="form-input" id="jobTitle" placeholder="Historian & Writer" required>
             </div>
 
             <div class="form-group">
-                <label class="form-label">Email *</label>
-                <input type="email" class="form-input" id="email" placeholder="kevin@email.com" required>
+                <label class="form-label">Email</label>
+                <input type="email" class="form-input" id="email" placeholder="william@history.com">
             </div>
 
             <div class="form-group">
@@ -533,28 +473,31 @@
 
             <hr class="section-divider">
 
-            <h2 class="section-header">💼 Work Experience</h2>
+            <h2 class="section-header">📝 Professional Summary</h2>
+            <div class="form-group">
+                <textarea class="form-input" id="summary" placeholder="Write your professional summary..."></textarea>
+            </div>
+
+            <hr class="section-divider">
+
+            <h2 class="section-header">💼 Professional Experience</h2>
             <div id="experienceContainer">
                 <div class="entry-box">
                     <div class="form-group">
                         <label class="form-label">Job Title</label>
-                        <input type="text" class="form-input exp-title" placeholder="Senior Project Manager">
+                        <input type="text" class="form-input exp-title" placeholder="Senior Historian">
                     </div>
                     <div class="form-group">
-                        <label class="form-label">Company</label>
-                        <input type="text" class="form-input exp-company" placeholder="Tech Solutions Inc">
+                        <label class="form-label">Organization</label>
+                        <input type="text" class="form-input exp-company" placeholder="Historical Society">
                     </div>
                     <div class="form-group">
-                        <label class="form-label">Start Date</label>
-                        <input type="text" class="form-input exp-start" placeholder="2020">
-                    </div>
-                    <div class="form-group">
-                        <label class="form-label">End Date</label>
-                        <input type="text" class="form-input exp-end" placeholder="Present">
+                        <label class="form-label">Years</label>
+                        <input type="text" class="form-input exp-years" placeholder="2015-2024">
                     </div>
                     <div class="form-group">
                         <label class="form-label">Description</label>
-                        <textarea class="form-input exp-desc" placeholder="Describe your achievements..."></textarea>
+                        <textarea class="form-input exp-desc" placeholder="Describe your contributions..."></textarea>
                     </div>
                 </div>
             </div>
@@ -567,19 +510,15 @@
                 <div class="entry-box">
                     <div class="form-group">
                         <label class="form-label">Degree</label>
-                        <input type="text" class="form-input edu-degree" placeholder="MBA Business Administration">
+                        <input type="text" class="form-input edu-degree" placeholder="PhD in History">
                     </div>
                     <div class="form-group">
                         <label class="form-label">Institution</label>
-                        <input type="text" class="form-input edu-institution" placeholder="Harvard University">
+                        <input type="text" class="form-input edu-institution" placeholder="Oxford University">
                     </div>
                     <div class="form-group">
-                        <label class="form-label">Start Year</label>
-                        <input type="text" class="form-input edu-start" placeholder="2014">
-                    </div>
-                    <div class="form-group">
-                        <label class="form-label">End Year</label>
-                        <input type="text" class="form-input edu-end" placeholder="2016">
+                        <label class="form-label">Years</label>
+                        <input type="text" class="form-input edu-years" placeholder="2012-2015">
                     </div>
                 </div>
             </div>
@@ -587,10 +526,10 @@
 
             <hr class="section-divider">
 
-            <h2 class="section-header">⚡ Skills</h2>
+            <h2 class="section-header">⚡ Specializations</h2>
             <div class="form-group">
                 <label class="form-label">Skills (comma separated)</label>
-                <textarea class="form-input" id="skills" placeholder="Project Management, Agile, Leadership, Budgeting"></textarea>
+                <textarea class="form-input" id="skills" placeholder="Ancient History, Research, Writing, Analysis"></textarea>
             </div>
         </div>
 
@@ -615,8 +554,10 @@
             let sectionsComplete = 0;
             const fullName = document.getElementById('fullName').value;
             const jobTitle = document.getElementById('jobTitle').value;
-            const email = document.getElementById('email').value;
-            if (fullName && jobTitle && email) sectionsComplete++;
+            if (fullName && jobTitle) sectionsComplete++;
+            
+            const summary = document.getElementById('summary').value;
+            if (summary) sectionsComplete++;
             
             const experiences = document.querySelectorAll('#experienceContainer .entry-box');
             let hasExperience = false, expFilledCount = 0;
@@ -640,12 +581,12 @@
             const skillArray = skills ? skills.split(',').map(s => s.trim()).filter(s => s) : [];
             if (skillArray.length > 0) sectionsComplete++;
             
-            document.getElementById('sectionCount').textContent = sectionsComplete + ' / 4';
+            document.getElementById('sectionCount').textContent = sectionsComplete + ' / 5';
             document.getElementById('expCount').textContent = expFilledCount;
             document.getElementById('eduCount').textContent = eduFilledCount;
             document.getElementById('skillCount').textContent = skillArray.length;
             
-            const progressPercent = (sectionsComplete / 4) * 100;
+            const progressPercent = (sectionsComplete / 5) * 100;
             document.getElementById('progressBar').style.width = progressPercent + '%';
             document.getElementById('progressPercent').textContent = Math.round(progressPercent) + '%';
         }
@@ -656,92 +597,84 @@
             const email = document.getElementById('email').value;
             const phone = document.getElementById('phone').value;
             const location = document.getElementById('location').value;
+            const summary = document.getElementById('summary').value;
             const skills = document.getElementById('skills').value;
             updateHUDStats();
 
             let html = '';
 
-            // Add corner decorations
-            html += '<div class="corner-decoration corner-top-left"></div>';
-            html += '<div class="corner-decoration corner-bottom-right"></div>';
+            // Ornamental corners
+            html += '<div class="ornament-corner ornament-top-left">❦</div>';
+            html += '<div class="ornament-corner ornament-top-right">❦</div>';
+            html += '<div class="ornament-corner ornament-bottom-left">❦</div>';
+            html += '<div class="ornament-corner ornament-bottom-right">❦</div>';
 
             // Header
-            html += '<div class="resume-header">';
-            if (fullName) html += `<div class="resume-name">${fullName}</div>`;
-            if (jobTitle) html += `<div class="resume-title">${jobTitle}</div>`;
-            
+            html += '<div class="vintage-header">';
+            if (fullName) html += `<div class="vintage-name">${fullName}</div>`;
+            if (jobTitle) html += `<div class="vintage-title">${jobTitle}</div>`;
             if (email || phone || location) {
-                html += '<div class="resume-contact-line">';
+                html += '<div class="vintage-contact">';
                 const contacts = [];
-                if (email) contacts.push(`📧 ${email}`);
-                if (phone) contacts.push(`📱 ${phone}`);
+                if (email) contacts.push(`✉ ${email}`);
+                if (phone) contacts.push(`☎ ${phone}`);
                 if (location) contacts.push(`📍 ${location}`);
-                html += contacts.join(' <span>•</span> ');
+                html += contacts.join(' • ');
                 html += '</div>';
             }
-            html += '<div class="header-gradient-line"></div>';
             html += '</div>';
 
-            // Timeline Container
-            html += '<div class="timeline-container">';
-            html += '<div class="timeline-line"></div>';
+            // Summary
+            if (summary) {
+                html += '<div class="vintage-card">';
+                html += '<div class="vintage-card-title">Professional Summary</div>';
+                html += `<div class="vintage-item-description">${summary.replace(/\n/g, '<br>')}</div>`;
+                html += '</div>';
+            }
 
-            // Experience Items
+            // Experience
             const experiences = document.querySelectorAll('#experienceContainer .entry-box');
             experiences.forEach(exp => {
                 const title = exp.querySelector('.exp-title').value;
                 const company = exp.querySelector('.exp-company').value;
-                const start = exp.querySelector('.exp-start').value;
-                const end = exp.querySelector('.exp-end').value;
+                const years = exp.querySelector('.exp-years').value;
                 const desc = exp.querySelector('.exp-desc').value;
-                
                 if (title || company) {
-                    html += '<div class="timeline-item">';
-                    html += '<div class="timeline-dot"></div>';
-                    html += '<div class="timeline-card">';
-                    if (start || end) {
-                        html += `<div class="timeline-date">${start}${start && end ? ' - ' : ''}${end}</div>`;
-                    }
-                    if (title) html += `<div class="timeline-card-title">${title}</div>`;
-                    if (company) html += `<div class="timeline-card-subtitle">${company}</div>`;
-                    if (desc) html += `<div class="timeline-card-description">${desc.replace(/\n/g, '<br>')}</div>`;
+                    html += '<div class="vintage-card">';
+                    html += '<div class="vintage-card-title">Professional Experience</div>';
+                    html += '<div class="vintage-item">';
+                    if (title) html += `<div class="vintage-item-title">${title}</div>`;
+                    if (company || years) html += `<div class="vintage-item-subtitle">${company}${company && years ? ' • ' : ''}${years}</div>`;
+                    if (desc) html += `<div class="vintage-item-description">${desc.replace(/\n/g, '<br>')}</div>`;
                     html += '</div></div>';
                 }
             });
 
-            // Education Items
+            // Education
             const educations = document.querySelectorAll('#educationContainer .entry-box');
             educations.forEach(edu => {
                 const degree = edu.querySelector('.edu-degree').value;
                 const institution = edu.querySelector('.edu-institution').value;
-                const start = edu.querySelector('.edu-start').value;
-                const end = edu.querySelector('.edu-end').value;
-                
+                const years = edu.querySelector('.edu-years').value;
                 if (degree || institution) {
-                    html += '<div class="timeline-item">';
-                    html += '<div class="timeline-dot education"></div>';
-                    html += '<div class="timeline-card education">';
-                    html += '<div class="timeline-date education">🎓 EDUCATION</div>';
-                    if (degree) html += `<div class="timeline-card-title">${degree}</div>`;
-                    if (institution) {
-                        html += `<div class="timeline-card-subtitle">${institution}${start || end ? ' • ' + start + (start && end ? '-' : '') + end : ''}</div>`;
-                    }
+                    html += '<div class="vintage-card">';
+                    html += '<div class="vintage-card-title">Education</div>';
+                    html += '<div class="vintage-item">';
+                    if (degree) html += `<div class="vintage-item-title">${degree}</div>`;
+                    if (institution || years) html += `<div class="vintage-item-subtitle">${institution}${institution && years ? ' • ' : ''}${years}</div>`;
                     html += '</div></div>';
                 }
             });
 
-            html += '</div>'; // End timeline container
-
-            // Skills Section
+            // Skills
             if (skills) {
                 const skillArray = skills.split(',').map(s => s.trim()).filter(s => s);
                 if (skillArray.length > 0) {
-                    html += '<div class="skills-section">';
-                    html += '<div class="skills-divider-line"></div>';
-                    html += '<div class="skills-title">Core Skills</div>';
-                    html += '<div class="skills-grid">';
+                    html += '<div class="vintage-card">';
+                    html += '<div class="vintage-card-title">Specializations</div>';
+                    html += '<div class="vintage-skills">';
                     skillArray.forEach(skill => {
-                        html += `<div class="skill-item">${skill}</div>`;
+                        html += `<div class="vintage-skill-tag">${skill}</div>`;
                     });
                     html += '</div></div>';
                 }
@@ -758,23 +691,19 @@
                 <button class="remove-btn" onclick="this.parentElement.remove(); updatePreview();">×</button>
                 <div class="form-group">
                     <label class="form-label">Job Title</label>
-                    <input type="text" class="form-input exp-title" placeholder="Senior Project Manager" oninput="updatePreview()">
+                    <input type="text" class="form-input exp-title" placeholder="Senior Historian" oninput="updatePreview()">
                 </div>
                 <div class="form-group">
-                    <label class="form-label">Company</label>
-                    <input type="text" class="form-input exp-company" placeholder="Tech Solutions Inc" oninput="updatePreview()">
+                    <label class="form-label">Organization</label>
+                    <input type="text" class="form-input exp-company" placeholder="Historical Society" oninput="updatePreview()">
                 </div>
                 <div class="form-group">
-                    <label class="form-label">Start Date</label>
-                    <input type="text" class="form-input exp-start" placeholder="2020" oninput="updatePreview()">
-                </div>
-                <div class="form-group">
-                    <label class="form-label">End Date</label>
-                    <input type="text" class="form-input exp-end" placeholder="Present" oninput="updatePreview()">
+                    <label class="form-label">Years</label>
+                    <input type="text" class="form-input exp-years" placeholder="2015-2024" oninput="updatePreview()">
                 </div>
                 <div class="form-group">
                     <label class="form-label">Description</label>
-                    <textarea class="form-input exp-desc" placeholder="Describe achievements..." oninput="updatePreview()"></textarea>
+                    <textarea class="form-input exp-desc" placeholder="Describe contributions..." oninput="updatePreview()"></textarea>
                 </div>
             `;
             container.appendChild(entry);
@@ -788,19 +717,15 @@
                 <button class="remove-btn" onclick="this.parentElement.remove(); updatePreview();">×</button>
                 <div class="form-group">
                     <label class="form-label">Degree</label>
-                    <input type="text" class="form-input edu-degree" placeholder="MBA Business Administration" oninput="updatePreview()">
+                    <input type="text" class="form-input edu-degree" placeholder="PhD in History" oninput="updatePreview()">
                 </div>
                 <div class="form-group">
                     <label class="form-label">Institution</label>
-                    <input type="text" class="form-input edu-institution" placeholder="Harvard University" oninput="updatePreview()">
+                    <input type="text" class="form-input edu-institution" placeholder="Oxford University" oninput="updatePreview()">
                 </div>
                 <div class="form-group">
-                    <label class="form-label">Start Year</label>
-                    <input type="text" class="form-input edu-start" placeholder="2014" oninput="updatePreview()">
-                </div>
-                <div class="form-group">
-                    <label class="form-label">End Year</label>
-                    <input type="text" class="form-input edu-end" placeholder="2016" oninput="updatePreview()">
+                    <label class="form-label">Years</label>
+                    <input type="text" class="form-input edu-years" placeholder="2012-2015" oninput="updatePreview()">
                 </div>
             `;
             container.appendChild(entry);
@@ -819,7 +744,7 @@
 
             const A4_WIDTH_PX = 794, A4_HEIGHT_PX = 1123;
             const renderContainer = document.createElement('div');
-            renderContainer.style.cssText = `position:absolute;left:-9999px;top:0;width:${A4_WIDTH_PX}px;background:white;box-sizing:border-box;font-family:'Segoe UI',sans-serif;`;
+            renderContainer.style.cssText = `position:absolute;left:-9999px;top:0;width:${A4_WIDTH_PX}px;background:#f4e8d8;box-sizing:border-box;font-family:'Georgia',serif;`;
             const resumeClone = document.getElementById('resumePreview').cloneNode(true);
             resumeClone.style.cssText = 'width:100%;font-size:12.5px;line-height:1.4;';
             renderContainer.appendChild(resumeClone);
@@ -839,15 +764,20 @@
                 
                 setTimeout(() => {
                     html2canvas(renderContainer, {
-                        scale: 2, useCORS: true, logging: false,
-                        backgroundColor: '#ffffff', width: A4_WIDTH_PX, height: A4_HEIGHT_PX
+                        scale: 2,
+                        useCORS: true,
+                        allowTaint: true,
+                        logging: false,
+                        backgroundColor: '#f4e8d8',
+                        width: A4_WIDTH_PX,
+                        height: A4_HEIGHT_PX
                     }).then(canvas => {
                         document.body.removeChild(renderContainer);
                         const { jsPDF } = window.jspdf;
                         const pdf = new jsPDF({ orientation: 'portrait', unit: 'mm', format: 'a4', compress: true });
                         const imgData = canvas.toDataURL('image/jpeg', 0.95);
                         pdf.addImage(imgData, 'JPEG', 0, 0, 210, 297, '', 'FAST');
-                        const fileName = `${fullName.replace(/\s+/g, '_')}_Resume_Timeline.pdf`;
+                        const fileName = `${fullName.replace(/\s+/g, '_')}_Resume_Vintage.pdf`;
                         pdf.save(fileName);
                         downloadBtn.innerHTML = originalText;
                         downloadBtn.disabled = false;
