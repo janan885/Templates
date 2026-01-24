@@ -1,0 +1,894 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Neon Futuristic Template - Resume Builder Pro</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Courier New', 'Consolas', monospace;
+            background: linear-gradient(-45deg, #0a0a1a, #1a0a2e, #0a1a2e, #0a0a1a);
+            background-size: 400% 400%;
+            animation: gradientBG 15s ease infinite;
+            min-height: 100vh;
+            padding-top: 80px;
+        }
+
+        @keyframes gradientBG {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        .navbar {
+            position: fixed; top: 0; left: 0; width: 100%;
+            background: rgba(10, 10, 26, 0.95);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 5px 20px rgba(0, 255, 255, 0.3);
+            z-index: 1000; padding: 15px 0;
+            border-bottom: 2px solid #00ffff;
+        }
+
+        .nav-container {
+            max-width: 1400px; margin: 0 auto; padding: 0 40px;
+            display: flex; justify-content: space-between; align-items: center;
+        }
+
+        .logo {
+            display: flex; align-items: center; gap: 10px;
+            font-size: 1.5em; font-weight: 800;
+            color: #00ffff;
+            text-decoration: none;
+            text-shadow: 0 0 10px #00ffff;
+        }
+
+        .back-btn {
+            padding: 10px 25px;
+            background: transparent;
+            color: #00ffff; border: 2px solid #00ffff;
+            font-weight: 600; font-size: 1em; text-decoration: none;
+            transition: all 0.3s ease;
+            box-shadow: 0 0 10px rgba(0, 255, 255, 0.5);
+        }
+
+        .back-btn:hover { 
+            background: #00ffff;
+            color: #0a0a1a;
+            box-shadow: 0 0 20px rgba(0, 255, 255, 0.8);
+        }
+
+        .hud-header {
+            background: #0a0a1a;
+            color: white; padding: 20px 0; margin-top: 80px;
+            box-shadow: 0 5px 20px rgba(0, 255, 255, 0.3);
+            border-top: 2px solid #00ffff;
+            border-bottom: 2px solid #ff00ff;
+        }
+
+        .hud-container { max-width: 1400px; margin: 0 auto; padding: 0 40px; }
+
+        .hud-title {
+            font-size: 2em; font-weight: 800; margin-bottom: 10px;
+            display: flex; align-items: center; gap: 15px;
+            color: #00ffff;
+            text-shadow: 0 0 15px #00ffff;
+        }
+
+        .hud-subtitle { font-size: 1em; opacity: 0.95; margin-bottom: 20px; color: #ff00ff; }
+        .hud-stats { display: flex; gap: 25px; flex-wrap: wrap; }
+
+        .hud-stat {
+            background: rgba(0, 255, 255, 0.1);
+            border: 1px solid #00ffff;
+            padding: 12px 20px;
+            display: flex; align-items: center; gap: 10px; font-size: 0.9em;
+            box-shadow: 0 0 15px rgba(0, 255, 255, 0.3);
+        }
+
+        .hud-stat-icon { font-size: 1.5em; }
+        .hud-stat-label { opacity: 0.9; font-size: 0.85em; }
+        .hud-stat-value { font-weight: 700; font-size: 1.1em; color: #00ffff; }
+
+        .hud-progress {
+            margin-top: 15px; background: rgba(255, 0, 255, 0.1);
+            border: 1px solid #ff00ff;
+            padding: 10px 15px;
+            display: flex; align-items: center; gap: 15px;
+        }
+
+        .hud-progress-label { font-size: 0.9em; font-weight: 600; min-width: 120px; }
+        .hud-progress-bar {
+            flex: 1; height: 8px; background: rgba(255, 0, 255, 0.2);
+            overflow: hidden;
+        }
+
+        .hud-progress-fill {
+            height: 100%; 
+            background: linear-gradient(90deg, #00ffff, #ff00ff);
+            transition: width 0.5s ease; 
+            box-shadow: 0 0 10px rgba(0, 255, 255, 0.8);
+        }
+
+        .hud-progress-percent { font-size: 0.9em; font-weight: 700; min-width: 45px; text-align: right; color: #ff00ff; }
+
+        .container {
+            max-width: 1400px; margin: 20px auto; padding: 0 20px;
+            display: grid; grid-template-columns: 1fr 1fr; gap: 30px;
+        }
+
+        .form-section {
+            background: rgba(10, 10, 26, 0.8); 
+            padding: 30px; 
+            border: 2px solid #00ffff;
+            box-shadow: 0 0 30px rgba(0, 255, 255, 0.3);
+            height: fit-content;
+        }
+
+        .form-title { 
+            font-size: 2em;
+            color: #00ffff;
+            margin-bottom: 20px; font-weight: 800;
+            text-align: center;
+            text-shadow: 0 0 15px #00ffff;
+        }
+        .form-group { margin-bottom: 20px; }
+
+        .form-label {
+            display: block; font-weight: 600; color: #00ffff;
+            margin-bottom: 8px; font-size: 0.95em;
+            text-shadow: 0 0 5px #00ffff;
+        }
+
+        .form-input {
+            width: 100%; padding: 12px 15px; 
+            border: 2px solid #00ffff;
+            background: rgba(0, 255, 255, 0.05);
+            color: white;
+            font-size: 1em; transition: all 0.3s ease;
+            font-family: 'Courier New', monospace;
+        }
+
+        .form-input:focus {
+            outline: none; 
+            border-color: #ff00ff;
+            box-shadow: 0 0 15px rgba(255, 0, 255, 0.5);
+            background: rgba(255, 0, 255, 0.05);
+        }
+
+        textarea.form-input { resize: vertical; min-height: 100px; }
+        .section-divider { margin: 30px 0; border: none; border-top: 2px solid #00ffff; box-shadow: 0 0 10px rgba(0, 255, 255, 0.3); }
+
+        .section-header {
+            font-size: 1.3em; color: #ff00ff; margin-bottom: 15px;
+            font-weight: 700; display: flex; align-items: center; gap: 10px;
+            text-shadow: 0 0 10px #ff00ff;
+        }
+
+        .add-btn {
+            padding: 10px 20px;
+            background: transparent;
+            color: #00ffff; border: 2px solid #00ffff;
+            font-weight: 600; cursor: pointer; transition: all 0.3s ease; margin-top: 10px;
+            box-shadow: 0 0 10px rgba(0, 255, 255, 0.5);
+            font-family: 'Courier New', monospace;
+        }
+
+        .add-btn:hover { 
+            background: #00ffff;
+            color: #0a0a1a;
+            box-shadow: 0 0 20px rgba(0, 255, 255, 0.8);
+        }
+
+        .entry-box {
+            background: rgba(0, 255, 255, 0.05);
+            padding: 20px; 
+            margin-bottom: 15px; 
+            border: 1px solid #00ffff; 
+            position: relative;
+            box-shadow: 0 0 15px rgba(0, 255, 255, 0.2);
+        }
+
+        .remove-btn {
+            position: absolute; top: 10px; right: 10px;
+            background: #ff00ff; color: white; border: none;
+            width: 30px; height: 30px;
+            cursor: pointer; font-weight: bold;
+            box-shadow: 0 0 10px rgba(255, 0, 255, 0.5);
+        }
+
+        .remove-btn:hover { 
+            background: #00ffff;
+            box-shadow: 0 0 20px rgba(0, 255, 255, 0.8);
+        }
+
+        .preview-section {
+            background: rgba(10, 10, 26, 0.8); 
+            padding: 30px; 
+            border: 2px solid #ff00ff;
+            box-shadow: 0 0 30px rgba(255, 0, 255, 0.3);
+            position: sticky; top: 100px; max-height: calc(100vh - 120px); overflow-y: auto;
+        }
+
+        .preview-title {
+            font-size: 1.5em;
+            color: #ff00ff;
+            margin-bottom: 20px;
+            font-weight: 800; text-align: center;
+            text-shadow: 0 0 15px #ff00ff;
+        }
+
+        .preview-container {
+            background: #0a0a1a;
+            border: 2px solid #00ffff;
+            overflow: hidden;
+        }
+
+        /* Neon Futuristic Resume Styles */
+        .resume-preview {
+            font-family: 'Courier New', 'Consolas', monospace;
+            font-size: 1em;
+            background: #0a0a1a;
+            color: white;
+            padding: 35px;
+            border: 3px solid #00ffff;
+            position: relative;
+            box-shadow: inset 0 0 30px rgba(0, 255, 255, 0.1);
+        }
+
+        /* Neon corner accents */
+        .neon-corner {
+            position: absolute;
+            width: 40px;
+            height: 40px;
+            border: 3px solid #00ffff;
+        }
+
+        .neon-corner-tl {
+            top: 10px;
+            left: 10px;
+            border-right: none;
+            border-bottom: none;
+            box-shadow: 0 0 15px rgba(0, 255, 255, 0.5);
+        }
+
+        .neon-corner-tr {
+            top: 10px;
+            right: 10px;
+            border-left: none;
+            border-bottom: none;
+            box-shadow: 0 0 15px rgba(255, 0, 255, 0.5);
+            border-color: #ff00ff;
+        }
+
+        .neon-corner-bl {
+            bottom: 10px;
+            left: 10px;
+            border-right: none;
+            border-top: none;
+            box-shadow: 0 0 15px rgba(255, 0, 255, 0.5);
+            border-color: #ff00ff;
+        }
+
+        .neon-corner-br {
+            bottom: 10px;
+            right: 10px;
+            border-left: none;
+            border-top: none;
+            box-shadow: 0 0 15px rgba(0, 255, 255, 0.5);
+        }
+
+        /* Header */
+        .neon-header {
+            border: 2px solid #00ffff;
+            padding: 20px;
+            margin-bottom: 25px;
+            box-shadow: 0 0 20px rgba(0, 255, 255, 0.5);
+        }
+
+        .neon-name {
+            font-size: 2.5em;
+            font-weight: 800;
+            color: #00ffff;
+            text-shadow: 0 0 15px #00ffff, 0 0 30px #00ffff;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+        }
+
+        .neon-title {
+            font-size: 1.2em;
+            color: #ff00ff;
+            text-shadow: 0 0 10px #ff00ff, 0 0 20px #ff00ff;
+            font-weight: 600;
+        }
+
+        /* Contact Grid */
+        .neon-contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 12px;
+            margin-bottom: 25px;
+        }
+
+        .neon-contact-box {
+            border: 1px solid #00ffff;
+            padding: 12px;
+            text-align: center;
+            box-shadow: 0 0 10px rgba(0, 255, 255, 0.3);
+            background: rgba(0, 255, 255, 0.05);
+        }
+
+        .neon-contact-box:nth-child(even) {
+            border-color: #ff00ff;
+            box-shadow: 0 0 10px rgba(255, 0, 255, 0.3);
+            background: rgba(255, 0, 255, 0.05);
+        }
+
+        .neon-contact-icon {
+            font-size: 1.5em;
+            margin-bottom: 5px;
+        }
+
+        .neon-contact-text {
+            font-size: 0.85em;
+        }
+
+        /* Section */
+        .neon-section {
+            border-left: 3px solid #00ffff;
+            padding-left: 20px;
+            margin-bottom: 22px;
+        }
+
+        .neon-section.purple {
+            border-left-color: #ff00ff;
+        }
+
+        .neon-section-title {
+            font-size: 0.8em;
+            color: #00ffff;
+            font-weight: 700;
+            margin-bottom: 12px;
+            text-shadow: 0 0 8px #00ffff;
+            letter-spacing: 2px;
+        }
+
+        .neon-section-title::before {
+            content: '[[ ';
+        }
+
+        .neon-section-title::after {
+            content: ' ]]';
+        }
+
+        .neon-section.purple .neon-section-title {
+            color: #ff00ff;
+            text-shadow: 0 0 8px #ff00ff;
+        }
+
+        .neon-item {
+            margin-bottom: 15px;
+        }
+
+        .neon-item-title {
+            font-weight: 700;
+            color: white;
+            font-size: 1em;
+            margin-bottom: 5px;
+        }
+
+        .neon-item-subtitle {
+            color: #aaa;
+            font-size: 0.9em;
+            margin-bottom: 10px;
+        }
+
+        .neon-item-description {
+            color: #ccc;
+            line-height: 1.7;
+            font-size: 0.9em;
+        }
+
+        /* Skill Tags */
+        .neon-skills {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .neon-skill-tag {
+            border: 1px solid #00ffff;
+            color: #00ffff;
+            padding: 8px 16px;
+            font-size: 0.85em;
+            font-weight: 600;
+            box-shadow: 0 0 8px rgba(0, 255, 255, 0.5);
+            background: rgba(0, 255, 255, 0.05);
+        }
+
+        .neon-skill-tag:nth-child(even) {
+            border-color: #ff00ff;
+            color: #ff00ff;
+            box-shadow: 0 0 8px rgba(255, 0, 255, 0.5);
+            background: rgba(255, 0, 255, 0.05);
+        }
+
+        .placeholder-text {
+            text-align: center; color: #00ffff; padding: 40px; font-style: italic;
+            text-shadow: 0 0 10px #00ffff;
+        }
+
+        .action-buttons {
+            position: fixed; bottom: 30px; right: 30px;
+            display: flex; gap: 15px; z-index: 999;
+        }
+
+        .action-btn {
+            padding: 15px 30px;
+            background: transparent;
+            color: #00ffff; 
+            border: 2px solid #00ffff;
+            font-weight: 700; font-size: 1em; cursor: pointer;
+            box-shadow: 0 0 20px rgba(0, 255, 255, 0.5);
+            transition: all 0.3s ease;
+            font-family: 'Courier New', monospace;
+        }
+
+        .action-btn:hover {
+            background: #00ffff;
+            color: #0a0a1a;
+            box-shadow: 0 0 30px rgba(0, 255, 255, 0.8);
+        }
+
+        .action-btn:disabled { opacity: 0.6; cursor: not-allowed; }
+
+        @media (max-width: 1024px) {
+            .container { grid-template-columns: 1fr; }
+            .preview-section { position: relative; top: 0; max-height: none; }
+            .hud-stat { flex: 1; min-width: calc(50% - 10px); }
+        }
+
+        @media (max-width: 768px) {
+            .nav-container, .hud-container { padding: 0 20px; }
+            .hud-title { font-size: 1.5em; }
+            .hud-stat { min-width: calc(50% - 5px); padding: 10px 15px; }
+            .form-section, .preview-section { padding: 20px; }
+            .resume-preview { padding: 25px; font-size: 0.95em; }
+            .neon-contact-grid { grid-template-columns: 1fr; }
+            .action-buttons {
+                width: calc(100% - 40px); left: 20px; right: 20px; flex-direction: column;
+            }
+            .action-btn { width: 100%; }
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="../index.html" class="logo"><span>🌟</span><span>Resume Builder Pro</span></a>
+            <a href="../templates.html" class="back-btn">← Back to Templates</a>
+        </div>
+    </nav>
+
+    <div class="hud-header">
+        <div class="hud-container">
+            <div class="hud-title"><span>🌟</span><span>Neon Futuristic Template</span></div>
+            <div class="hud-subtitle">Create a cyberpunk resume with neon glows and dark styling</div>
+            <div class="hud-stats">
+                <div class="hud-stat">
+                    <div class="hud-stat-icon">📝</div>
+                    <div>
+                        <div class="hud-stat-label">Sections Filled</div>
+                        <div class="hud-stat-value" id="sectionCount">0 / 5</div>
+                    </div>
+                </div>
+                <div class="hud-stat">
+                    <div class="hud-stat-icon">💼</div>
+                    <div>
+                        <div class="hud-stat-label">Work Experience</div>
+                        <div class="hud-stat-value" id="expCount">0</div>
+                    </div>
+                </div>
+                <div class="hud-stat">
+                    <div class="hud-stat-icon">🎓</div>
+                    <div>
+                        <div class="hud-stat-label">Education</div>
+                        <div class="hud-stat-value" id="eduCount">0</div>
+                    </div>
+                </div>
+                <div class="hud-stat">
+                    <div class="hud-stat-icon">⚡</div>
+                    <div>
+                        <div class="hud-stat-label">Skills</div>
+                        <div class="hud-stat-value" id="skillCount">0</div>
+                    </div>
+                </div>
+            </div>
+            <div class="hud-progress">
+                <div class="hud-progress-label">Completion</div>
+                <div class="hud-progress-bar">
+                    <div class="hud-progress-fill" id="progressBar" style="width: 0%"></div>
+                </div>
+                <div class="hud-progress-percent" id="progressPercent">0%</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="form-section">
+            <h1 class="form-title">🌟 NEON FUTURISTIC</h1>
+            
+            <div class="form-group">
+                <label class="form-label">Full Name *</label>
+                <input type="text" class="form-input" id="fullName" placeholder="ALEX NOVA" required>
+            </div>
+
+            <div class="form-group">
+                <label class="form-label">Job Title *</label>
+                <input type="text" class="form-input" id="jobTitle" placeholder="Cyber Security Expert" required>
+            </div>
+
+            <div class="form-group">
+                <label class="form-label">Email</label>
+                <input type="email" class="form-input" id="email" placeholder="alex@cyber.com">
+            </div>
+
+            <div class="form-group">
+                <label class="form-label">Phone</label>
+                <input type="tel" class="form-input" id="phone" placeholder="+1 234 567 8900">
+            </div>
+
+            <div class="form-group">
+                <label class="form-label">Location</label>
+                <input type="text" class="form-input" id="location" placeholder="Silicon Valley, CA">
+            </div>
+
+            <hr class="section-divider">
+
+            <h2 class="section-header">📝 Profile</h2>
+            <div class="form-group">
+                <textarea class="form-input" id="summary" placeholder="Write your professional summary..."></textarea>
+            </div>
+
+            <hr class="section-divider">
+
+            <h2 class="section-header">💼 Experience</h2>
+            <div id="experienceContainer">
+                <div class="entry-box">
+                    <div class="form-group">
+                        <label class="form-label">Job Title</label>
+                        <input type="text" class="form-input exp-title" placeholder="Senior Security Analyst">
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Company</label>
+                        <input type="text" class="form-input exp-company" placeholder="CyberTech Corp">
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Years</label>
+                        <input type="text" class="form-input exp-years" placeholder="2020-2024">
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Description</label>
+                        <textarea class="form-input exp-desc" placeholder="Describe your achievements..."></textarea>
+                    </div>
+                </div>
+            </div>
+            <button class="add-btn" onclick="addExperience()">+ Add Experience</button>
+
+            <hr class="section-divider">
+
+            <h2 class="section-header">🎓 Education</h2>
+            <div id="educationContainer">
+                <div class="entry-box">
+                    <div class="form-group">
+                        <label class="form-label">Degree</label>
+                        <input type="text" class="form-input edu-degree" placeholder="BS Computer Science">
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Institution</label>
+                        <input type="text" class="form-input edu-institution" placeholder="MIT">
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Years</label>
+                        <input type="text" class="form-input edu-years" placeholder="2016-2020">
+                    </div>
+                </div>
+            </div>
+            <button class="add-btn" onclick="addEducation()">+ Add Education</button>
+
+            <hr class="section-divider">
+
+            <h2 class="section-header">⚡ Skills</h2>
+            <div class="form-group">
+                <label class="form-label">Skills (comma separated)</label>
+                <textarea class="form-input" id="skills" placeholder="Penetration Testing, Encryption, Network Security, Ethical Hacking"></textarea>
+            </div>
+        </div>
+
+        <div class="preview-section">
+            <h2 class="preview-title">📄 Live Preview</h2>
+            <div class="preview-container">
+                <div class="resume-preview" id="resumePreview">
+                    <div class="placeholder-text">👈 Fill in your information to see live preview</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="action-buttons">
+        <button class="action-btn" onclick="downloadPDF()">📥 Download PDF</button>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <script>
+        function updateHUDStats() {
+            let sectionsComplete = 0;
+            const fullName = document.getElementById('fullName').value;
+            const jobTitle = document.getElementById('jobTitle').value;
+            if (fullName && jobTitle) sectionsComplete++;
+            
+            const summary = document.getElementById('summary').value;
+            if (summary) sectionsComplete++;
+            
+            const experiences = document.querySelectorAll('#experienceContainer .entry-box');
+            let hasExperience = false, expFilledCount = 0;
+            experiences.forEach(exp => {
+                const title = exp.querySelector('.exp-title').value;
+                const company = exp.querySelector('.exp-company').value;
+                if (title || company) { hasExperience = true; expFilledCount++; }
+            });
+            if (hasExperience) sectionsComplete++;
+            
+            const educations = document.querySelectorAll('#educationContainer .entry-box');
+            let hasEducation = false, eduFilledCount = 0;
+            educations.forEach(edu => {
+                const degree = edu.querySelector('.edu-degree').value;
+                const institution = edu.querySelector('.edu-institution').value;
+                if (degree || institution) { hasEducation = true; eduFilledCount++; }
+            });
+            if (hasEducation) sectionsComplete++;
+            
+            const skills = document.getElementById('skills').value;
+            const skillArray = skills ? skills.split(',').map(s => s.trim()).filter(s => s) : [];
+            if (skillArray.length > 0) sectionsComplete++;
+            
+            document.getElementById('sectionCount').textContent = sectionsComplete + ' / 5';
+            document.getElementById('expCount').textContent = expFilledCount;
+            document.getElementById('eduCount').textContent = eduFilledCount;
+            document.getElementById('skillCount').textContent = skillArray.length;
+            
+            const progressPercent = (sectionsComplete / 5) * 100;
+            document.getElementById('progressBar').style.width = progressPercent + '%';
+            document.getElementById('progressPercent').textContent = Math.round(progressPercent) + '%';
+        }
+
+        function updatePreview() {
+            const fullName = document.getElementById('fullName').value;
+            const jobTitle = document.getElementById('jobTitle').value;
+            const email = document.getElementById('email').value;
+            const phone = document.getElementById('phone').value;
+            const location = document.getElementById('location').value;
+            const summary = document.getElementById('summary').value;
+            const skills = document.getElementById('skills').value;
+            updateHUDStats();
+
+            let html = '';
+
+            // Neon corners
+            html += '<div class="neon-corner neon-corner-tl"></div>';
+            html += '<div class="neon-corner neon-corner-tr"></div>';
+            html += '<div class="neon-corner neon-corner-bl"></div>';
+            html += '<div class="neon-corner neon-corner-br"></div>';
+
+            // Header
+            html += '<div class="neon-header">';
+            if (fullName) html += `<div class="neon-name">${fullName}</div>`;
+            if (jobTitle) html += `<div class="neon-title">${jobTitle}</div>`;
+            html += '</div>';
+
+            // Contact Grid
+            if (email || phone || location) {
+                html += '<div class="neon-contact-grid">';
+                if (email) {
+                    html += '<div class="neon-contact-box">';
+                    html += '<div class="neon-contact-icon">📧</div>';
+                    html += `<div class="neon-contact-text">${email}</div>`;
+                    html += '</div>';
+                }
+                if (phone) {
+                    html += '<div class="neon-contact-box">';
+                    html += '<div class="neon-contact-icon">📱</div>';
+                    html += `<div class="neon-contact-text">${phone}</div>`;
+                    html += '</div>';
+                }
+                if (location) {
+                    html += '<div class="neon-contact-box">';
+                    html += '<div class="neon-contact-icon">📍</div>';
+                    html += `<div class="neon-contact-text">${location}</div>`;
+                    html += '</div>';
+                }
+                html += '</div>';
+            }
+
+            // Profile
+            if (summary) {
+                html += '<div class="neon-section">';
+                html += '<div class="neon-section-title">PROFILE</div>';
+                html += `<div class="neon-item-description">${summary.replace(/\n/g, '<br>')}</div>`;
+                html += '</div>';
+            }
+
+            // Experience
+            const experiences = document.querySelectorAll('#experienceContainer .entry-box');
+            let sectionToggle = false;
+            experiences.forEach(exp => {
+                const title = exp.querySelector('.exp-title').value;
+                const company = exp.querySelector('.exp-company').value;
+                const years = exp.querySelector('.exp-years').value;
+                const desc = exp.querySelector('.exp-desc').value;
+                if (title || company) {
+                    html += `<div class="neon-section ${sectionToggle ? 'purple' : ''}">`;
+                    html += '<div class="neon-section-title">EXPERIENCE</div>';
+                    html += '<div class="neon-item">';
+                    if (title) html += `<div class="neon-item-title">${title}</div>`;
+                    if (company || years) html += `<div class="neon-item-subtitle">${company}${company && years ? ' • ' : ''}${years}</div>`;
+                    if (desc) html += `<div class="neon-item-description">${desc.replace(/\n/g, '<br>')}</div>`;
+                    html += '</div></div>';
+                    sectionToggle = !sectionToggle;
+                }
+            });
+
+            // Education
+            const educations = document.querySelectorAll('#educationContainer .entry-box');
+            educations.forEach(edu => {
+                const degree = edu.querySelector('.edu-degree').value;
+                const institution = edu.querySelector('.edu-institution').value;
+                const years = edu.querySelector('.edu-years').value;
+                if (degree || institution) {
+                    html += `<div class="neon-section ${sectionToggle ? 'purple' : ''}">`;
+                    html += '<div class="neon-section-title">EDUCATION</div>';
+                    html += '<div class="neon-item">';
+                    if (degree) html += `<div class="neon-item-title">${degree}</div>`;
+                    if (institution || years) html += `<div class="neon-item-subtitle">${institution}${institution && years ? ' • ' : ''}${years}</div>`;
+                    html += '</div></div>';
+                    sectionToggle = !sectionToggle;
+                }
+            });
+
+            // Skills
+            if (skills) {
+                const skillArray = skills.split(',').map(s => s.trim()).filter(s => s);
+                if (skillArray.length > 0) {
+                    html += `<div class="neon-section ${sectionToggle ? 'purple' : ''}">`;
+                    html += '<div class="neon-section-title">SKILLS</div>';
+                    html += '<div class="neon-skills">';
+                    skillArray.forEach(skill => {
+                        html += `<div class="neon-skill-tag">${skill}</div>`;
+                    });
+                    html += '</div></div>';
+                }
+            }
+
+            document.getElementById('resumePreview').innerHTML = html || '<div class="placeholder-text">👈 Fill in your information to see live preview</div>';
+        }
+
+        function addExperience() {
+            const container = document.getElementById('experienceContainer');
+            const entry = document.createElement('div');
+            entry.className = 'entry-box';
+            entry.innerHTML = `
+                <button class="remove-btn" onclick="this.parentElement.remove(); updatePreview();">×</button>
+                <div class="form-group">
+                    <label class="form-label">Job Title</label>
+                    <input type="text" class="form-input exp-title" placeholder="Senior Security Analyst" oninput="updatePreview()">
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Company</label>
+                    <input type="text" class="form-input exp-company" placeholder="CyberTech Corp" oninput="updatePreview()">
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Years</label>
+                    <input type="text" class="form-input exp-years" placeholder="2020-2024" oninput="updatePreview()">
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Description</label>
+                    <textarea class="form-input exp-desc" placeholder="Describe achievements..." oninput="updatePreview()"></textarea>
+                </div>
+            `;
+            container.appendChild(entry);
+        }
+
+        function addEducation() {
+            const container = document.getElementById('educationContainer');
+            const entry = document.createElement('div');
+            entry.className = 'entry-box';
+            entry.innerHTML = `
+                <button class="remove-btn" onclick="this.parentElement.remove(); updatePreview();">×</button>
+                <div class="form-group">
+                    <label class="form-label">Degree</label>
+                    <input type="text" class="form-input edu-degree" placeholder="BS Computer Science" oninput="updatePreview()">
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Institution</label>
+                    <input type="text" class="form-input edu-institution" placeholder="MIT" oninput="updatePreview()">
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Years</label>
+                    <input type="text" class="form-input edu-years" placeholder="2016-2020" oninput="updatePreview()">
+                </div>
+            `;
+            container.appendChild(entry);
+        }
+
+        function downloadPDF() {
+            const fullName = document.getElementById('fullName').value;
+            if (!fullName) {
+                alert('⚠️ Please fill in at least your name before downloading!');
+                return;
+            }
+            const downloadBtn = event.target;
+            const originalText = downloadBtn.innerHTML;
+            downloadBtn.innerHTML = '⏳ Generating PDF...';
+            downloadBtn.disabled = true;
+
+            const A4_WIDTH_PX = 794, A4_HEIGHT_PX = 1123;
+            const renderContainer = document.createElement('div');
+            renderContainer.style.cssText = `position:absolute;left:-9999px;top:0;width:${A4_WIDTH_PX}px;background:#0a0a1a;box-sizing:border-box;font-family:'Courier New',monospace;`;
+            const resumeClone = document.getElementById('resumePreview').cloneNode(true);
+            resumeClone.style.cssText = 'width:100%;font-size:12.5px;line-height:1.4;';
+            renderContainer.appendChild(resumeClone);
+            document.body.appendChild(renderContainer);
+
+            setTimeout(() => {
+                const contentHeight = renderContainer.scrollHeight;
+                const availableHeight = A4_HEIGHT_PX - 80;
+                let scaleFactor = 1;
+                if (contentHeight > availableHeight) {
+                    scaleFactor = availableHeight / contentHeight;
+                    resumeClone.style.fontSize = (12.5 * scaleFactor) + 'px';
+                }
+                renderContainer.style.minHeight = A4_HEIGHT_PX + 'px';
+                renderContainer.style.maxHeight = A4_HEIGHT_PX + 'px';
+                renderContainer.style.overflow = 'hidden';
+                
+                setTimeout(() => {
+                    html2canvas(renderContainer, {
+                        scale: 2,
+                        useCORS: true,
+                        allowTaint: true,
+                        logging: false,
+                        backgroundColor: '#0a0a1a',
+                        width: A4_WIDTH_PX,
+                        height: A4_HEIGHT_PX
+                    }).then(canvas => {
+                        document.body.removeChild(renderContainer);
+                        const { jsPDF } = window.jspdf;
+                        const pdf = new jsPDF({ orientation: 'portrait', unit: 'mm', format: 'a4', compress: true });
+                        const imgData = canvas.toDataURL('image/jpeg', 0.95);
+                        pdf.addImage(imgData, 'JPEG', 0, 0, 210, 297, '', 'FAST');
+                        const fileName = `${fullName.replace(/\s+/g, '_')}_Resume_Neon.pdf`;
+                        pdf.save(fileName);
+                        downloadBtn.innerHTML = originalText;
+                        downloadBtn.disabled = false;
+                        alert('✅ Resume downloaded successfully!');
+                    }).catch(error => {
+                        console.error('PDF error:', error);
+                        if (document.body.contains(renderContainer)) document.body.removeChild(renderContainer);
+                        downloadBtn.innerHTML = originalText;
+                        downloadBtn.disabled = false;
+                        alert('❌ Error generating PDF.');
+                    });
+                }, 200);
+            }, 150);
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            const inputs = document.querySelectorAll('.form-input');
+            inputs.forEach(input => input.addEventListener('input', updatePreview));
+        });
+    </script>
+</body>
+</html>
