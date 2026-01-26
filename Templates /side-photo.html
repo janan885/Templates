@@ -3,13 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Watercolor Artistic Template - Resume Builder Pro</title>
+    <title>Side Photo Professional Template - Resume Builder Pro</title>
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
 
         body {
-            font-family: 'Georgia', 'Palatino', serif;
-            background: linear-gradient(-45deg, #ffb6c1, #add8e6, #ffdab9, #e6e6fa);
+            font-family: 'Inter', 'Segoe UI', sans-serif;
+            background: linear-gradient(-45deg, #2c3e50, #34495e, #16a085, #2c3e50);
             background-size: 400% 400%;
             animation: gradientBG 15s ease infinite;
             min-height: 100vh;
@@ -24,10 +24,11 @@
 
         .navbar {
             position: fixed; top: 0; left: 0; width: 100%;
-            background: rgba(255, 255, 255, 0.95);
+            background: rgba(44, 62, 80, 0.95);
             backdrop-filter: blur(10px);
-            box-shadow: 0 5px 20px rgba(255, 105, 180, 0.2);
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
             z-index: 1000; padding: 15px 0;
+            border-bottom: 3px solid #3498db;
         }
 
         .nav-container {
@@ -38,26 +39,30 @@
         .logo {
             display: flex; align-items: center; gap: 10px;
             font-size: 1.5em; font-weight: 800;
-            background: linear-gradient(135deg, #ff69b4, #add8e6);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
+            color: white;
             text-decoration: none;
         }
 
         .back-btn {
             padding: 10px 25px;
-            background: linear-gradient(135deg, #ff69b4, #add8e6);
-            color: white; border: none; border-radius: 25px;
+            background: #3498db;
+            color: white; border: none; border-radius: 8px;
             font-weight: 600; font-size: 1em; text-decoration: none;
             transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(52, 152, 219, 0.3);
         }
 
-        .back-btn:hover { transform: translateY(-2px); box-shadow: 0 5px 15px rgba(255, 105, 180, 0.4); }
+        .back-btn:hover { 
+            background: #2980b9;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(52, 152, 219, 0.5);
+        }
 
         .hud-header {
-            background: linear-gradient(135deg, #ff69b4, #add8e6);
+            background: linear-gradient(135deg, #2c3e50, #34495e);
             color: white; padding: 20px 0; margin-top: 80px;
-            box-shadow: 0 5px 20px rgba(255, 105, 180, 0.3);
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+            border-bottom: 3px solid #3498db;
         }
 
         .hud-container { max-width: 1400px; margin: 0 auto; padding: 0 40px; }
@@ -71,36 +76,38 @@
         .hud-stats { display: flex; gap: 25px; flex-wrap: wrap; }
 
         .hud-stat {
-            background: rgba(255, 255, 255, 0.25); backdrop-filter: blur(10px);
-            padding: 12px 20px; border-radius: 20px;
+            background: rgba(52, 152, 219, 0.2); 
+            border: 1px solid rgba(52, 152, 219, 0.4);
+            padding: 12px 20px; border-radius: 10px;
             display: flex; align-items: center; gap: 10px; font-size: 0.9em;
         }
 
         .hud-stat-icon { font-size: 1.5em; }
         .hud-stat-label { opacity: 0.95; font-size: 0.85em; }
-        .hud-stat-value { font-weight: 700; font-size: 1.1em; }
+        .hud-stat-value { font-weight: 700; font-size: 1.1em; color: #3498db; }
 
         .hud-progress {
-            margin-top: 15px; background: rgba(255, 255, 255, 0.25);
-            border-radius: 15px; padding: 10px 15px;
+            margin-top: 15px; background: rgba(52, 152, 219, 0.2);
+            border: 1px solid rgba(52, 152, 219, 0.4);
+            border-radius: 10px; padding: 10px 15px;
             display: flex; align-items: center; gap: 15px;
         }
 
         .hud-progress-label { font-size: 0.9em; font-weight: 600; min-width: 120px; }
         .hud-progress-bar {
-            flex: 1; height: 8px; background: rgba(255, 255, 255, 0.3);
+            flex: 1; height: 8px; background: rgba(255, 255, 255, 0.2);
             border-radius: 10px; overflow: hidden;
         }
 
         .hud-progress-fill {
             height: 100%; 
-            background: white;
+            background: #3498db;
             border-radius: 10px;
             transition: width 0.5s ease; 
-            box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+            box-shadow: 0 0 10px rgba(52, 152, 219, 0.8);
         }
 
-        .hud-progress-percent { font-size: 0.9em; font-weight: 700; min-width: 45px; text-align: right; }
+        .hud-progress-percent { font-size: 0.9em; font-weight: 700; min-width: 45px; text-align: right; color: #3498db; }
 
         .container {
             max-width: 1400px; margin: 20px auto; padding: 0 20px;
@@ -110,16 +117,14 @@
         .form-section {
             background: white; 
             padding: 30px; 
-            border-radius: 20px;
-            box-shadow: 0 10px 40px rgba(255, 105, 180, 0.2);
+            border-radius: 15px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
             height: fit-content;
         }
 
         .form-title { 
             font-size: 2em;
-            background: linear-gradient(135deg, #ff69b4, #add8e6);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
+            color: #2c3e50;
             margin-bottom: 20px; font-weight: 800;
             text-align: center;
         }
@@ -132,270 +137,255 @@
 
         .form-input {
             width: 100%; padding: 12px 15px; 
-            border: 2px solid #ffc0cb;
+            border: 2px solid #e0e0e0;
             background: white;
-            border-radius: 15px;
+            border-radius: 8px;
             color: #333;
             font-size: 1em; transition: all 0.3s ease;
-            font-family: 'Georgia', serif;
         }
 
         .form-input:focus {
             outline: none; 
-            border-color: #ff69b4;
-            box-shadow: 0 0 0 3px rgba(255, 105, 180, 0.1);
+            border-color: #3498db;
+            box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.1);
         }
 
         textarea.form-input { resize: vertical; min-height: 100px; }
-        .section-divider { margin: 30px 0; border: none; border-top: 2px dashed #ffc0cb; }
+        .section-divider { 
+            margin: 30px 0; 
+            border: none; 
+            height: 2px;
+            background: linear-gradient(90deg, #2c3e50, #3498db);
+        }
 
         .section-header {
-            font-size: 1.3em; color: #ff69b4; margin-bottom: 15px;
+            font-size: 1.3em; 
+            color: #2c3e50;
+            margin-bottom: 15px;
             font-weight: 700; display: flex; align-items: center; gap: 10px;
         }
 
         .add-btn {
             padding: 10px 20px;
-            background: linear-gradient(135deg, #ff69b4, #add8e6);
-            color: white; border: none; border-radius: 20px;
+            background: #3498db;
+            color: white; border: none; border-radius: 8px;
             font-weight: 600; cursor: pointer; transition: all 0.3s ease; margin-top: 10px;
+            box-shadow: 0 4px 15px rgba(52, 152, 219, 0.3);
         }
 
         .add-btn:hover { 
+            background: #2980b9;
             transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(255, 105, 180, 0.4);
+            box-shadow: 0 6px 20px rgba(52, 152, 219, 0.5);
         }
 
         .entry-box {
-            background: linear-gradient(135deg, rgba(255, 182, 193, 0.1), rgba(173, 216, 230, 0.1));
+            background: #f8f9fa;
             padding: 20px; 
-            border-radius: 20px;
+            border-radius: 10px;
             margin-bottom: 15px; 
-            border: 2px dashed rgba(255, 192, 203, 0.5); 
+            border-left: 4px solid #3498db; 
             position: relative;
         }
 
         .remove-btn {
             position: absolute; top: 10px; right: 10px;
-            background: #ff69b4; color: white; border: none;
+            background: #e74c3c;
+            color: white; border: none;
             width: 30px; height: 30px; border-radius: 50%;
             cursor: pointer; font-weight: bold;
+            box-shadow: 0 3px 10px rgba(231, 76, 60, 0.4);
+            transition: all 0.3s ease;
         }
 
-        .remove-btn:hover { background: #ff1493; }
+        .remove-btn:hover { 
+            background: #c0392b;
+            transform: scale(1.1);
+            box-shadow: 0 5px 15px rgba(231, 76, 60, 0.6);
+        }
 
         .preview-section {
             background: white; 
             padding: 30px; 
-            border-radius: 20px;
-            box-shadow: 0 10px 40px rgba(173, 216, 230, 0.3);
+            border-radius: 15px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
             position: sticky; top: 100px; max-height: calc(100vh - 120px); overflow-y: auto;
         }
 
         .preview-title {
             font-size: 1.5em;
-            background: linear-gradient(135deg, #ff69b4, #add8e6);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
+            color: #2c3e50;
             margin-bottom: 20px;
             font-weight: 800; text-align: center;
         }
 
         .preview-container {
             background: white;
-            border: 2px solid #ffc0cb;
-            border-radius: 20px;
+            border: 2px solid #e0e0e0;
+            border-radius: 10px;
             overflow: hidden;
         }
 
-        /* Watercolor Artistic Resume Styles */
+        /* Side Photo Professional Resume Styles */
         .resume-preview {
-            font-family: 'Georgia', 'Palatino', serif;
-            font-size: 1em;
+            font-family: 'Inter', 'Arial', sans-serif;
+            font-size: 1.1em;
             background: white;
             color: #333;
-            padding: 35px;
+            display: flex;
+            min-height: 600px;
+            line-height: 1.7;
+        }
+
+        /* Left Side Photo Panel (35%) */
+        .side-photo-panel {
+            width: 35%;
+            background: linear-gradient(180deg, #2c3e50, #34495e);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            padding: 40px 25px;
             position: relative;
+        }
+
+        .side-photo {
+            width: 140px;
+            height: 140px;
+            background: white;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4em;
+            color: #2c3e50;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
             overflow: hidden;
+            margin-bottom: 30px;
         }
 
-        /* Watercolor blobs */
-        .watercolor-blob {
-            position: absolute;
-            border-radius: 50%;
-            opacity: 0.4;
-            z-index: 0;
+        .side-photo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
         }
 
-        .blob-pink-top {
-            top: -20px;
-            right: -20px;
-            width: 150px;
-            height: 150px;
-            background: radial-gradient(circle, rgba(255, 182, 193, 0.6), transparent);
+        .side-info {
+            width: 100%;
+            color: white;
         }
 
-        .blob-blue-bottom {
-            bottom: -30px;
-            left: -30px;
-            width: 180px;
-            height: 180px;
-            background: radial-gradient(circle, rgba(173, 216, 230, 0.6), transparent);
+        .side-section {
+            margin-bottom: 30px;
         }
 
-        .blob-peach-middle {
-            top: 50%;
-            right: -40px;
-            width: 120px;
-            height: 120px;
-            background: radial-gradient(circle, rgba(255, 218, 185, 0.6), transparent);
-        }
-
-        /* Header Pill */
-        .watercolor-header {
-            text-align: center;
-            margin-bottom: 25px;
-            position: relative;
-            z-index: 1;
-        }
-
-        .watercolor-name-pill {
-            display: inline-block;
-            background: linear-gradient(135deg, rgba(255, 182, 193, 0.3), rgba(173, 216, 230, 0.3));
-            padding: 18px 35px;
-            border-radius: 50px;
-        }
-
-        .watercolor-name {
-            font-size: 2.2em;
-            font-weight: 700;
-            color: #333;
-            margin-bottom: 8px;
-        }
-
-        .watercolor-title {
-            font-size: 1.1em;
-            color: #ff69b4;
-            font-style: italic;
-        }
-
-        /* Contact Line */
-        .watercolor-contact {
-            text-align: center;
-            font-size: 0.9em;
-            color: #888;
-            margin-bottom: 25px;
-            position: relative;
-            z-index: 1;
-        }
-
-        /* Watercolor Cards */
-        .watercolor-card {
-            background: rgba(255, 182, 193, 0.1);
-            padding: 18px;
-            border-radius: 20px;
-            border: 2px dashed rgba(255, 182, 193, 0.5);
-            margin-bottom: 18px;
-            position: relative;
-            z-index: 1;
-        }
-
-        .watercolor-card.blue {
-            background: rgba(173, 216, 230, 0.1);
-            border-color: rgba(173, 216, 230, 0.5);
-        }
-
-        .watercolor-card.peach {
-            background: rgba(255, 218, 185, 0.1);
-            border-color: rgba(255, 218, 185, 0.5);
-        }
-
-        .watercolor-card-title {
+        .side-section-title {
             font-size: 0.85em;
             font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
             margin-bottom: 12px;
+            color: #3498db;
+            border-bottom: 2px solid #3498db;
+            padding-bottom: 8px;
+        }
+
+        .side-section-content {
+            font-size: 0.95em;
+            line-height: 1.8;
+            color: rgba(255, 255, 255, 0.95);
+        }
+
+        .side-skill {
+            background: rgba(52, 152, 219, 0.2);
+            border: 1px solid rgba(52, 152, 219, 0.4);
+            padding: 8px 15px;
+            border-radius: 6px;
+            margin-bottom: 8px;
+            font-size: 0.9em;
+        }
+
+        /* Right Content Panel (65%) */
+        .content-panel {
+            width: 65%;
+            padding: 40px 35px;
+            background: white;
+        }
+
+        .header-section {
+            margin-bottom: 30px;
+            padding-bottom: 20px;
+            border-bottom: 3px solid #2c3e50;
+        }
+
+        .header-name {
+            font-size: 2.5em;
+            font-weight: 800;
+            color: #2c3e50;
+            margin-bottom: 8px;
             text-transform: uppercase;
             letter-spacing: 1px;
+            line-height: 1.2;
         }
 
-        .watercolor-card-title::before {
-            content: '~ ';
-        }
-
-        .watercolor-card-title::after {
-            content: ' ~';
-        }
-
-        .watercolor-card.pink .watercolor-card-title {
-            color: #ff69b4;
-        }
-
-        .watercolor-card.blue .watercolor-card-title {
-            color: #4682b4;
-        }
-
-        .watercolor-card.peach .watercolor-card-title {
-            color: #ff8c69;
-        }
-
-        .watercolor-item {
+        .header-title {
+            font-size: 1.3em;
+            color: #3498db;
+            font-weight: 600;
             margin-bottom: 12px;
+            line-height: 1.4;
         }
 
-        .watercolor-item:last-child {
+        .header-contact {
+            font-size: 0.95em;
+            color: #7f8c8d;
+            line-height: 1.6;
+        }
+
+        .content-section {
+            margin-bottom: 30px;
+        }
+
+        .content-section-title {
+            font-size: 0.9em;
+            font-weight: 700;
+            color: #2c3e50;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+        }
+
+        .content-item {
+            margin-bottom: 18px;
+        }
+
+        .content-item:last-child {
             margin-bottom: 0;
         }
 
-        .watercolor-item-title {
+        .content-item-title {
             font-weight: 700;
+            font-size: 1.1em;
             color: #333;
-            font-size: 1em;
             margin-bottom: 5px;
+            line-height: 1.4;
         }
 
-        .watercolor-item-subtitle {
-            color: #888;
-            font-size: 0.9em;
-            margin-bottom: 10px;
+        .content-item-subtitle {
+            color: #3498db;
+            font-size: 1em;
+            margin-bottom: 8px;
+            line-height: 1.5;
         }
 
-        .watercolor-item-description {
+        .content-item-description {
             color: #555;
-            line-height: 1.7;
-            font-size: 0.95em;
-        }
-
-        /* Skill Pills */
-        .watercolor-skills {
-            display: flex;
-            gap: 10px;
-            flex-wrap: wrap;
-        }
-
-        .watercolor-skill-pill {
-            padding: 8px 18px;
-            border-radius: 20px;
-            font-size: 0.85em;
-            font-weight: 600;
-        }
-
-        .watercolor-skill-pill.pink {
-            background: rgba(255, 182, 193, 0.3);
-            color: #ff69b4;
-        }
-
-        .watercolor-skill-pill.blue {
-            background: rgba(173, 216, 230, 0.3);
-            color: #4682b4;
-        }
-
-        .watercolor-skill-pill.peach {
-            background: rgba(255, 218, 185, 0.3);
-            color: #ff8c69;
+            line-height: 1.8;
+            font-size: 1em;
         }
 
         .placeholder-text {
-            text-align: center; color: #ff69b4; padding: 40px; font-style: italic;
+            text-align: center; color: #999; padding: 40px; font-style: italic;
         }
 
         .action-buttons {
@@ -405,25 +395,51 @@
 
         .action-btn {
             padding: 15px 30px;
-            background: linear-gradient(135deg, #ff69b4, #add8e6);
+            background: #3498db;
             color: white; 
-            border: none; border-radius: 30px;
+            border: none; border-radius: 10px;
             font-weight: 700; font-size: 1em; cursor: pointer;
-            box-shadow: 0 5px 20px rgba(255, 105, 180, 0.4);
+            box-shadow: 0 5px 20px rgba(52, 152, 219, 0.4);
             transition: all 0.3s ease;
         }
 
         .action-btn:hover {
+            background: #2980b9;
             transform: translateY(-3px);
-            box-shadow: 0 8px 30px rgba(255, 105, 180, 0.5);
+            box-shadow: 0 8px 30px rgba(52, 152, 219, 0.6);
         }
 
         .action-btn:disabled { opacity: 0.6; cursor: not-allowed; }
+
+        .photo-upload-btn {
+            display: inline-block;
+            padding: 8px 20px;
+            background: #3498db;
+            color: white;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 0.9em;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 3px 10px rgba(52, 152, 219, 0.3);
+        }
+
+        .photo-upload-btn:hover {
+            background: #2980b9;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(52, 152, 219, 0.5);
+        }
+
+        input[type="file"] {
+            display: none;
+        }
 
         @media (max-width: 1024px) {
             .container { grid-template-columns: 1fr; }
             .preview-section { position: relative; top: 0; max-height: none; }
             .hud-stat { flex: 1; min-width: calc(50% - 10px); }
+            .resume-preview { flex-direction: column; }
+            .side-photo-panel, .content-panel { width: 100%; }
         }
 
         @media (max-width: 768px) {
@@ -431,7 +447,8 @@
             .hud-title { font-size: 1.5em; }
             .hud-stat { min-width: calc(50% - 5px); padding: 10px 15px; }
             .form-section, .preview-section { padding: 20px; }
-            .resume-preview { padding: 25px; font-size: 0.95em; }
+            .resume-preview { font-size: 1em; }
+            .header-name { font-size: 2em; }
             .action-buttons {
                 width: calc(100% - 40px); left: 20px; right: 20px; flex-direction: column;
             }
@@ -442,27 +459,27 @@
 <body>
     <nav class="navbar">
         <div class="nav-container">
-            <a href="../index.html" class="logo"><span>🎨</span><span>Resume Builder Pro</span></a>
+            <a href="../index.html" class="logo"><span>📸</span><span>Resume Builder Pro</span></a>
             <a href="../templates.html" class="back-btn">← Back to Templates</a>
         </div>
     </nav>
 
     <div class="hud-header">
         <div class="hud-container">
-            <div class="hud-title"><span>🎨</span><span>Watercolor Artistic Template</span></div>
-            <div class="hud-subtitle">Create an artistic resume with soft watercolor effects</div>
+            <div class="hud-title"><span>📸</span><span>Side Photo Professional Template</span></div>
+            <div class="hud-subtitle">Create an executive resume with side photo panel</div>
             <div class="hud-stats">
                 <div class="hud-stat">
                     <div class="hud-stat-icon">📝</div>
                     <div>
                         <div class="hud-stat-label">Sections Filled</div>
-                        <div class="hud-stat-value" id="sectionCount">0 / 5</div>
+                        <div class="hud-stat-value" id="sectionCount">0 / 6</div>
                     </div>
                 </div>
                 <div class="hud-stat">
                     <div class="hud-stat-icon">💼</div>
                     <div>
-                        <div class="hud-stat-label">Work Experience</div>
+                        <div class="hud-stat-label">Experience</div>
                         <div class="hud-stat-value" id="expCount">0</div>
                     </div>
                 </div>
@@ -493,21 +510,31 @@
 
     <div class="container">
         <div class="form-section">
-            <h1 class="form-title">🎨 Watercolor Artistic</h1>
+            <h1 class="form-title">📸 Side Photo Professional</h1>
             
             <div class="form-group">
+                <label class="form-label">Profile Photo (Optional)</label>
+                <label for="photoUpload" class="photo-upload-btn">📷 Upload Photo</label>
+                <input type="file" id="photoUpload" accept="image/*">
+                <div style="font-size: 0.85em; color: #888; margin-top: 8px;">Square images work best (e.g. 500×500px)</div>
+            </div>
+
+            <div class="form-group">
                 <label class="form-label">Full Name *</label>
-                <input type="text" class="form-input" id="fullName" placeholder="Emma Rose" required>
+                <input type="text" class="form-input" id="fullName" placeholder="Isabella Torres" required>
             </div>
 
             <div class="form-group">
                 <label class="form-label">Job Title *</label>
-                <input type="text" class="form-input" id="jobTitle" placeholder="Watercolor Artist" required>
+                <input type="text" class="form-input" id="jobTitle" placeholder="Human Resources Director" required>
             </div>
 
+            <hr class="section-divider">
+
+            <h2 class="section-header">📧 Contact Information</h2>
             <div class="form-group">
                 <label class="form-label">Email</label>
-                <input type="email" class="form-input" id="email" placeholder="emma@art.com">
+                <input type="email" class="form-input" id="email" placeholder="isabella@hr.com">
             </div>
 
             <div class="form-group">
@@ -516,41 +543,42 @@
             </div>
 
             <div class="form-group">
-                <label class="form-label">Website / Portfolio</label>
-                <input type="text" class="form-input" id="website" placeholder="emma.art">
+                <label class="form-label">Location</label>
+                <input type="text" class="form-input" id="location" placeholder="Miami, FL">
             </div>
 
             <hr class="section-divider">
 
-            <h2 class="section-header">📝 Artist Statement</h2>
+            <h2 class="section-header">📝 Professional Summary</h2>
             <div class="form-group">
-                <textarea class="form-input" id="summary" placeholder="Write your artistic statement or professional summary..."></textarea>
+                <label class="form-label">Summary</label>
+                <textarea class="form-input" id="summary" placeholder="Strategic HR leader with 10+ years experience..."></textarea>
             </div>
 
             <hr class="section-divider">
 
-            <h2 class="section-header">🖼️ Exhibitions / Experience</h2>
+            <h2 class="section-header">💼 Work Experience</h2>
             <div id="experienceContainer">
                 <div class="entry-box">
                     <div class="form-group">
-                        <label class="form-label">Title / Position</label>
-                        <input type="text" class="form-input exp-title" placeholder="Solo Exhibition">
+                        <label class="form-label">Position</label>
+                        <input type="text" class="form-input exp-title" placeholder="HR Director">
                     </div>
                     <div class="form-group">
-                        <label class="form-label">Gallery / Organization</label>
-                        <input type="text" class="form-input exp-company" placeholder="Art Gallery NYC">
+                        <label class="form-label">Company</label>
+                        <input type="text" class="form-input exp-company" placeholder="Global Corp">
                     </div>
                     <div class="form-group">
-                        <label class="form-label">Year / Period</label>
-                        <input type="text" class="form-input exp-years" placeholder="2023">
+                        <label class="form-label">Years</label>
+                        <input type="text" class="form-input exp-years" placeholder="2019-2024">
                     </div>
                     <div class="form-group">
                         <label class="form-label">Description</label>
-                        <textarea class="form-input exp-desc" placeholder="Describe your work or achievements..."></textarea>
+                        <textarea class="form-input exp-desc" placeholder="Key responsibilities and achievements..."></textarea>
                     </div>
                 </div>
             </div>
-            <button class="add-btn" onclick="addExperience()">+ Add Exhibition/Experience</button>
+            <button class="add-btn" onclick="addExperience()">+ Add Experience</button>
 
             <hr class="section-divider">
 
@@ -559,15 +587,15 @@
                 <div class="entry-box">
                     <div class="form-group">
                         <label class="form-label">Degree</label>
-                        <input type="text" class="form-input edu-degree" placeholder="BFA Fine Arts">
+                        <input type="text" class="form-input edu-degree" placeholder="MBA Human Resources">
                     </div>
                     <div class="form-group">
                         <label class="form-label">Institution</label>
-                        <input type="text" class="form-input edu-institution" placeholder="Art Institute">
+                        <input type="text" class="form-input edu-institution" placeholder="Business School">
                     </div>
                     <div class="form-group">
                         <label class="form-label">Years</label>
-                        <input type="text" class="form-input edu-years" placeholder="2016-2020">
+                        <input type="text" class="form-input edu-years" placeholder="2015-2017">
                     </div>
                 </div>
             </div>
@@ -575,10 +603,13 @@
 
             <hr class="section-divider">
 
-            <h2 class="section-header">🎨 Techniques / Skills</h2>
+            <h2 class="section-header">⚡ Skills</h2>
             <div class="form-group">
-                <label class="form-label">Skills (comma separated)</label>
-                <textarea class="form-input" id="skills" placeholder="Watercolor, Acrylic, Mixed Media, Illustration"></textarea>
+                <label class="form-label">Skills (one per line)</label>
+                <textarea class="form-input" id="skills" placeholder="Leadership
+Recruiting
+Training & Development
+Performance Management"></textarea>
             </div>
         </div>
 
@@ -599,12 +630,31 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
     <script>
+        let uploadedPhotoURL = null;
+
+        document.getElementById('photoUpload').addEventListener('change', function(e) {
+            const file = e.target.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = function(event) {
+                    uploadedPhotoURL = event.target.result;
+                    updatePreview();
+                };
+                reader.readAsDataURL(file);
+            }
+        });
+
         function updateHUDStats() {
             let sectionsComplete = 0;
             const fullName = document.getElementById('fullName').value;
             const jobTitle = document.getElementById('jobTitle').value;
             if (fullName && jobTitle) sectionsComplete++;
             
+            const email = document.getElementById('email').value;
+            const phone = document.getElementById('phone').value;
+            const location = document.getElementById('location').value;
+            if (email || phone || location) sectionsComplete++;
+
             const summary = document.getElementById('summary').value;
             if (summary) sectionsComplete++;
             
@@ -627,15 +677,15 @@
             if (hasEducation) sectionsComplete++;
             
             const skills = document.getElementById('skills').value;
-            const skillArray = skills ? skills.split(',').map(s => s.trim()).filter(s => s) : [];
+            const skillArray = skills ? skills.split('\n').map(s => s.trim()).filter(s => s) : [];
             if (skillArray.length > 0) sectionsComplete++;
             
-            document.getElementById('sectionCount').textContent = sectionsComplete + ' / 5';
+            document.getElementById('sectionCount').textContent = sectionsComplete + ' / 6';
             document.getElementById('expCount').textContent = expFilledCount;
             document.getElementById('eduCount').textContent = eduFilledCount;
             document.getElementById('skillCount').textContent = skillArray.length;
             
-            const progressPercent = (sectionsComplete / 5) * 100;
+            const progressPercent = (sectionsComplete / 6) * 100;
             document.getElementById('progressBar').style.width = progressPercent + '%';
             document.getElementById('progressPercent').textContent = Math.round(progressPercent) + '%';
         }
@@ -645,96 +695,119 @@
             const jobTitle = document.getElementById('jobTitle').value;
             const email = document.getElementById('email').value;
             const phone = document.getElementById('phone').value;
-            const website = document.getElementById('website').value;
+            const location = document.getElementById('location').value;
             const summary = document.getElementById('summary').value;
             const skills = document.getElementById('skills').value;
             updateHUDStats();
 
             let html = '';
 
-            // Watercolor blobs
-            html += '<div class="watercolor-blob blob-pink-top"></div>';
-            html += '<div class="watercolor-blob blob-blue-bottom"></div>';
-            html += '<div class="watercolor-blob blob-peach-middle"></div>';
+            // Left Side Panel
+            html += '<div class="side-photo-panel">';
+            html += '<div class="side-photo">';
+            if (uploadedPhotoURL) {
+                html += `<img src="${uploadedPhotoURL}" alt="Profile Photo">`;
+            } else {
+                html += '<span>👤</span>';
+            }
+            html += '</div>';
+
+            html += '<div class="side-info">';
+
+            // Contact in Side
+            if (email || phone || location) {
+                html += '<div class="side-section">';
+                html += '<div class="side-section-title">CONTACT</div>';
+                html += '<div class="side-section-content">';
+                if (email) html += `📧 ${email}<br>`;
+                if (phone) html += `📱 ${phone}<br>`;
+                if (location) html += `📍 ${location}`;
+                html += '</div></div>';
+            }
+
+            // Skills in Side
+            if (skills) {
+                const skillArray = skills.split('\n').map(s => s.trim()).filter(s => s);
+                if (skillArray.length > 0) {
+                    html += '<div class="side-section">';
+                    html += '<div class="side-section-title">KEY SKILLS</div>';
+                    html += '<div class="side-section-content">';
+                    skillArray.forEach(skill => {
+                        html += `<div class="side-skill">${skill}</div>`;
+                    });
+                    html += '</div></div>';
+                }
+            }
+
+            html += '</div>'; // Close side-info
+            html += '</div>'; // Close side-photo-panel
+
+            // Right Content Panel
+            html += '<div class="content-panel">';
 
             // Header
-            html += '<div class="watercolor-header">';
-            html += '<div class="watercolor-name-pill">';
-            if (fullName) html += `<div class="watercolor-name">${fullName}</div>`;
-            if (jobTitle) html += `<div class="watercolor-title">${jobTitle}</div>`;
-            html += '</div></div>';
-
-            // Contact Line
-            if (email || phone || website) {
-                html += '<div class="watercolor-contact">';
-                const contacts = [];
-                if (email) contacts.push(`📧 ${email}`);
-                if (phone) contacts.push(`📱 ${phone}`);
-                if (website) contacts.push(`🎨 ${website}`);
-                html += contacts.join(' • ');
-                html += '</div>';
-            }
+            html += '<div class="header-section">';
+            if (fullName) html += `<div class="header-name">${fullName}</div>`;
+            if (jobTitle) html += `<div class="header-title">${jobTitle}</div>`;
+            html += '</div>';
 
             // Summary
             if (summary) {
-                html += '<div class="watercolor-card pink">';
-                html += '<div class="watercolor-card-title">Artist Statement</div>';
-                html += `<div class="watercolor-item-description">${summary.replace(/\n/g, '<br>')}</div>`;
+                html += '<div class="content-section">';
+                html += '<div class="content-section-title">PROFESSIONAL SUMMARY</div>';
+                html += `<div class="content-item-description">${summary.replace(/\n/g, '<br>')}</div>`;
                 html += '</div>';
             }
 
             // Experience
             const experiences = document.querySelectorAll('#experienceContainer .entry-box');
-            const cardColors = ['blue', 'peach', 'pink'];
-            let colorIndex = 0;
+            let hasExp = false;
+            let expHtml = '';
             experiences.forEach(exp => {
                 const title = exp.querySelector('.exp-title').value;
                 const company = exp.querySelector('.exp-company').value;
                 const years = exp.querySelector('.exp-years').value;
                 const desc = exp.querySelector('.exp-desc').value;
                 if (title || company) {
-                    html += `<div class="watercolor-card ${cardColors[colorIndex % 3]}">`;
-                    html += '<div class="watercolor-card-title">Exhibitions</div>';
-                    html += '<div class="watercolor-item">';
-                    if (title) html += `<div class="watercolor-item-title">${title}</div>`;
-                    if (company || years) html += `<div class="watercolor-item-subtitle">${company}${company && years ? ' • ' : ''}${years}</div>`;
-                    if (desc) html += `<div class="watercolor-item-description">${desc.replace(/\n/g, '<br>')}</div>`;
-                    html += '</div></div>';
-                    colorIndex++;
+                    hasExp = true;
+                    expHtml += '<div class="content-item">';
+                    if (title) expHtml += `<div class="content-item-title">${title}</div>`;
+                    if (company || years) expHtml += `<div class="content-item-subtitle">${company}${company && years ? ' • ' : ''}${years}</div>`;
+                    if (desc) expHtml += `<div class="content-item-description">${desc.replace(/\n/g, '<br>')}</div>`;
+                    expHtml += '</div>';
                 }
             });
+            if (hasExp) {
+                html += '<div class="content-section">';
+                html += '<div class="content-section-title">EXPERIENCE</div>';
+                html += expHtml;
+                html += '</div>';
+            }
 
             // Education
             const educations = document.querySelectorAll('#educationContainer .entry-box');
+            let hasEdu = false;
+            let eduHtml = '';
             educations.forEach(edu => {
                 const degree = edu.querySelector('.edu-degree').value;
                 const institution = edu.querySelector('.edu-institution').value;
                 const years = edu.querySelector('.edu-years').value;
                 if (degree || institution) {
-                    html += `<div class="watercolor-card ${cardColors[colorIndex % 3]}">`;
-                    html += '<div class="watercolor-card-title">Education</div>';
-                    html += '<div class="watercolor-item">';
-                    if (degree) html += `<div class="watercolor-item-title">${degree}</div>`;
-                    if (institution || years) html += `<div class="watercolor-item-subtitle">${institution}${institution && years ? ' • ' : ''}${years}</div>`;
-                    html += '</div></div>';
-                    colorIndex++;
+                    hasEdu = true;
+                    eduHtml += '<div class="content-item">';
+                    if (degree) eduHtml += `<div class="content-item-title">${degree}</div>`;
+                    if (institution || years) eduHtml += `<div class="content-item-subtitle">${institution}${institution && years ? ' • ' : ''}${years}</div>`;
+                    eduHtml += '</div>';
                 }
             });
-
-            // Skills
-            if (skills) {
-                const skillArray = skills.split(',').map(s => s.trim()).filter(s => s);
-                if (skillArray.length > 0) {
-                    html += `<div class="watercolor-card ${cardColors[colorIndex % 3]}">`;
-                    html += '<div class="watercolor-card-title">Techniques</div>';
-                    html += '<div class="watercolor-skills">';
-                    skillArray.forEach((skill, index) => {
-                        const pillColor = ['pink', 'blue', 'peach'][index % 3];
-                        html += `<div class="watercolor-skill-pill ${pillColor}">${skill}</div>`;
-                    });
-                    html += '</div></div>';
-                }
+            if (hasEdu) {
+                html += '<div class="content-section">';
+                html += '<div class="content-section-title">EDUCATION</div>';
+                html += eduHtml;
+                html += '</div>';
             }
+
+            html += '</div>'; // Close content-panel
 
             document.getElementById('resumePreview').innerHTML = html || '<div class="placeholder-text">👈 Fill in your information to see live preview</div>';
         }
@@ -746,20 +819,20 @@
             entry.innerHTML = `
                 <button class="remove-btn" onclick="this.parentElement.remove(); updatePreview();">×</button>
                 <div class="form-group">
-                    <label class="form-label">Title / Position</label>
-                    <input type="text" class="form-input exp-title" placeholder="Solo Exhibition" oninput="updatePreview()">
+                    <label class="form-label">Position</label>
+                    <input type="text" class="form-input exp-title" placeholder="Senior Manager" oninput="updatePreview()">
                 </div>
                 <div class="form-group">
-                    <label class="form-label">Gallery / Organization</label>
-                    <input type="text" class="form-input exp-company" placeholder="Art Gallery NYC" oninput="updatePreview()">
+                    <label class="form-label">Company</label>
+                    <input type="text" class="form-input exp-company" placeholder="Company Name" oninput="updatePreview()">
                 </div>
                 <div class="form-group">
-                    <label class="form-label">Year / Period</label>
-                    <input type="text" class="form-input exp-years" placeholder="2023" oninput="updatePreview()">
+                    <label class="form-label">Years</label>
+                    <input type="text" class="form-input exp-years" placeholder="2019-2024" oninput="updatePreview()">
                 </div>
                 <div class="form-group">
                     <label class="form-label">Description</label>
-                    <textarea class="form-input exp-desc" placeholder="Describe your work..." oninput="updatePreview()"></textarea>
+                    <textarea class="form-input exp-desc" placeholder="Key responsibilities..." oninput="updatePreview()"></textarea>
                 </div>
             `;
             container.appendChild(entry);
@@ -773,15 +846,15 @@
                 <button class="remove-btn" onclick="this.parentElement.remove(); updatePreview();">×</button>
                 <div class="form-group">
                     <label class="form-label">Degree</label>
-                    <input type="text" class="form-input edu-degree" placeholder="BFA Fine Arts" oninput="updatePreview()">
+                    <input type="text" class="form-input edu-degree" placeholder="Master's Degree" oninput="updatePreview()">
                 </div>
                 <div class="form-group">
                     <label class="form-label">Institution</label>
-                    <input type="text" class="form-input edu-institution" placeholder="Art Institute" oninput="updatePreview()">
+                    <input type="text" class="form-input edu-institution" placeholder="University Name" oninput="updatePreview()">
                 </div>
                 <div class="form-group">
                     <label class="form-label">Years</label>
-                    <input type="text" class="form-input edu-years" placeholder="2016-2020" oninput="updatePreview()">
+                    <input type="text" class="form-input edu-years" placeholder="2015-2017" oninput="updatePreview()">
                 </div>
             `;
             container.appendChild(entry);
@@ -800,9 +873,9 @@
 
             const A4_WIDTH_PX = 794, A4_HEIGHT_PX = 1123;
             const renderContainer = document.createElement('div');
-            renderContainer.style.cssText = `position:absolute;left:-9999px;top:0;width:${A4_WIDTH_PX}px;background:white;box-sizing:border-box;font-family:'Georgia',serif;`;
+            renderContainer.style.cssText = `position:absolute;left:-9999px;top:0;width:${A4_WIDTH_PX}px;background:white;box-sizing:border-box;font-family:'Inter',sans-serif;`;
             const resumeClone = document.getElementById('resumePreview').cloneNode(true);
-            resumeClone.style.cssText = 'width:100%;font-size:12.5px;line-height:1.4;';
+            resumeClone.style.cssText = 'width:100%;font-size:13.5px;line-height:1.7;display:flex;';
             renderContainer.appendChild(resumeClone);
             document.body.appendChild(renderContainer);
 
@@ -812,7 +885,7 @@
                 let scaleFactor = 1;
                 if (contentHeight > availableHeight) {
                     scaleFactor = availableHeight / contentHeight;
-                    resumeClone.style.fontSize = (12.5 * scaleFactor) + 'px';
+                    resumeClone.style.fontSize = (13.5 * scaleFactor) + 'px';
                 }
                 renderContainer.style.minHeight = A4_HEIGHT_PX + 'px';
                 renderContainer.style.maxHeight = A4_HEIGHT_PX + 'px';
@@ -833,7 +906,7 @@
                         const pdf = new jsPDF({ orientation: 'portrait', unit: 'mm', format: 'a4', compress: true });
                         const imgData = canvas.toDataURL('image/jpeg', 0.95);
                         pdf.addImage(imgData, 'JPEG', 0, 0, 210, 297, '', 'FAST');
-                        const fileName = `${fullName.replace(/\s+/g, '_')}_Resume_Watercolor.pdf`;
+                        const fileName = `${fullName.replace(/\s+/g, '_')}_Resume_Side_Photo.pdf`;
                         pdf.save(fileName);
                         downloadBtn.innerHTML = originalText;
                         downloadBtn.disabled = false;

@@ -1,0 +1,936 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gaming Esports Template - Resume Builder Pro</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Rajdhani', 'Orbitron', 'Arial', sans-serif;
+            background: linear-gradient(-45deg, #0f0c29, #302b63, #24243e, #0f0c29);
+            background-size: 400% 400%;
+            animation: gradientBG 15s ease infinite;
+            min-height: 100vh;
+            padding-top: 80px;
+        }
+
+        @keyframes gradientBG {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        .navbar {
+            position: fixed; top: 0; left: 0; width: 100%;
+            background: rgba(26, 26, 46, 0.95);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 5px 20px rgba(255, 0, 128, 0.3);
+            z-index: 1000; padding: 15px 0;
+            border-bottom: 2px solid #ff0080;
+        }
+
+        .nav-container {
+            max-width: 1400px; margin: 0 auto; padding: 0 40px;
+            display: flex; justify-content: space-between; align-items: center;
+        }
+
+        .logo {
+            display: flex; align-items: center; gap: 10px;
+            font-size: 1.5em; font-weight: 800;
+            background: linear-gradient(135deg, #ff0080, #ff8c00);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-decoration: none;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .back-btn {
+            padding: 10px 25px;
+            background: linear-gradient(135deg, #ff0080, #ff8c00);
+            color: white; border: none;
+            clip-path: polygon(5% 0, 100% 0, 95% 100%, 0% 100%);
+            font-weight: 700; font-size: 1em; text-decoration: none;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .back-btn:hover { 
+            background: linear-gradient(135deg, #ff8c00, #ff0080);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 20px rgba(255, 0, 128, 0.5);
+        }
+
+        .hud-header {
+            background: linear-gradient(135deg, #1a1a2e, #16213e);
+            color: white; padding: 20px 0; margin-top: 80px;
+            box-shadow: 0 5px 20px rgba(255, 0, 128, 0.3);
+            border-top: 2px solid #ff0080;
+            border-bottom: 2px solid #ff8c00;
+        }
+
+        .hud-container { max-width: 1400px; margin: 0 auto; padding: 0 40px; }
+
+        .hud-title {
+            font-size: 2em; font-weight: 800; margin-bottom: 10px;
+            display: flex; align-items: center; gap: 15px;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            background: linear-gradient(135deg, #ff0080, #ff8c00);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hud-subtitle { font-size: 1em; opacity: 0.95; margin-bottom: 20px; }
+        .hud-stats { display: flex; gap: 25px; flex-wrap: wrap; }
+
+        .hud-stat {
+            background: rgba(255, 0, 128, 0.1); 
+            border: 1px solid #ff0080;
+            padding: 12px 20px;
+            clip-path: polygon(5% 0, 100% 0, 95% 100%, 0% 100%);
+            display: flex; align-items: center; gap: 10px; font-size: 0.9em;
+        }
+
+        .hud-stat-icon { font-size: 1.5em; }
+        .hud-stat-label { opacity: 0.95; font-size: 0.85em; }
+        .hud-stat-value { font-weight: 700; font-size: 1.1em; color: #ff0080; }
+
+        .hud-progress {
+            margin-top: 15px; background: rgba(255, 0, 128, 0.1);
+            border: 1px solid #ff0080;
+            padding: 10px 15px;
+            display: flex; align-items: center; gap: 15px;
+        }
+
+        .hud-progress-label { font-size: 0.9em; font-weight: 600; min-width: 120px; text-transform: uppercase; }
+        .hud-progress-bar {
+            flex: 1; height: 8px; background: rgba(255, 255, 255, 0.1);
+            overflow: hidden;
+        }
+
+        .hud-progress-fill {
+            height: 100%; 
+            background: linear-gradient(90deg, #ff0080, #ff8c00);
+            transition: width 0.5s ease; 
+            box-shadow: 0 0 10px #ff0080;
+        }
+
+        .hud-progress-percent { font-size: 0.9em; font-weight: 700; min-width: 45px; text-align: right; color: #ff0080; }
+
+        .container {
+            max-width: 1400px; margin: 20px auto; padding: 0 20px;
+            display: grid; grid-template-columns: 1fr 1fr; gap: 30px;
+        }
+
+        .form-section {
+            background: rgba(26, 26, 46, 0.9); 
+            padding: 30px; 
+            border: 2px solid #ff0080;
+            clip-path: polygon(0 0, 98% 0, 100% 2%, 100% 100%, 2% 100%, 0 98%);
+            box-shadow: 0 10px 40px rgba(255, 0, 128, 0.3);
+            height: fit-content;
+        }
+
+        .form-title { 
+            font-size: 2em;
+            background: linear-gradient(135deg, #ff0080, #ff8c00);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 20px; font-weight: 800;
+            text-align: center;
+            text-transform: uppercase;
+            letter-spacing: 4px;
+        }
+        .form-group { margin-bottom: 20px; }
+
+        .form-label {
+            display: block; font-weight: 700; color: #ff8c00;
+            margin-bottom: 8px; font-size: 0.9em;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .form-input {
+            width: 100%; padding: 12px 15px; 
+            border: 2px solid #444;
+            background: rgba(0, 0, 0, 0.5);
+            color: white;
+            font-size: 1em; transition: all 0.3s ease;
+        }
+
+        .form-input:focus {
+            outline: none; 
+            border-color: #ff0080;
+            box-shadow: 0 0 10px rgba(255, 0, 128, 0.5);
+            background: rgba(0, 0, 0, 0.7);
+        }
+
+        textarea.form-input { resize: vertical; min-height: 100px; }
+        
+        .section-divider { 
+            margin: 30px 0; 
+            border: none; 
+            height: 2px;
+            background: linear-gradient(90deg, #ff0080, #ff8c00);
+        }
+
+        .section-header {
+            font-size: 1.3em; 
+            background: linear-gradient(135deg, #ff0080, #ff8c00);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 15px;
+            font-weight: 700; display: flex; align-items: center; gap: 10px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .add-btn {
+            padding: 10px 20px;
+            background: linear-gradient(135deg, #ff0080, #ff8c00);
+            color: white; border: none;
+            clip-path: polygon(5% 0, 100% 0, 95% 100%, 0% 100%);
+            font-weight: 700; cursor: pointer; transition: all 0.3s ease; margin-top: 10px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .add-btn:hover { 
+            background: linear-gradient(135deg, #ff8c00, #ff0080);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(255, 0, 128, 0.5);
+        }
+
+        .entry-box {
+            background: rgba(255, 0, 128, 0.05);
+            padding: 20px; 
+            margin-bottom: 15px; 
+            border-left: 3px solid #ff0080;
+            border-right: 3px solid #ff8c00;
+            position: relative;
+        }
+
+        .remove-btn {
+            position: absolute; top: 10px; right: 10px;
+            background: linear-gradient(135deg, #ff0080, #ff8c00);
+            color: white; border: none;
+            width: 30px; height: 30px;
+            cursor: pointer; font-weight: bold;
+            clip-path: polygon(20% 0%, 80% 0%, 100% 20%, 100% 80%, 80% 100%, 20% 100%, 0% 80%, 0% 20%);
+            transition: all 0.3s ease;
+        }
+
+        .remove-btn:hover { 
+            background: linear-gradient(135deg, #ff8c00, #ff0080);
+            transform: rotate(90deg) scale(1.1);
+        }
+
+        .preview-section {
+            background: rgba(26, 26, 46, 0.9); 
+            padding: 30px; 
+            border: 2px solid #ff8c00;
+            clip-path: polygon(0 0, 98% 0, 100% 2%, 100% 100%, 2% 100%, 0 98%);
+            box-shadow: 0 10px 40px rgba(255, 140, 0, 0.3);
+            position: sticky; top: 100px; max-height: calc(100vh - 120px); overflow-y: auto;
+        }
+
+        .preview-title {
+            font-size: 1.5em;
+            background: linear-gradient(135deg, #ff0080, #ff8c00);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 20px;
+            font-weight: 800; text-align: center;
+            text-transform: uppercase;
+            letter-spacing: 4px;
+        }
+
+        .preview-container {
+            background: linear-gradient(135deg, #1a1a2e, #16213e);
+            border: 2px solid #ff0080;
+            overflow: hidden;
+        }
+
+        .resume-preview {
+            font-family: 'Rajdhani', 'Arial', sans-serif;
+            font-size: 1em;
+            background: linear-gradient(135deg, #1a1a2e, #16213e);
+            color: white;
+            padding: 40px;
+            position: relative;
+            border: 2px solid #ff0080;
+        }
+
+        /* Angular Name Badge */
+        .gaming-header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .gaming-name-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, #ff0080, #ff8c00);
+            padding: 4px;
+            position: relative;
+            margin-bottom: 15px;
+        }
+
+        .gaming-name-badge::before,
+        .gaming-name-badge::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            width: 0;
+            height: 0;
+            border-style: solid;
+        }
+
+        .gaming-name-badge::before {
+            left: -20px;
+            border-width: 0 20px 60px 0;
+            border-color: transparent #ff0080 transparent transparent;
+        }
+
+        .gaming-name-badge::after {
+            right: -20px;
+            border-width: 60px 20px 0 0;
+            border-color: #ff8c00 transparent transparent transparent;
+        }
+
+        .gaming-name-inner {
+            background: #1a1a2e;
+            padding: 15px 35px;
+            position: relative;
+        }
+
+        .gaming-name {
+            font-size: 2.5em;
+            font-weight: 900;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: white;
+            display: inline-block;
+            padding: 5px 0;
+            text-shadow: 0 0 20px rgba(255, 0, 128, 0.8), 0 0 40px rgba(255, 140, 0, 0.6);
+        }
+
+        .gaming-title {
+            font-size: 1.1em;
+            color: #ff8c00;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-top: 10px;
+        }
+
+        /* Stats Boxes */
+        .gaming-stats {
+            display: flex;
+            gap: 12px;
+            justify-content: center;
+            margin-bottom: 25px;
+            flex-wrap: wrap;
+        }
+
+        .gaming-stat-box {
+            background: rgba(255, 0, 128, 0.15);
+            border: 2px solid #ff0080;
+            border-left: 4px solid #ff0080;
+            border-right: 4px solid #ff0080;
+            padding: 10px 18px;
+            font-size: 0.85em;
+            font-weight: 600;
+            position: relative;
+        }
+
+        .gaming-stat-box::before,
+        .gaming-stat-box::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            width: 8px;
+            background: #ff0080;
+        }
+
+        .gaming-stat-box::before {
+            left: -4px;
+            transform: skewX(-10deg);
+        }
+
+        .gaming-stat-box::after {
+            right: -4px;
+            transform: skewX(10deg);
+        }
+
+        .gaming-stat-box.orange {
+            background: rgba(255, 140, 0, 0.15);
+            border-color: #ff8c00;
+        }
+
+        .gaming-stat-box.orange::before,
+        .gaming-stat-box.orange::after {
+            background: #ff8c00;
+        }
+
+        /* Section Cards */
+        .gaming-section {
+            margin-bottom: 20px;
+        }
+
+        .gaming-card {
+            background: rgba(255, 0, 128, 0.08);
+            border-left: 3px solid #ff0080;
+            padding: 18px;
+            margin-bottom: 15px;
+        }
+
+        .gaming-card.orange {
+            background: rgba(255, 140, 0, 0.08);
+            border-left-color: #ff8c00;
+        }
+
+        .gaming-card-title {
+            font-size: 0.75em;
+            color: #ff0080;
+            font-weight: 700;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+        }
+
+        .gaming-card-title::before {
+            content: '▶ ';
+        }
+
+        .gaming-card.orange .gaming-card-title {
+            color: #ff8c00;
+        }
+
+        .gaming-item-title {
+            font-weight: 700;
+            font-size: 1em;
+            margin-bottom: 5px;
+        }
+
+        .gaming-item-subtitle {
+            color: #aaa;
+            font-size: 0.9em;
+            margin-bottom: 8px;
+        }
+
+        .gaming-item-description {
+            color: #ccc;
+            line-height: 1.7;
+            font-size: 0.9em;
+        }
+
+        /* Game Tags */
+        .gaming-tags {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+        }
+
+        .gaming-tag {
+            background: rgba(255, 0, 128, 0.25);
+            border: 1px solid #ff0080;
+            padding: 6px 14px;
+            font-size: 0.8em;
+            font-weight: 700;
+            text-transform: uppercase;
+        }
+
+        .gaming-tag:nth-child(even) {
+            background: rgba(255, 140, 0, 0.25);
+            border-color: #ff8c00;
+        }
+
+        /* Contact Footer */
+        .gaming-footer {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 15px;
+            text-align: center;
+            font-size: 0.85em;
+            margin-top: 25px;
+            border-top: 2px solid #ff0080;
+        }
+
+        .placeholder-text {
+            text-align: center; color: #666; padding: 40px; font-style: italic;
+        }
+
+        .action-buttons {
+            position: fixed; bottom: 30px; right: 30px;
+            display: flex; gap: 15px; z-index: 999;
+        }
+
+        .action-btn {
+            padding: 15px 30px;
+            background: linear-gradient(135deg, #ff0080, #ff8c00);
+            color: white; 
+            border: none;
+            clip-path: polygon(5% 0, 100% 0, 95% 100%, 0% 100%);
+            font-weight: 700; font-size: 1em; cursor: pointer;
+            box-shadow: 0 5px 20px rgba(255, 0, 128, 0.5);
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .action-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 30px rgba(255, 0, 128, 0.7);
+            background: linear-gradient(135deg, #ff8c00, #ff0080);
+        }
+
+        .action-btn:disabled { opacity: 0.6; cursor: not-allowed; }
+
+        @media (max-width: 1024px) {
+            .container { grid-template-columns: 1fr; }
+            .preview-section { position: relative; top: 0; max-height: none; }
+            .hud-stat { flex: 1; min-width: calc(50% - 10px); }
+        }
+
+        @media (max-width: 768px) {
+            .nav-container, .hud-container { padding: 0 20px; }
+            .hud-title { font-size: 1.5em; }
+            .hud-stat { min-width: calc(50% - 5px); padding: 10px 15px; }
+            .form-section, .preview-section { padding: 20px; }
+            .resume-preview { padding: 25px; font-size: 0.95em; }
+            .gaming-name { font-size: 2em; }
+            .gaming-stats { flex-direction: column; }
+            .action-buttons {
+                width: calc(100% - 40px); left: 20px; right: 20px; flex-direction: column;
+            }
+            .action-btn { width: 100%; }
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="../index.html" class="logo"><span>🎮</span><span>RESUME BUILDER PRO</span></a>
+            <a href="../templates.html" class="back-btn">← BACK</a>
+        </div>
+    </nav>
+
+    <div class="hud-header">
+        <div class="hud-container">
+            <div class="hud-title"><span>🎮</span><span>GAMING ESPORTS</span></div>
+            <div class="hud-subtitle">Create a dynamic esports resume for gaming professionals</div>
+            <div class="hud-stats">
+                <div class="hud-stat">
+                    <div class="hud-stat-icon">📝</div>
+                    <div>
+                        <div class="hud-stat-label">Sections</div>
+                        <div class="hud-stat-value" id="sectionCount">0 / 6</div>
+                    </div>
+                </div>
+                <div class="hud-stat">
+                    <div class="hud-stat-icon">🏆</div>
+                    <div>
+                        <div class="hud-stat-label">Teams</div>
+                        <div class="hud-stat-value" id="teamCount">0</div>
+                    </div>
+                </div>
+                <div class="hud-stat">
+                    <div class="hud-stat-icon">🎮</div>
+                    <div>
+                        <div class="hud-stat-label">Games</div>
+                        <div class="hud-stat-value" id="gameCount">0</div>
+                    </div>
+                </div>
+                <div class="hud-stat">
+                    <div class="hud-stat-icon">⚡</div>
+                    <div>
+                        <div class="hud-stat-label">Achievements</div>
+                        <div class="hud-stat-value" id="achieveCount">0</div>
+                    </div>
+                </div>
+            </div>
+            <div class="hud-progress">
+                <div class="hud-progress-label">COMPLETION</div>
+                <div class="hud-progress-bar">
+                    <div class="hud-progress-fill" id="progressBar" style="width: 0%"></div>
+                </div>
+                <div class="hud-progress-percent" id="progressPercent">0%</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="form-section">
+            <h1 class="form-title">🎮 GAMING</h1>
+            
+            <div class="form-group">
+                <label class="form-label">GAMER TAG / NAME *</label>
+                <input type="text" class="form-input" id="gamerTag" placeholder="ZACK GAMER" required>
+            </div>
+
+            <div class="form-group">
+                <label class="form-label">ROLE / TITLE *</label>
+                <input type="text" class="form-input" id="role" placeholder="Professional Esports Player" required>
+            </div>
+
+            <hr class="section-divider">
+
+            <h2 class="section-header">📊 STATS</h2>
+            <div class="form-group">
+                <label class="form-label">PRO SINCE</label>
+                <input type="text" class="form-input" id="proSince" placeholder="2018">
+            </div>
+
+            <div class="form-group">
+                <label class="form-label">TOURNAMENTS WON</label>
+                <input type="text" class="form-input" id="tournaments" placeholder="15+ Tournaments">
+            </div>
+
+            <div class="form-group">
+                <label class="form-label">HIGHEST RANK</label>
+                <input type="text" class="form-input" id="rank" placeholder="Radiant / Global Elite">
+            </div>
+
+            <hr class="section-divider">
+
+            <h2 class="section-header">🏆 TEAMS / ORGANIZATIONS</h2>
+            <div id="teamContainer">
+                <div class="entry-box">
+                    <div class="form-group">
+                        <label class="form-label">TEAM NAME</label>
+                        <input type="text" class="form-input team-name" placeholder="Pro Gaming Team">
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">ROLE / POSITION</label>
+                        <input type="text" class="form-input team-role" placeholder="Main Roster / IGL">
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">PERIOD</label>
+                        <input type="text" class="form-input team-period" placeholder="2020-2024">
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">ACHIEVEMENTS</label>
+                        <textarea class="form-input team-achieve" placeholder="Tournament wins, rankings..."></textarea>
+                    </div>
+                </div>
+            </div>
+            <button class="add-btn" onclick="addTeam()">+ ADD TEAM</button>
+
+            <hr class="section-divider">
+
+            <h2 class="section-header">🎮 GAMES / EXPERTISE</h2>
+            <div class="form-group">
+                <label class="form-label">GAMES (comma separated)</label>
+                <textarea class="form-input" id="games" placeholder="VALORANT, CS:GO, Apex Legends, League of Legends"></textarea>
+            </div>
+
+            <hr class="section-divider">
+
+            <h2 class="section-header">🏅 ACHIEVEMENTS / AWARDS</h2>
+            <div id="achievementContainer">
+                <div class="entry-box">
+                    <div class="form-group">
+                        <label class="form-label">ACHIEVEMENT</label>
+                        <input type="text" class="form-input achieve-title" placeholder="Champions Tournament Winner">
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">DETAILS</label>
+                        <input type="text" class="form-input achieve-details" placeholder="2023 World Championship">
+                    </div>
+                </div>
+            </div>
+            <button class="add-btn" onclick="addAchievement()">+ ADD ACHIEVEMENT</button>
+
+            <hr class="section-divider">
+
+            <h2 class="section-header">📧 CONTACT</h2>
+            <div class="form-group">
+                <label class="form-label">EMAIL</label>
+                <input type="email" class="form-input" id="email" placeholder="zack@esports.gg">
+            </div>
+
+            <div class="form-group">
+                <label class="form-label">TWITCH / STREAM</label>
+                <input type="text" class="form-input" id="twitch" placeholder="Twitch.tv/zackgamer">
+            </div>
+
+            <div class="form-group">
+                <label class="form-label">DISCORD</label>
+                <input type="text" class="form-input" id="discord" placeholder="ZackGamer#1234">
+            </div>
+        </div>
+
+        <div class="preview-section">
+            <h2 class="preview-title">📄 PREVIEW</h2>
+            <div class="preview-container">
+                <div class="resume-preview" id="resumePreview">
+                    <div class="placeholder-text">👈 Fill in your information to see live preview</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="action-buttons">
+        <button class="action-btn" onclick="downloadPDF()">📥 DOWNLOAD</button>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <script>
+        function updateHUDStats() {
+            let sectionsComplete = 0;
+            const gamerTag = document.getElementById('gamerTag').value;
+            const role = document.getElementById('role').value;
+            if (gamerTag && role) sectionsComplete++;
+            
+            const proSince = document.getElementById('proSince').value;
+            const tournaments = document.getElementById('tournaments').value;
+            const rank = document.getElementById('rank').value;
+            if (proSince || tournaments || rank) sectionsComplete++;
+            
+            const teams = document.querySelectorAll('#teamContainer .entry-box');
+            let hasTeam = false, teamFilledCount = 0;
+            teams.forEach(team => {
+                const name = team.querySelector('.team-name').value;
+                if (name) { hasTeam = true; teamFilledCount++; }
+            });
+            if (hasTeam) sectionsComplete++;
+            
+            const games = document.getElementById('games').value;
+            const gameArray = games ? games.split(',').map(s => s.trim()).filter(s => s) : [];
+            if (gameArray.length > 0) sectionsComplete++;
+            
+            const achievements = document.querySelectorAll('#achievementContainer .entry-box');
+            let hasAchieve = false, achieveFilledCount = 0;
+            achievements.forEach(achieve => {
+                const title = achieve.querySelector('.achieve-title').value;
+                if (title) { hasAchieve = true; achieveFilledCount++; }
+            });
+            if (hasAchieve) sectionsComplete++;
+            
+            const email = document.getElementById('email').value;
+            const twitch = document.getElementById('twitch').value;
+            if (email || twitch) sectionsComplete++;
+            
+            document.getElementById('sectionCount').textContent = sectionsComplete + ' / 6';
+            document.getElementById('teamCount').textContent = teamFilledCount;
+            document.getElementById('gameCount').textContent = gameArray.length;
+            document.getElementById('achieveCount').textContent = achieveFilledCount;
+            
+            const progressPercent = (sectionsComplete / 6) * 100;
+            document.getElementById('progressBar').style.width = progressPercent + '%';
+            document.getElementById('progressPercent').textContent = Math.round(progressPercent) + '%';
+        }
+
+        function updatePreview() {
+            const gamerTag = document.getElementById('gamerTag').value;
+            const role = document.getElementById('role').value;
+            const proSince = document.getElementById('proSince').value;
+            const tournaments = document.getElementById('tournaments').value;
+            const rank = document.getElementById('rank').value;
+            const games = document.getElementById('games').value;
+            const email = document.getElementById('email').value;
+            const twitch = document.getElementById('twitch').value;
+            const discord = document.getElementById('discord').value;
+            updateHUDStats();
+
+            let html = '';
+
+            // Header
+            html += '<div class="gaming-header">';
+            html += '<div class="gaming-name-badge">';
+            html += '<div class="gaming-name-inner">';
+            if (gamerTag) html += `<div class="gaming-name">${gamerTag.toUpperCase()}</div>`;
+            html += '</div></div>';
+            if (role) html += `<div class="gaming-title">${role}</div>`;
+            html += '</div>';
+
+            // Stats
+            if (proSince || tournaments || rank) {
+                html += '<div class="gaming-stats">';
+                if (proSince) html += `<div class="gaming-stat-box">🎮 Pro Since ${proSince}</div>`;
+                if (tournaments) html += `<div class="gaming-stat-box orange">🏆 ${tournaments}</div>`;
+                if (rank) html += `<div class="gaming-stat-box">🏅 ${rank}</div>`;
+                html += '</div>';
+            }
+
+            // Teams
+            const teams = document.querySelectorAll('#teamContainer .entry-box');
+            teams.forEach(team => {
+                const name = team.querySelector('.team-name').value;
+                const teamRole = team.querySelector('.team-role').value;
+                const period = team.querySelector('.team-period').value;
+                const achieve = team.querySelector('.team-achieve').value;
+                if (name) {
+                    html += '<div class="gaming-section">';
+                    html += '<div class="gaming-card">';
+                    html += '<div class="gaming-card-title">TEAMS</div>';
+                    if (name) html += `<div class="gaming-item-title">${name}</div>`;
+                    if (teamRole || period) html += `<div class="gaming-item-subtitle">${teamRole}${teamRole && period ? ' • ' : ''}${period}</div>`;
+                    if (achieve) html += `<div class="gaming-item-description">${achieve.replace(/\n/g, '<br>')}</div>`;
+                    html += '</div></div>';
+                }
+            });
+
+            // Games
+            if (games) {
+                const gameArray = games.split(',').map(s => s.trim()).filter(s => s);
+                if (gameArray.length > 0) {
+                    html += '<div class="gaming-section">';
+                    html += '<div class="gaming-card orange">';
+                    html += '<div class="gaming-card-title">GAMES</div>';
+                    html += '<div class="gaming-tags">';
+                    gameArray.forEach(game => {
+                        html += `<div class="gaming-tag">${game.toUpperCase()}</div>`;
+                    });
+                    html += '</div></div></div>';
+                }
+            }
+
+            // Achievements
+            const achievements = document.querySelectorAll('#achievementContainer .entry-box');
+            achievements.forEach(achieve => {
+                const title = achieve.querySelector('.achieve-title').value;
+                const details = achieve.querySelector('.achieve-details').value;
+                if (title) {
+                    html += '<div class="gaming-section">';
+                    html += '<div class="gaming-card">';
+                    html += '<div class="gaming-card-title">ACHIEVEMENTS</div>';
+                    if (title) html += `<div class="gaming-item-title">${title}</div>`;
+                    if (details) html += `<div class="gaming-item-subtitle">${details}</div>`;
+                    html += '</div></div>';
+                }
+            });
+
+            // Contact Footer
+            if (email || twitch || discord || rank) {
+                html += '<div class="gaming-footer">';
+                const contacts = [];
+                if (email) contacts.push(`📧 ${email}`);
+                if (twitch) contacts.push(`🎮 ${twitch}`);
+                if (discord) contacts.push(`💬 ${discord}`);
+                if (rank) contacts.push(`🏅 Rank: ${rank}`);
+                html += contacts.join(' • ');
+                html += '</div>';
+            }
+
+            document.getElementById('resumePreview').innerHTML = html || '<div class="placeholder-text">👈 Fill in your information to see live preview</div>';
+        }
+
+        function addTeam() {
+            const container = document.getElementById('teamContainer');
+            const entry = document.createElement('div');
+            entry.className = 'entry-box';
+            entry.innerHTML = `
+                <button class="remove-btn" onclick="this.parentElement.remove(); updatePreview();">×</button>
+                <div class="form-group">
+                    <label class="form-label">TEAM NAME</label>
+                    <input type="text" class="form-input team-name" placeholder="Pro Gaming Team" oninput="updatePreview()">
+                </div>
+                <div class="form-group">
+                    <label class="form-label">ROLE / POSITION</label>
+                    <input type="text" class="form-input team-role" placeholder="Main Roster" oninput="updatePreview()">
+                </div>
+                <div class="form-group">
+                    <label class="form-label">PERIOD</label>
+                    <input type="text" class="form-input team-period" placeholder="2020-2024" oninput="updatePreview()">
+                </div>
+                <div class="form-group">
+                    <label class="form-label">ACHIEVEMENTS</label>
+                    <textarea class="form-input team-achieve" placeholder="Achievements..." oninput="updatePreview()"></textarea>
+                </div>
+            `;
+            container.appendChild(entry);
+        }
+
+        function addAchievement() {
+            const container = document.getElementById('achievementContainer');
+            const entry = document.createElement('div');
+            entry.className = 'entry-box';
+            entry.innerHTML = `
+                <button class="remove-btn" onclick="this.parentElement.remove(); updatePreview();">×</button>
+                <div class="form-group">
+                    <label class="form-label">ACHIEVEMENT</label>
+                    <input type="text" class="form-input achieve-title" placeholder="Tournament Winner" oninput="updatePreview()">
+                </div>
+                <div class="form-group">
+                    <label class="form-label">DETAILS</label>
+                    <input type="text" class="form-input achieve-details" placeholder="2023 Championship" oninput="updatePreview()">
+                </div>
+            `;
+            container.appendChild(entry);
+        }
+
+        function downloadPDF() {
+            const gamerTag = document.getElementById('gamerTag').value;
+            if (!gamerTag) {
+                alert('⚠️ Please fill in at least your gamer tag before downloading!');
+                return;
+            }
+            const downloadBtn = event.target;
+            const originalText = downloadBtn.innerHTML;
+            downloadBtn.innerHTML = '⏳ GENERATING...';
+            downloadBtn.disabled = true;
+
+            const A4_WIDTH_PX = 794, A4_HEIGHT_PX = 1123;
+            const renderContainer = document.createElement('div');
+            renderContainer.style.cssText = `position:absolute;left:-9999px;top:0;width:${A4_WIDTH_PX}px;background:linear-gradient(135deg, #1a1a2e, #16213e);box-sizing:border-box;font-family:'Rajdhani',sans-serif;border:2px solid #ff0080;`;
+            const resumeClone = document.getElementById('resumePreview').cloneNode(true);
+            resumeClone.style.cssText = 'width:100%;font-size:12.5px;line-height:1.4;border:2px solid #ff0080;';
+            renderContainer.appendChild(resumeClone);
+            document.body.appendChild(renderContainer);
+
+            setTimeout(() => {
+                const contentHeight = renderContainer.scrollHeight;
+                const availableHeight = A4_HEIGHT_PX - 80;
+                let scaleFactor = 1;
+                if (contentHeight > availableHeight) {
+                    scaleFactor = availableHeight / contentHeight;
+                    resumeClone.style.fontSize = (12.5 * scaleFactor) + 'px';
+                }
+                renderContainer.style.minHeight = A4_HEIGHT_PX + 'px';
+                renderContainer.style.maxHeight = A4_HEIGHT_PX + 'px';
+                renderContainer.style.overflow = 'hidden';
+                
+                setTimeout(() => {
+                    html2canvas(renderContainer, {
+                        scale: 2,
+                        useCORS: true,
+                        allowTaint: true,
+                        logging: false,
+                        backgroundColor: '#1a1a2e',
+                        width: A4_WIDTH_PX,
+                        height: A4_HEIGHT_PX
+                    }).then(canvas => {
+                        document.body.removeChild(renderContainer);
+                        const { jsPDF } = window.jspdf;
+                        const pdf = new jsPDF({ orientation: 'portrait', unit: 'mm', format: 'a4', compress: true });
+                        const imgData = canvas.toDataURL('image/jpeg', 0.95);
+                        pdf.addImage(imgData, 'JPEG', 0, 0, 210, 297, '', 'FAST');
+                        const fileName = `${gamerTag.replace(/\s+/g, '_')}_Gaming_Resume.pdf`;
+                        pdf.save(fileName);
+                        downloadBtn.innerHTML = originalText;
+                        downloadBtn.disabled = false;
+                        alert('✅ Resume downloaded successfully!');
+                    }).catch(error => {
+                        console.error('PDF error:', error);
+                        if (document.body.contains(renderContainer)) document.body.removeChild(renderContainer);
+                        downloadBtn.innerHTML = originalText;
+                        downloadBtn.disabled = false;
+                        alert('❌ Error generating PDF.');
+                    });
+                }, 200);
+            }, 150);
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            const inputs = document.querySelectorAll('.form-input');
+            inputs.forEach(input => input.addEventListener('input', updatePreview));
+        });
+    </script>
+</body>
+</html>

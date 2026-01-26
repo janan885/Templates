@@ -3,13 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Watercolor Artistic Template - Resume Builder Pro</title>
+    <title>Minimalist Swiss Template - Resume Builder Pro</title>
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
 
         body {
-            font-family: 'Georgia', 'Palatino', serif;
-            background: linear-gradient(-45deg, #ffb6c1, #add8e6, #ffdab9, #e6e6fa);
+            font-family: 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
+            background: linear-gradient(-45deg, #667eea, #764ba2, #f093fb, #4facfe);
             background-size: 400% 400%;
             animation: gradientBG 15s ease infinite;
             min-height: 100vh;
@@ -26,7 +26,7 @@
             position: fixed; top: 0; left: 0; width: 100%;
             background: rgba(255, 255, 255, 0.95);
             backdrop-filter: blur(10px);
-            box-shadow: 0 5px 20px rgba(255, 105, 180, 0.2);
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
             z-index: 1000; padding: 15px 0;
         }
 
@@ -38,7 +38,7 @@
         .logo {
             display: flex; align-items: center; gap: 10px;
             font-size: 1.5em; font-weight: 800;
-            background: linear-gradient(135deg, #ff69b4, #add8e6);
+            background: linear-gradient(135deg, #667eea, #764ba2);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             text-decoration: none;
@@ -46,18 +46,23 @@
 
         .back-btn {
             padding: 10px 25px;
-            background: linear-gradient(135deg, #ff69b4, #add8e6);
+            background: linear-gradient(135deg, #667eea, #764ba2);
             color: white; border: none; border-radius: 25px;
             font-weight: 600; font-size: 1em; text-decoration: none;
             transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
         }
 
-        .back-btn:hover { transform: translateY(-2px); box-shadow: 0 5px 15px rgba(255, 105, 180, 0.4); }
+        .back-btn:hover { 
+            background: linear-gradient(135deg, #764ba2, #667eea);
+            box-shadow: 0 6px 20px rgba(102, 126, 234, 0.6);
+            transform: translateY(-2px);
+        }
 
         .hud-header {
-            background: linear-gradient(135deg, #ff69b4, #add8e6);
+            background: linear-gradient(135deg, #667eea, #764ba2);
             color: white; padding: 20px 0; margin-top: 80px;
-            box-shadow: 0 5px 20px rgba(255, 105, 180, 0.3);
+            box-shadow: 0 5px 20px rgba(102, 126, 234, 0.4);
         }
 
         .hud-container { max-width: 1400px; margin: 0 auto; padding: 0 40px; }
@@ -65,14 +70,16 @@
         .hud-title {
             font-size: 2em; font-weight: 800; margin-bottom: 10px;
             display: flex; align-items: center; gap: 15px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
         }
 
         .hud-subtitle { font-size: 1em; opacity: 0.95; margin-bottom: 20px; }
         .hud-stats { display: flex; gap: 25px; flex-wrap: wrap; }
 
         .hud-stat {
-            background: rgba(255, 255, 255, 0.25); backdrop-filter: blur(10px);
-            padding: 12px 20px; border-radius: 20px;
+            background: rgba(255, 255, 255, 0.15); backdrop-filter: blur(10px);
+            padding: 12px 20px;
             display: flex; align-items: center; gap: 10px; font-size: 0.9em;
         }
 
@@ -81,21 +88,20 @@
         .hud-stat-value { font-weight: 700; font-size: 1.1em; }
 
         .hud-progress {
-            margin-top: 15px; background: rgba(255, 255, 255, 0.25);
-            border-radius: 15px; padding: 10px 15px;
+            margin-top: 15px; background: rgba(255, 255, 255, 0.15);
+            padding: 10px 15px;
             display: flex; align-items: center; gap: 15px;
         }
 
         .hud-progress-label { font-size: 0.9em; font-weight: 600; min-width: 120px; }
         .hud-progress-bar {
             flex: 1; height: 8px; background: rgba(255, 255, 255, 0.3);
-            border-radius: 10px; overflow: hidden;
+            overflow: hidden;
         }
 
         .hud-progress-fill {
             height: 100%; 
             background: white;
-            border-radius: 10px;
             transition: width 0.5s ease; 
             box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
         }
@@ -111,291 +117,286 @@
             background: white; 
             padding: 30px; 
             border-radius: 20px;
-            box-shadow: 0 10px 40px rgba(255, 105, 180, 0.2);
+            box-shadow: 0 10px 40px rgba(102, 126, 234, 0.3);
+            border: 3px solid transparent;
+            background-image: linear-gradient(white, white), linear-gradient(135deg, #667eea, #764ba2);
+            background-origin: border-box;
+            background-clip: padding-box, border-box;
             height: fit-content;
         }
 
         .form-title { 
             font-size: 2em;
-            background: linear-gradient(135deg, #ff69b4, #add8e6);
+            background: linear-gradient(135deg, #667eea, #764ba2);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             margin-bottom: 20px; font-weight: 800;
             text-align: center;
+            text-transform: uppercase;
+            letter-spacing: 3px;
         }
         .form-group { margin-bottom: 20px; }
 
         .form-label {
-            display: block; font-weight: 600; color: #555;
+            display: block; font-weight: 600; color: #000;
             margin-bottom: 8px; font-size: 0.95em;
+            text-transform: uppercase;
+            letter-spacing: 1px;
         }
 
         .form-input {
             width: 100%; padding: 12px 15px; 
-            border: 2px solid #ffc0cb;
+            border: 2px solid #e0e0e0;
             background: white;
-            border-radius: 15px;
+            border-radius: 10px;
             color: #333;
             font-size: 1em; transition: all 0.3s ease;
-            font-family: 'Georgia', serif;
         }
 
         .form-input:focus {
             outline: none; 
-            border-color: #ff69b4;
-            box-shadow: 0 0 0 3px rgba(255, 105, 180, 0.1);
+            border-color: #667eea;
+            box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.2);
+            background: linear-gradient(to right, #f8f9ff, white);
         }
 
         textarea.form-input { resize: vertical; min-height: 100px; }
-        .section-divider { margin: 30px 0; border: none; border-top: 2px dashed #ffc0cb; }
+        .section-divider { 
+            margin: 30px 0; 
+            border: none; 
+            height: 3px;
+            background: linear-gradient(90deg, #667eea, #764ba2, #f093fb);
+        }
 
         .section-header {
-            font-size: 1.3em; color: #ff69b4; margin-bottom: 15px;
+            font-size: 1.3em; 
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 15px;
             font-weight: 700; display: flex; align-items: center; gap: 10px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
         }
 
         .add-btn {
             padding: 10px 20px;
-            background: linear-gradient(135deg, #ff69b4, #add8e6);
-            color: white; border: none; border-radius: 20px;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white; border: none;
+            border-radius: 25px;
             font-weight: 600; cursor: pointer; transition: all 0.3s ease; margin-top: 10px;
+            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
         }
 
         .add-btn:hover { 
+            background: linear-gradient(135deg, #764ba2, #667eea);
+            box-shadow: 0 6px 20px rgba(102, 126, 234, 0.6);
             transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(255, 105, 180, 0.4);
         }
 
         .entry-box {
-            background: linear-gradient(135deg, rgba(255, 182, 193, 0.1), rgba(173, 216, 230, 0.1));
+            background: linear-gradient(to right, #f8f9ff, white);
             padding: 20px; 
-            border-radius: 20px;
+            border-radius: 15px;
             margin-bottom: 15px; 
-            border: 2px dashed rgba(255, 192, 203, 0.5); 
+            border-left: 4px solid transparent;
+            border-image: linear-gradient(to bottom, #667eea, #764ba2) 1;
             position: relative;
+            box-shadow: 0 3px 10px rgba(102, 126, 234, 0.1);
         }
 
         .remove-btn {
             position: absolute; top: 10px; right: 10px;
-            background: #ff69b4; color: white; border: none;
-            width: 30px; height: 30px; border-radius: 50%;
+            background: linear-gradient(135deg, #f093fb, #f5576c);
+            color: white; border: none;
+            width: 30px; height: 30px;
+            border-radius: 50%;
             cursor: pointer; font-weight: bold;
+            box-shadow: 0 3px 10px rgba(245, 87, 108, 0.4);
+            transition: all 0.3s ease;
         }
 
-        .remove-btn:hover { background: #ff1493; }
+        .remove-btn:hover { 
+            background: linear-gradient(135deg, #f5576c, #f093fb);
+            box-shadow: 0 5px 15px rgba(245, 87, 108, 0.6);
+            transform: scale(1.1);
+        }
 
         .preview-section {
             background: white; 
             padding: 30px; 
             border-radius: 20px;
-            box-shadow: 0 10px 40px rgba(173, 216, 230, 0.3);
+            box-shadow: 0 10px 40px rgba(102, 126, 234, 0.3);
+            border: 3px solid transparent;
+            background-image: linear-gradient(white, white), linear-gradient(135deg, #667eea, #764ba2);
+            background-origin: border-box;
+            background-clip: padding-box, border-box;
             position: sticky; top: 100px; max-height: calc(100vh - 120px); overflow-y: auto;
         }
 
         .preview-title {
             font-size: 1.5em;
-            background: linear-gradient(135deg, #ff69b4, #add8e6);
+            background: linear-gradient(135deg, #667eea, #764ba2);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             margin-bottom: 20px;
             font-weight: 800; text-align: center;
+            text-transform: uppercase;
+            letter-spacing: 3px;
         }
 
         .preview-container {
             background: white;
-            border: 2px solid #ffc0cb;
-            border-radius: 20px;
+            border: 3px solid transparent;
+            background-image: linear-gradient(white, white), linear-gradient(135deg, #667eea, #764ba2);
+            background-origin: border-box;
+            background-clip: padding-box, border-box;
+            border-radius: 15px;
             overflow: hidden;
         }
 
-        /* Watercolor Artistic Resume Styles */
+        /* Minimalist Swiss Resume Styles */
         .resume-preview {
-            font-family: 'Georgia', 'Palatino', serif;
+            font-family: 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
             font-size: 1em;
             background: white;
-            color: #333;
-            padding: 35px;
+            color: #000;
+            padding: 50px;
             position: relative;
-            overflow: hidden;
         }
 
-        /* Watercolor blobs */
-        .watercolor-blob {
-            position: absolute;
-            border-radius: 50%;
-            opacity: 0.4;
-            z-index: 0;
+        /* Bold Name Header */
+        .swiss-header {
+            margin-bottom: 40px;
         }
 
-        .blob-pink-top {
-            top: -20px;
-            right: -20px;
-            width: 150px;
-            height: 150px;
-            background: radial-gradient(circle, rgba(255, 182, 193, 0.6), transparent);
+        .swiss-name-line {
+            font-size: 4em;
+            font-weight: 900;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            line-height: 0.9;
+            text-transform: uppercase;
+            letter-spacing: -2px;
+            margin-bottom: 2px;
         }
 
-        .blob-blue-bottom {
-            bottom: -30px;
-            left: -30px;
-            width: 180px;
-            height: 180px;
-            background: radial-gradient(circle, rgba(173, 216, 230, 0.6), transparent);
+        .swiss-divider {
+            width: 80px;
+            height: 5px;
+            background: linear-gradient(90deg, #667eea, #764ba2, #f093fb);
+            margin: 20px 0;
+            border-radius: 10px;
         }
 
-        .blob-peach-middle {
-            top: 50%;
-            right: -40px;
-            width: 120px;
-            height: 120px;
-            background: radial-gradient(circle, rgba(255, 218, 185, 0.6), transparent);
+        .swiss-subtitle {
+            font-size: 1em;
+            color: #666;
+            text-transform: uppercase;
+            letter-spacing: 5px;
+            font-weight: 500;
         }
 
-        /* Header Pill */
-        .watercolor-header {
-            text-align: center;
-            margin-bottom: 25px;
-            position: relative;
-            z-index: 1;
+        /* Grid Layout 35/65 */
+        .swiss-grid {
+            display: grid;
+            grid-template-columns: 35% 65%;
+            gap: 40px;
+            margin-top: 35px;
         }
 
-        .watercolor-name-pill {
-            display: inline-block;
-            background: linear-gradient(135deg, rgba(255, 182, 193, 0.3), rgba(173, 216, 230, 0.3));
-            padding: 18px 35px;
-            border-radius: 50px;
+        /* Left Sidebar */
+        .swiss-sidebar {
+            
         }
 
-        .watercolor-name {
-            font-size: 2.2em;
-            font-weight: 700;
-            color: #333;
-            margin-bottom: 8px;
+        .swiss-sidebar-section {
+            margin-bottom: 30px;
+            padding-bottom: 25px;
+            border-bottom: 2px solid transparent;
+            border-image: linear-gradient(90deg, #667eea, #764ba2) 1;
         }
 
-        .watercolor-title {
-            font-size: 1.1em;
-            color: #ff69b4;
-            font-style: italic;
+        .swiss-sidebar-section:last-child {
+            border-bottom: none;
+            padding-bottom: 0;
         }
 
-        /* Contact Line */
-        .watercolor-contact {
-            text-align: center;
-            font-size: 0.9em;
-            color: #888;
-            margin-bottom: 25px;
-            position: relative;
-            z-index: 1;
-        }
-
-        /* Watercolor Cards */
-        .watercolor-card {
-            background: rgba(255, 182, 193, 0.1);
-            padding: 18px;
-            border-radius: 20px;
-            border: 2px dashed rgba(255, 182, 193, 0.5);
-            margin-bottom: 18px;
-            position: relative;
-            z-index: 1;
-        }
-
-        .watercolor-card.blue {
-            background: rgba(173, 216, 230, 0.1);
-            border-color: rgba(173, 216, 230, 0.5);
-        }
-
-        .watercolor-card.peach {
-            background: rgba(255, 218, 185, 0.1);
-            border-color: rgba(255, 218, 185, 0.5);
-        }
-
-        .watercolor-card-title {
-            font-size: 0.85em;
+        .swiss-sidebar-title {
             font-weight: 700;
             margin-bottom: 12px;
             text-transform: uppercase;
-            letter-spacing: 1px;
+            font-size: 0.7em;
+            letter-spacing: 2px;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
         }
 
-        .watercolor-card-title::before {
-            content: '~ ';
+        .swiss-sidebar-content {
+            color: #555;
+            line-height: 2;
+            font-size: 0.9em;
         }
 
-        .watercolor-card-title::after {
-            content: ' ~';
+        /* Right Content */
+        .swiss-content {
+            
         }
 
-        .watercolor-card.pink .watercolor-card-title {
-            color: #ff69b4;
+        .swiss-content-section {
+            margin-bottom: 35px;
         }
 
-        .watercolor-card.blue .watercolor-card-title {
-            color: #4682b4;
-        }
-
-        .watercolor-card.peach .watercolor-card-title {
-            color: #ff8c69;
-        }
-
-        .watercolor-item {
-            margin-bottom: 12px;
-        }
-
-        .watercolor-item:last-child {
-            margin-bottom: 0;
-        }
-
-        .watercolor-item-title {
+        .swiss-content-title {
             font-weight: 700;
-            color: #333;
-            font-size: 1em;
-            margin-bottom: 5px;
+            margin-bottom: 18px;
+            text-transform: uppercase;
+            font-size: 0.7em;
+            letter-spacing: 2px;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            padding-bottom: 8px;
+            border-bottom: 3px solid transparent;
+            border-image: linear-gradient(90deg, #667eea, #764ba2, #f093fb) 1;
         }
 
-        .watercolor-item-subtitle {
-            color: #888;
+        .swiss-item {
+            margin-bottom: 20px;
+            padding-bottom: 18px;
+            border-bottom: 2px solid transparent;
+            border-image: linear-gradient(90deg, rgba(102, 126, 234, 0.3), rgba(118, 75, 162, 0.3)) 1;
+        }
+
+        .swiss-item:last-child {
+            border-bottom: none;
+            padding-bottom: 0;
+        }
+
+        .swiss-item-title {
+            font-weight: 700;
+            margin-bottom: 6px;
+            font-size: 1.05em;
+            color: #333;
+        }
+
+        .swiss-item-subtitle {
+            color: #666;
             font-size: 0.9em;
             margin-bottom: 10px;
+            font-style: italic;
         }
 
-        .watercolor-item-description {
+        .swiss-item-description {
             color: #555;
-            line-height: 1.7;
-            font-size: 0.95em;
-        }
-
-        /* Skill Pills */
-        .watercolor-skills {
-            display: flex;
-            gap: 10px;
-            flex-wrap: wrap;
-        }
-
-        .watercolor-skill-pill {
-            padding: 8px 18px;
-            border-radius: 20px;
-            font-size: 0.85em;
-            font-weight: 600;
-        }
-
-        .watercolor-skill-pill.pink {
-            background: rgba(255, 182, 193, 0.3);
-            color: #ff69b4;
-        }
-
-        .watercolor-skill-pill.blue {
-            background: rgba(173, 216, 230, 0.3);
-            color: #4682b4;
-        }
-
-        .watercolor-skill-pill.peach {
-            background: rgba(255, 218, 185, 0.3);
-            color: #ff8c69;
+            line-height: 1.8;
+            font-size: 0.9em;
         }
 
         .placeholder-text {
-            text-align: center; color: #ff69b4; padding: 40px; font-style: italic;
+            text-align: center; color: #999; padding: 40px; font-style: italic;
         }
 
         .action-buttons {
@@ -405,17 +406,21 @@
 
         .action-btn {
             padding: 15px 30px;
-            background: linear-gradient(135deg, #ff69b4, #add8e6);
+            background: linear-gradient(135deg, #667eea, #764ba2);
             color: white; 
-            border: none; border-radius: 30px;
+            border: none;
+            border-radius: 30px;
             font-weight: 700; font-size: 1em; cursor: pointer;
-            box-shadow: 0 5px 20px rgba(255, 105, 180, 0.4);
+            box-shadow: 0 5px 20px rgba(102, 126, 234, 0.5);
             transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 2px;
         }
 
         .action-btn:hover {
             transform: translateY(-3px);
-            box-shadow: 0 8px 30px rgba(255, 105, 180, 0.5);
+            box-shadow: 0 8px 30px rgba(102, 126, 234, 0.7);
+            background: linear-gradient(135deg, #764ba2, #667eea);
         }
 
         .action-btn:disabled { opacity: 0.6; cursor: not-allowed; }
@@ -424,6 +429,7 @@
             .container { grid-template-columns: 1fr; }
             .preview-section { position: relative; top: 0; max-height: none; }
             .hud-stat { flex: 1; min-width: calc(50% - 10px); }
+            .swiss-grid { grid-template-columns: 1fr; }
         }
 
         @media (max-width: 768px) {
@@ -432,6 +438,7 @@
             .hud-stat { min-width: calc(50% - 5px); padding: 10px 15px; }
             .form-section, .preview-section { padding: 20px; }
             .resume-preview { padding: 25px; font-size: 0.95em; }
+            .swiss-name-line { font-size: 2.5em; }
             .action-buttons {
                 width: calc(100% - 40px); left: 20px; right: 20px; flex-direction: column;
             }
@@ -442,15 +449,15 @@
 <body>
     <nav class="navbar">
         <div class="nav-container">
-            <a href="../index.html" class="logo"><span>🎨</span><span>Resume Builder Pro</span></a>
-            <a href="../templates.html" class="back-btn">← Back to Templates</a>
+            <a href="../index.html" class="logo"><span>🇨🇭</span><span>Resume Builder Pro</span></a>
+            <a href="../templates.html" class="back-btn">← BACK</a>
         </div>
     </nav>
 
     <div class="hud-header">
         <div class="hud-container">
-            <div class="hud-title"><span>🎨</span><span>Watercolor Artistic Template</span></div>
-            <div class="hud-subtitle">Create an artistic resume with soft watercolor effects</div>
+            <div class="hud-title"><span>🇨🇭</span><span>MINIMALIST SWISS</span></div>
+            <div class="hud-subtitle">Create an ultra-clean Swiss design resume</div>
             <div class="hud-stats">
                 <div class="hud-stat">
                     <div class="hud-stat-icon">📝</div>
@@ -462,7 +469,7 @@
                 <div class="hud-stat">
                     <div class="hud-stat-icon">💼</div>
                     <div>
-                        <div class="hud-stat-label">Work Experience</div>
+                        <div class="hud-stat-label">Experience</div>
                         <div class="hud-stat-value" id="expCount">0</div>
                     </div>
                 </div>
@@ -493,97 +500,108 @@
 
     <div class="container">
         <div class="form-section">
-            <h1 class="form-title">🎨 Watercolor Artistic</h1>
+            <h1 class="form-title">🇨🇭 SWISS</h1>
             
             <div class="form-group">
-                <label class="form-label">Full Name *</label>
-                <input type="text" class="form-input" id="fullName" placeholder="Emma Rose" required>
+                <label class="form-label">FIRST NAME *</label>
+                <input type="text" class="form-input" id="firstName" placeholder="ANNA" required>
             </div>
 
             <div class="form-group">
-                <label class="form-label">Job Title *</label>
-                <input type="text" class="form-input" id="jobTitle" placeholder="Watercolor Artist" required>
+                <label class="form-label">LAST NAME *</label>
+                <input type="text" class="form-input" id="lastName" placeholder="SCHMIDT" required>
             </div>
 
             <div class="form-group">
-                <label class="form-label">Email</label>
-                <input type="email" class="form-input" id="email" placeholder="emma@art.com">
+                <label class="form-label">JOB TITLE *</label>
+                <input type="text" class="form-input" id="jobTitle" placeholder="Designer" required>
+            </div>
+
+            <hr class="section-divider">
+
+            <h2 class="section-header">📧 CONTACT</h2>
+            <div class="form-group">
+                <label class="form-label">EMAIL</label>
+                <input type="email" class="form-input" id="email" placeholder="anna@design.com">
             </div>
 
             <div class="form-group">
-                <label class="form-label">Phone</label>
+                <label class="form-label">PHONE</label>
                 <input type="tel" class="form-input" id="phone" placeholder="+1 234 567 8900">
             </div>
 
             <div class="form-group">
-                <label class="form-label">Website / Portfolio</label>
-                <input type="text" class="form-input" id="website" placeholder="emma.art">
+                <label class="form-label">LOCATION</label>
+                <input type="text" class="form-input" id="location" placeholder="Zurich, CH">
             </div>
 
             <hr class="section-divider">
 
-            <h2 class="section-header">📝 Artist Statement</h2>
+            <h2 class="section-header">📝 SUMMARY (OPTIONAL)</h2>
             <div class="form-group">
-                <textarea class="form-input" id="summary" placeholder="Write your artistic statement or professional summary..."></textarea>
+                <label class="form-label">PROFESSIONAL SUMMARY</label>
+                <textarea class="form-input" id="summary" placeholder="Write a brief professional summary (2-3 sentences)..."></textarea>
             </div>
 
             <hr class="section-divider">
 
-            <h2 class="section-header">🖼️ Exhibitions / Experience</h2>
+            <h2 class="section-header">⚡ SKILLS</h2>
+            <div class="form-group">
+                <label class="form-label">SKILLS (one per line)</label>
+                <textarea class="form-input" id="skills" placeholder="Typography
+Layout Design
+Brand Identity"></textarea>
+            </div>
+
+            <hr class="section-divider">
+
+            <h2 class="section-header">💼 EXPERIENCE</h2>
             <div id="experienceContainer">
                 <div class="entry-box">
                     <div class="form-group">
-                        <label class="form-label">Title / Position</label>
-                        <input type="text" class="form-input exp-title" placeholder="Solo Exhibition">
+                        <label class="form-label">POSITION</label>
+                        <input type="text" class="form-input exp-title" placeholder="Senior Designer">
                     </div>
                     <div class="form-group">
-                        <label class="form-label">Gallery / Organization</label>
-                        <input type="text" class="form-input exp-company" placeholder="Art Gallery NYC">
+                        <label class="form-label">COMPANY</label>
+                        <input type="text" class="form-input exp-company" placeholder="Design Studio">
                     </div>
                     <div class="form-group">
-                        <label class="form-label">Year / Period</label>
-                        <input type="text" class="form-input exp-years" placeholder="2023">
+                        <label class="form-label">YEARS</label>
+                        <input type="text" class="form-input exp-years" placeholder="2020-2024">
                     </div>
                     <div class="form-group">
-                        <label class="form-label">Description</label>
-                        <textarea class="form-input exp-desc" placeholder="Describe your work or achievements..."></textarea>
+                        <label class="form-label">DESCRIPTION</label>
+                        <textarea class="form-input exp-desc" placeholder="Describe your role..."></textarea>
                     </div>
                 </div>
             </div>
-            <button class="add-btn" onclick="addExperience()">+ Add Exhibition/Experience</button>
+            <button class="add-btn" onclick="addExperience()">+ ADD EXPERIENCE</button>
 
             <hr class="section-divider">
 
-            <h2 class="section-header">🎓 Education</h2>
+            <h2 class="section-header">🎓 EDUCATION</h2>
             <div id="educationContainer">
                 <div class="entry-box">
                     <div class="form-group">
-                        <label class="form-label">Degree</label>
-                        <input type="text" class="form-input edu-degree" placeholder="BFA Fine Arts">
+                        <label class="form-label">DEGREE</label>
+                        <input type="text" class="form-input edu-degree" placeholder="BA Graphic Design">
                     </div>
                     <div class="form-group">
-                        <label class="form-label">Institution</label>
-                        <input type="text" class="form-input edu-institution" placeholder="Art Institute">
+                        <label class="form-label">INSTITUTION</label>
+                        <input type="text" class="form-input edu-institution" placeholder="University of Arts">
                     </div>
                     <div class="form-group">
-                        <label class="form-label">Years</label>
+                        <label class="form-label">YEARS</label>
                         <input type="text" class="form-input edu-years" placeholder="2016-2020">
                     </div>
                 </div>
             </div>
-            <button class="add-btn" onclick="addEducation()">+ Add Education</button>
-
-            <hr class="section-divider">
-
-            <h2 class="section-header">🎨 Techniques / Skills</h2>
-            <div class="form-group">
-                <label class="form-label">Skills (comma separated)</label>
-                <textarea class="form-input" id="skills" placeholder="Watercolor, Acrylic, Mixed Media, Illustration"></textarea>
-            </div>
+            <button class="add-btn" onclick="addEducation()">+ ADD EDUCATION</button>
         </div>
 
         <div class="preview-section">
-            <h2 class="preview-title">📄 Live Preview</h2>
+            <h2 class="preview-title">📄 PREVIEW</h2>
             <div class="preview-container">
                 <div class="resume-preview" id="resumePreview">
                     <div class="placeholder-text">👈 Fill in your information to see live preview</div>
@@ -593,7 +611,7 @@
     </div>
 
     <div class="action-buttons">
-        <button class="action-btn" onclick="downloadPDF()">📥 Download PDF</button>
+        <button class="action-btn" onclick="downloadPDF()">📥 DOWNLOAD</button>
     </div>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
@@ -601,12 +619,15 @@
     <script>
         function updateHUDStats() {
             let sectionsComplete = 0;
-            const fullName = document.getElementById('fullName').value;
+            const firstName = document.getElementById('firstName').value;
+            const lastName = document.getElementById('lastName').value;
             const jobTitle = document.getElementById('jobTitle').value;
-            if (fullName && jobTitle) sectionsComplete++;
+            if (firstName && lastName && jobTitle) sectionsComplete++;
             
-            const summary = document.getElementById('summary').value;
-            if (summary) sectionsComplete++;
+            const email = document.getElementById('email').value;
+            const phone = document.getElementById('phone').value;
+            const location = document.getElementById('location').value;
+            if (email || phone || location) sectionsComplete++;
             
             const experiences = document.querySelectorAll('#experienceContainer .entry-box');
             let hasExperience = false, expFilledCount = 0;
@@ -627,7 +648,7 @@
             if (hasEducation) sectionsComplete++;
             
             const skills = document.getElementById('skills').value;
-            const skillArray = skills ? skills.split(',').map(s => s.trim()).filter(s => s) : [];
+            const skillArray = skills ? skills.split('\n').map(s => s.trim()).filter(s => s) : [];
             if (skillArray.length > 0) sectionsComplete++;
             
             document.getElementById('sectionCount').textContent = sectionsComplete + ' / 5';
@@ -641,100 +662,119 @@
         }
 
         function updatePreview() {
-            const fullName = document.getElementById('fullName').value;
+            const firstName = document.getElementById('firstName').value;
+            const lastName = document.getElementById('lastName').value;
             const jobTitle = document.getElementById('jobTitle').value;
             const email = document.getElementById('email').value;
             const phone = document.getElementById('phone').value;
-            const website = document.getElementById('website').value;
-            const summary = document.getElementById('summary').value;
+            const location = document.getElementById('location').value;
             const skills = document.getElementById('skills').value;
+            const summary = document.getElementById('summary').value;
             updateHUDStats();
 
             let html = '';
 
-            // Watercolor blobs
-            html += '<div class="watercolor-blob blob-pink-top"></div>';
-            html += '<div class="watercolor-blob blob-blue-bottom"></div>';
-            html += '<div class="watercolor-blob blob-peach-middle"></div>';
-
             // Header
-            html += '<div class="watercolor-header">';
-            html += '<div class="watercolor-name-pill">';
-            if (fullName) html += `<div class="watercolor-name">${fullName}</div>`;
-            if (jobTitle) html += `<div class="watercolor-title">${jobTitle}</div>`;
-            html += '</div></div>';
+            html += '<div class="swiss-header">';
+            if (firstName) html += `<div class="swiss-name-line">${firstName.toUpperCase()}</div>`;
+            if (lastName) html += `<div class="swiss-name-line">${lastName.toUpperCase()}</div>`;
+            html += '<div class="swiss-divider"></div>';
+            if (jobTitle) html += `<div class="swiss-subtitle">${jobTitle.toUpperCase()}</div>`;
+            html += '</div>';
 
-            // Contact Line
-            if (email || phone || website) {
-                html += '<div class="watercolor-contact">';
-                const contacts = [];
-                if (email) contacts.push(`📧 ${email}`);
-                if (phone) contacts.push(`📱 ${phone}`);
-                if (website) contacts.push(`🎨 ${website}`);
-                html += contacts.join(' • ');
-                html += '</div>';
-            }
-
-            // Summary
+            // Professional Summary (if provided)
             if (summary) {
-                html += '<div class="watercolor-card pink">';
-                html += '<div class="watercolor-card-title">Artist Statement</div>';
-                html += `<div class="watercolor-item-description">${summary.replace(/\n/g, '<br>')}</div>`;
+                html += '<div style="margin-bottom: 35px; padding: 20px; background: linear-gradient(to right, #f8f9ff, white); border-left: 4px solid transparent; border-image: linear-gradient(to bottom, #667eea, #764ba2) 1; border-radius: 10px; box-shadow: 0 3px 10px rgba(102, 126, 234, 0.1);">';
+                html += '<div style="font-size: 0.9em; line-height: 1.8; color: #333;">' + summary.replace(/\n/g, '<br>') + '</div>';
                 html += '</div>';
             }
+
+            // Grid Layout
+            html += '<div class="swiss-grid">';
+
+            // Left Sidebar
+            html += '<div class="swiss-sidebar">';
+
+            // Contact
+            if (email || phone || location) {
+                html += '<div class="swiss-sidebar-section">';
+                html += '<div class="swiss-sidebar-title">CONTACT</div>';
+                html += '<div class="swiss-sidebar-content">';
+                if (email) html += `${email}<br>`;
+                if (phone) html += `${phone}<br>`;
+                if (location) html += location;
+                html += '</div></div>';
+            }
+
+            // Skills
+            if (skills) {
+                const skillArray = skills.split('\n').map(s => s.trim()).filter(s => s);
+                if (skillArray.length > 0) {
+                    html += '<div class="swiss-sidebar-section">';
+                    html += '<div class="swiss-sidebar-title">SKILLS</div>';
+                    html += '<div class="swiss-sidebar-content">';
+                    skillArray.forEach(skill => {
+                        html += skill + '<br>';
+                    });
+                    html += '</div></div>';
+                }
+            }
+
+            html += '</div>'; // End sidebar
+
+            // Right Content
+            html += '<div class="swiss-content">';
 
             // Experience
             const experiences = document.querySelectorAll('#experienceContainer .entry-box');
-            const cardColors = ['blue', 'peach', 'pink'];
-            let colorIndex = 0;
+            let hasExp = false;
+            let expHtml = '';
             experiences.forEach(exp => {
                 const title = exp.querySelector('.exp-title').value;
                 const company = exp.querySelector('.exp-company').value;
                 const years = exp.querySelector('.exp-years').value;
                 const desc = exp.querySelector('.exp-desc').value;
                 if (title || company) {
-                    html += `<div class="watercolor-card ${cardColors[colorIndex % 3]}">`;
-                    html += '<div class="watercolor-card-title">Exhibitions</div>';
-                    html += '<div class="watercolor-item">';
-                    if (title) html += `<div class="watercolor-item-title">${title}</div>`;
-                    if (company || years) html += `<div class="watercolor-item-subtitle">${company}${company && years ? ' • ' : ''}${years}</div>`;
-                    if (desc) html += `<div class="watercolor-item-description">${desc.replace(/\n/g, '<br>')}</div>`;
-                    html += '</div></div>';
-                    colorIndex++;
+                    hasExp = true;
+                    expHtml += '<div class="swiss-item">';
+                    if (title) expHtml += `<div class="swiss-item-title">${title}</div>`;
+                    if (company || years) expHtml += `<div class="swiss-item-subtitle">${company}${company && years ? ' • ' : ''}${years}</div>`;
+                    if (desc) expHtml += `<div class="swiss-item-description">${desc.replace(/\n/g, '<br>')}</div>`;
+                    expHtml += '</div>';
                 }
             });
+            if (hasExp) {
+                html += '<div class="swiss-content-section">';
+                html += '<div class="swiss-content-title">EXPERIENCE</div>';
+                html += expHtml;
+                html += '</div>';
+            }
 
             // Education
             const educations = document.querySelectorAll('#educationContainer .entry-box');
+            let hasEdu = false;
+            let eduHtml = '';
             educations.forEach(edu => {
                 const degree = edu.querySelector('.edu-degree').value;
                 const institution = edu.querySelector('.edu-institution').value;
                 const years = edu.querySelector('.edu-years').value;
                 if (degree || institution) {
-                    html += `<div class="watercolor-card ${cardColors[colorIndex % 3]}">`;
-                    html += '<div class="watercolor-card-title">Education</div>';
-                    html += '<div class="watercolor-item">';
-                    if (degree) html += `<div class="watercolor-item-title">${degree}</div>`;
-                    if (institution || years) html += `<div class="watercolor-item-subtitle">${institution}${institution && years ? ' • ' : ''}${years}</div>`;
-                    html += '</div></div>';
-                    colorIndex++;
+                    hasEdu = true;
+                    eduHtml += '<div class="swiss-item">';
+                    if (degree) eduHtml += `<div class="swiss-item-title">${degree}</div>`;
+                    if (institution || years) eduHtml += `<div class="swiss-item-subtitle">${institution}${institution && years ? ' • ' : ''}${years}</div>`;
+                    eduHtml += '</div>';
                 }
             });
-
-            // Skills
-            if (skills) {
-                const skillArray = skills.split(',').map(s => s.trim()).filter(s => s);
-                if (skillArray.length > 0) {
-                    html += `<div class="watercolor-card ${cardColors[colorIndex % 3]}">`;
-                    html += '<div class="watercolor-card-title">Techniques</div>';
-                    html += '<div class="watercolor-skills">';
-                    skillArray.forEach((skill, index) => {
-                        const pillColor = ['pink', 'blue', 'peach'][index % 3];
-                        html += `<div class="watercolor-skill-pill ${pillColor}">${skill}</div>`;
-                    });
-                    html += '</div></div>';
-                }
+            if (hasEdu) {
+                html += '<div class="swiss-content-section">';
+                html += '<div class="swiss-content-title">EDUCATION</div>';
+                html += eduHtml;
+                html += '</div>';
             }
+
+            html += '</div>'; // End content
+            html += '</div>'; // End grid
 
             document.getElementById('resumePreview').innerHTML = html || '<div class="placeholder-text">👈 Fill in your information to see live preview</div>';
         }
@@ -746,20 +786,20 @@
             entry.innerHTML = `
                 <button class="remove-btn" onclick="this.parentElement.remove(); updatePreview();">×</button>
                 <div class="form-group">
-                    <label class="form-label">Title / Position</label>
-                    <input type="text" class="form-input exp-title" placeholder="Solo Exhibition" oninput="updatePreview()">
+                    <label class="form-label">POSITION</label>
+                    <input type="text" class="form-input exp-title" placeholder="Senior Designer" oninput="updatePreview()">
                 </div>
                 <div class="form-group">
-                    <label class="form-label">Gallery / Organization</label>
-                    <input type="text" class="form-input exp-company" placeholder="Art Gallery NYC" oninput="updatePreview()">
+                    <label class="form-label">COMPANY</label>
+                    <input type="text" class="form-input exp-company" placeholder="Design Studio" oninput="updatePreview()">
                 </div>
                 <div class="form-group">
-                    <label class="form-label">Year / Period</label>
-                    <input type="text" class="form-input exp-years" placeholder="2023" oninput="updatePreview()">
+                    <label class="form-label">YEARS</label>
+                    <input type="text" class="form-input exp-years" placeholder="2020-2024" oninput="updatePreview()">
                 </div>
                 <div class="form-group">
-                    <label class="form-label">Description</label>
-                    <textarea class="form-input exp-desc" placeholder="Describe your work..." oninput="updatePreview()"></textarea>
+                    <label class="form-label">DESCRIPTION</label>
+                    <textarea class="form-input exp-desc" placeholder="Describe role..." oninput="updatePreview()"></textarea>
                 </div>
             `;
             container.appendChild(entry);
@@ -772,15 +812,15 @@
             entry.innerHTML = `
                 <button class="remove-btn" onclick="this.parentElement.remove(); updatePreview();">×</button>
                 <div class="form-group">
-                    <label class="form-label">Degree</label>
-                    <input type="text" class="form-input edu-degree" placeholder="BFA Fine Arts" oninput="updatePreview()">
+                    <label class="form-label">DEGREE</label>
+                    <input type="text" class="form-input edu-degree" placeholder="BA Graphic Design" oninput="updatePreview()">
                 </div>
                 <div class="form-group">
-                    <label class="form-label">Institution</label>
-                    <input type="text" class="form-input edu-institution" placeholder="Art Institute" oninput="updatePreview()">
+                    <label class="form-label">INSTITUTION</label>
+                    <input type="text" class="form-input edu-institution" placeholder="University of Arts" oninput="updatePreview()">
                 </div>
                 <div class="form-group">
-                    <label class="form-label">Years</label>
+                    <label class="form-label">YEARS</label>
                     <input type="text" class="form-input edu-years" placeholder="2016-2020" oninput="updatePreview()">
                 </div>
             `;
@@ -788,19 +828,20 @@
         }
 
         function downloadPDF() {
-            const fullName = document.getElementById('fullName').value;
-            if (!fullName) {
+            const firstName = document.getElementById('firstName').value;
+            const lastName = document.getElementById('lastName').value;
+            if (!firstName || !lastName) {
                 alert('⚠️ Please fill in at least your name before downloading!');
                 return;
             }
             const downloadBtn = event.target;
             const originalText = downloadBtn.innerHTML;
-            downloadBtn.innerHTML = '⏳ Generating PDF...';
+            downloadBtn.innerHTML = '⏳ GENERATING...';
             downloadBtn.disabled = true;
 
             const A4_WIDTH_PX = 794, A4_HEIGHT_PX = 1123;
             const renderContainer = document.createElement('div');
-            renderContainer.style.cssText = `position:absolute;left:-9999px;top:0;width:${A4_WIDTH_PX}px;background:white;box-sizing:border-box;font-family:'Georgia',serif;`;
+            renderContainer.style.cssText = `position:absolute;left:-9999px;top:0;width:${A4_WIDTH_PX}px;background:white;box-sizing:border-box;font-family:'Helvetica Neue',sans-serif;`;
             const resumeClone = document.getElementById('resumePreview').cloneNode(true);
             resumeClone.style.cssText = 'width:100%;font-size:12.5px;line-height:1.4;';
             renderContainer.appendChild(resumeClone);
@@ -833,7 +874,7 @@
                         const pdf = new jsPDF({ orientation: 'portrait', unit: 'mm', format: 'a4', compress: true });
                         const imgData = canvas.toDataURL('image/jpeg', 0.95);
                         pdf.addImage(imgData, 'JPEG', 0, 0, 210, 297, '', 'FAST');
-                        const fileName = `${fullName.replace(/\s+/g, '_')}_Resume_Watercolor.pdf`;
+                        const fileName = `${firstName}_${lastName}_Resume_Swiss.pdf`;
                         pdf.save(fileName);
                         downloadBtn.innerHTML = originalText;
                         downloadBtn.disabled = false;

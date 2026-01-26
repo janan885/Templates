@@ -3,13 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Watercolor Artistic Template - Resume Builder Pro</title>
+    <title>Grid Portfolio Template - Resume Builder Pro</title>
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
 
         body {
-            font-family: 'Georgia', 'Palatino', serif;
-            background: linear-gradient(-45deg, #ffb6c1, #add8e6, #ffdab9, #e6e6fa);
+            font-family: 'Arial', 'Helvetica', sans-serif;
+            background: linear-gradient(-45deg, #e74c3c, #3498db, #2ecc71, #f39c12);
             background-size: 400% 400%;
             animation: gradientBG 15s ease infinite;
             min-height: 100vh;
@@ -26,7 +26,7 @@
             position: fixed; top: 0; left: 0; width: 100%;
             background: rgba(255, 255, 255, 0.95);
             backdrop-filter: blur(10px);
-            box-shadow: 0 5px 20px rgba(255, 105, 180, 0.2);
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
             z-index: 1000; padding: 15px 0;
         }
 
@@ -38,7 +38,7 @@
         .logo {
             display: flex; align-items: center; gap: 10px;
             font-size: 1.5em; font-weight: 800;
-            background: linear-gradient(135deg, #ff69b4, #add8e6);
+            background: linear-gradient(135deg, #e74c3c, #3498db);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             text-decoration: none;
@@ -46,18 +46,18 @@
 
         .back-btn {
             padding: 10px 25px;
-            background: linear-gradient(135deg, #ff69b4, #add8e6);
+            background: linear-gradient(135deg, #e74c3c, #3498db);
             color: white; border: none; border-radius: 25px;
             font-weight: 600; font-size: 1em; text-decoration: none;
             transition: all 0.3s ease;
         }
 
-        .back-btn:hover { transform: translateY(-2px); box-shadow: 0 5px 15px rgba(255, 105, 180, 0.4); }
+        .back-btn:hover { transform: translateY(-2px); box-shadow: 0 5px 15px rgba(231, 76, 60, 0.4); }
 
         .hud-header {
-            background: linear-gradient(135deg, #ff69b4, #add8e6);
+            background: linear-gradient(135deg, #e74c3c, #3498db);
             color: white; padding: 20px 0; margin-top: 80px;
-            box-shadow: 0 5px 20px rgba(255, 105, 180, 0.3);
+            box-shadow: 0 5px 20px rgba(231, 76, 60, 0.3);
         }
 
         .hud-container { max-width: 1400px; margin: 0 auto; padding: 0 40px; }
@@ -72,7 +72,7 @@
 
         .hud-stat {
             background: rgba(255, 255, 255, 0.25); backdrop-filter: blur(10px);
-            padding: 12px 20px; border-radius: 20px;
+            padding: 12px 20px; border-radius: 15px;
             display: flex; align-items: center; gap: 10px; font-size: 0.9em;
         }
 
@@ -110,14 +110,14 @@
         .form-section {
             background: white; 
             padding: 30px; 
-            border-radius: 20px;
-            box-shadow: 0 10px 40px rgba(255, 105, 180, 0.2);
+            border-radius: 15px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
             height: fit-content;
         }
 
         .form-title { 
             font-size: 2em;
-            background: linear-gradient(135deg, #ff69b4, #add8e6);
+            background: linear-gradient(135deg, #e74c3c, #3498db);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             margin-bottom: 20px; font-weight: 800;
@@ -132,69 +132,68 @@
 
         .form-input {
             width: 100%; padding: 12px 15px; 
-            border: 2px solid #ffc0cb;
+            border: 2px solid #e0e0e0;
             background: white;
-            border-radius: 15px;
+            border-radius: 10px;
             color: #333;
             font-size: 1em; transition: all 0.3s ease;
-            font-family: 'Georgia', serif;
         }
 
         .form-input:focus {
             outline: none; 
-            border-color: #ff69b4;
-            box-shadow: 0 0 0 3px rgba(255, 105, 180, 0.1);
+            border-color: #e74c3c;
+            box-shadow: 0 0 0 3px rgba(231, 76, 60, 0.1);
         }
 
         textarea.form-input { resize: vertical; min-height: 100px; }
-        .section-divider { margin: 30px 0; border: none; border-top: 2px dashed #ffc0cb; }
+        .section-divider { margin: 30px 0; border: none; border-top: 2px solid #f0f0f0; }
 
         .section-header {
-            font-size: 1.3em; color: #ff69b4; margin-bottom: 15px;
+            font-size: 1.3em; color: #e74c3c; margin-bottom: 15px;
             font-weight: 700; display: flex; align-items: center; gap: 10px;
         }
 
         .add-btn {
             padding: 10px 20px;
-            background: linear-gradient(135deg, #ff69b4, #add8e6);
-            color: white; border: none; border-radius: 20px;
+            background: linear-gradient(135deg, #e74c3c, #3498db);
+            color: white; border: none; border-radius: 10px;
             font-weight: 600; cursor: pointer; transition: all 0.3s ease; margin-top: 10px;
         }
 
         .add-btn:hover { 
             transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(255, 105, 180, 0.4);
+            box-shadow: 0 5px 15px rgba(231, 76, 60, 0.4);
         }
 
         .entry-box {
-            background: linear-gradient(135deg, rgba(255, 182, 193, 0.1), rgba(173, 216, 230, 0.1));
+            background: #f5f5f5;
             padding: 20px; 
-            border-radius: 20px;
+            border-radius: 10px;
             margin-bottom: 15px; 
-            border: 2px dashed rgba(255, 192, 203, 0.5); 
+            border-left: 4px solid #e74c3c; 
             position: relative;
         }
 
         .remove-btn {
             position: absolute; top: 10px; right: 10px;
-            background: #ff69b4; color: white; border: none;
+            background: #e74c3c; color: white; border: none;
             width: 30px; height: 30px; border-radius: 50%;
             cursor: pointer; font-weight: bold;
         }
 
-        .remove-btn:hover { background: #ff1493; }
+        .remove-btn:hover { background: #c0392b; }
 
         .preview-section {
             background: white; 
             padding: 30px; 
-            border-radius: 20px;
-            box-shadow: 0 10px 40px rgba(173, 216, 230, 0.3);
+            border-radius: 15px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
             position: sticky; top: 100px; max-height: calc(100vh - 120px); overflow-y: auto;
         }
 
         .preview-title {
             font-size: 1.5em;
-            background: linear-gradient(135deg, #ff69b4, #add8e6);
+            background: linear-gradient(135deg, #e74c3c, #3498db);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             margin-bottom: 20px;
@@ -203,199 +202,165 @@
 
         .preview-container {
             background: white;
-            border: 2px solid #ffc0cb;
-            border-radius: 20px;
+            border: 2px solid #e0e0e0;
+            border-radius: 10px;
             overflow: hidden;
         }
 
-        /* Watercolor Artistic Resume Styles */
+        /* Grid Portfolio Resume Styles */
         .resume-preview {
-            font-family: 'Georgia', 'Palatino', serif;
+            font-family: 'Arial', 'Helvetica', sans-serif;
             font-size: 1em;
             background: white;
             color: #333;
             padding: 35px;
             position: relative;
-            overflow: hidden;
         }
 
-        /* Watercolor blobs */
-        .watercolor-blob {
-            position: absolute;
-            border-radius: 50%;
-            opacity: 0.4;
-            z-index: 0;
-        }
-
-        .blob-pink-top {
-            top: -20px;
-            right: -20px;
-            width: 150px;
-            height: 150px;
-            background: radial-gradient(circle, rgba(255, 182, 193, 0.6), transparent);
-        }
-
-        .blob-blue-bottom {
-            bottom: -30px;
-            left: -30px;
-            width: 180px;
-            height: 180px;
-            background: radial-gradient(circle, rgba(173, 216, 230, 0.6), transparent);
-        }
-
-        .blob-peach-middle {
-            top: 50%;
-            right: -40px;
-            width: 120px;
-            height: 120px;
-            background: radial-gradient(circle, rgba(255, 218, 185, 0.6), transparent);
-        }
-
-        /* Header Pill */
-        .watercolor-header {
+        /* Header */
+        .grid-header {
             text-align: center;
-            margin-bottom: 25px;
-            position: relative;
-            z-index: 1;
+            margin-bottom: 10px;
+            padding-bottom: 20px;
+            border-bottom: 3px solid #e74c3c;
         }
 
-        .watercolor-name-pill {
-            display: inline-block;
-            background: linear-gradient(135deg, rgba(255, 182, 193, 0.3), rgba(173, 216, 230, 0.3));
-            padding: 18px 35px;
-            border-radius: 50px;
-        }
-
-        .watercolor-name {
-            font-size: 2.2em;
-            font-weight: 700;
-            color: #333;
+        .grid-name {
+            font-size: 2.8em;
+            font-weight: 800;
+            color: #2c3e50;
+            text-transform: uppercase;
+            letter-spacing: 3px;
             margin-bottom: 8px;
         }
 
-        .watercolor-title {
-            font-size: 1.1em;
-            color: #ff69b4;
-            font-style: italic;
-        }
-
-        /* Contact Line */
-        .watercolor-contact {
-            text-align: center;
-            font-size: 0.9em;
-            color: #888;
-            margin-bottom: 25px;
-            position: relative;
-            z-index: 1;
-        }
-
-        /* Watercolor Cards */
-        .watercolor-card {
-            background: rgba(255, 182, 193, 0.1);
-            padding: 18px;
-            border-radius: 20px;
-            border: 2px dashed rgba(255, 182, 193, 0.5);
-            margin-bottom: 18px;
-            position: relative;
-            z-index: 1;
-        }
-
-        .watercolor-card.blue {
-            background: rgba(173, 216, 230, 0.1);
-            border-color: rgba(173, 216, 230, 0.5);
-        }
-
-        .watercolor-card.peach {
-            background: rgba(255, 218, 185, 0.1);
-            border-color: rgba(255, 218, 185, 0.5);
-        }
-
-        .watercolor-card-title {
-            font-size: 0.85em;
-            font-weight: 700;
+        .grid-title {
+            font-size: 1.3em;
+            color: #e74c3c;
+            font-weight: 600;
             margin-bottom: 12px;
+        }
+
+        .grid-contact {
+            font-size: 0.9em;
+            color: #7f8c8d;
+            margin-top: 12px;
+        }
+
+        /* Visual Grid Gallery - REMOVED */
+        .grid-gallery {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 10px;
+            margin-bottom: 25px;
+        }
+
+        .grid-block {
+            height: 80px;
+            border-radius: 8px;
+            background: linear-gradient(135deg, #e74c3c, #c0392b);
+        }
+
+        .grid-block.red {
+            background: linear-gradient(135deg, #e74c3c, #c0392b);
+        }
+
+        .grid-block.blue {
+            background: linear-gradient(135deg, #3498db, #2980b9);
+        }
+
+        .grid-block.green {
+            background: linear-gradient(135deg, #2ecc71, #27ae60);
+        }
+
+        .grid-block.orange {
+            background: linear-gradient(135deg, #f39c12, #d68910);
+        }
+
+        .grid-block.purple {
+            background: linear-gradient(135deg, #9b59b6, #8e44ad);
+        }
+
+        .grid-block.wide {
+            grid-column: span 2;
+        }
+
+        /* Info Cards */
+        .grid-info-card {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 15px;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .grid-card-title {
+            font-size: 0.8em;
+            font-weight: 700;
+            margin-bottom: 10px;
             text-transform: uppercase;
             letter-spacing: 1px;
         }
 
-        .watercolor-card-title::before {
-            content: '~ ';
-        }
+        .grid-card-title.red { color: #e74c3c; }
+        .grid-card-title.blue { color: #3498db; }
+        .grid-card-title.green { color: #2ecc71; }
+        .grid-card-title.orange { color: #f39c12; }
+        .grid-card-title.purple { color: #9b59b6; }
 
-        .watercolor-card-title::after {
-            content: ' ~';
-        }
-
-        .watercolor-card.pink .watercolor-card-title {
-            color: #ff69b4;
-        }
-
-        .watercolor-card.blue .watercolor-card-title {
-            color: #4682b4;
-        }
-
-        .watercolor-card.peach .watercolor-card-title {
-            color: #ff8c69;
-        }
-
-        .watercolor-item {
-            margin-bottom: 12px;
-        }
-
-        .watercolor-item:last-child {
-            margin-bottom: 0;
-        }
-
-        .watercolor-item-title {
-            font-weight: 700;
-            color: #333;
-            font-size: 1em;
-            margin-bottom: 5px;
-        }
-
-        .watercolor-item-subtitle {
-            color: #888;
-            font-size: 0.9em;
-            margin-bottom: 10px;
-        }
-
-        .watercolor-item-description {
-            color: #555;
-            line-height: 1.7;
+        .grid-card-content {
             font-size: 0.95em;
+            color: #555;
+            line-height: 1.6;
         }
 
-        /* Skill Pills */
-        .watercolor-skills {
-            display: flex;
-            gap: 10px;
-            flex-wrap: wrap;
+        /* Stats Grid */
+        .grid-stats {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 12px;
+            margin-bottom: 15px;
         }
 
-        .watercolor-skill-pill {
-            padding: 8px 18px;
-            border-radius: 20px;
-            font-size: 0.85em;
+        .grid-stat-box {
+            background: white;
+            padding: 15px;
+            border-radius: 10px;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .grid-stat-label {
+            font-size: 0.8em;
+            font-weight: 700;
+            margin-bottom: 8px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .grid-stat-value {
+            font-size: 0.9em;
+            color: #555;
             font-weight: 600;
         }
 
-        .watercolor-skill-pill.pink {
-            background: rgba(255, 182, 193, 0.3);
-            color: #ff69b4;
+        /* Skills Grid */
+        .grid-skills {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 8px;
         }
 
-        .watercolor-skill-pill.blue {
-            background: rgba(173, 216, 230, 0.3);
-            color: #4682b4;
-        }
-
-        .watercolor-skill-pill.peach {
-            background: rgba(255, 218, 185, 0.3);
-            color: #ff8c69;
+        .grid-skill-box {
+            padding: 10px;
+            border-radius: 8px;
+            text-align: center;
+            font-size: 0.85em;
+            font-weight: 600;
+            color: white;
         }
 
         .placeholder-text {
-            text-align: center; color: #ff69b4; padding: 40px; font-style: italic;
+            text-align: center; color: #999; padding: 40px; font-style: italic;
         }
 
         .action-buttons {
@@ -405,17 +370,17 @@
 
         .action-btn {
             padding: 15px 30px;
-            background: linear-gradient(135deg, #ff69b4, #add8e6);
+            background: linear-gradient(135deg, #e74c3c, #3498db);
             color: white; 
-            border: none; border-radius: 30px;
+            border: none; border-radius: 25px;
             font-weight: 700; font-size: 1em; cursor: pointer;
-            box-shadow: 0 5px 20px rgba(255, 105, 180, 0.4);
+            box-shadow: 0 5px 20px rgba(231, 76, 60, 0.4);
             transition: all 0.3s ease;
         }
 
         .action-btn:hover {
             transform: translateY(-3px);
-            box-shadow: 0 8px 30px rgba(255, 105, 180, 0.5);
+            box-shadow: 0 8px 30px rgba(231, 76, 60, 0.5);
         }
 
         .action-btn:disabled { opacity: 0.6; cursor: not-allowed; }
@@ -424,6 +389,8 @@
             .container { grid-template-columns: 1fr; }
             .preview-section { position: relative; top: 0; max-height: none; }
             .hud-stat { flex: 1; min-width: calc(50% - 10px); }
+            .grid-gallery { grid-template-columns: repeat(2, 1fr); }
+            .grid-skills { grid-template-columns: repeat(2, 1fr); }
         }
 
         @media (max-width: 768px) {
@@ -432,6 +399,9 @@
             .hud-stat { min-width: calc(50% - 5px); padding: 10px 15px; }
             .form-section, .preview-section { padding: 20px; }
             .resume-preview { padding: 25px; font-size: 0.95em; }
+            .grid-gallery { grid-template-columns: 1fr; }
+            .grid-stats { grid-template-columns: 1fr; }
+            .grid-skills { grid-template-columns: 1fr; }
             .action-buttons {
                 width: calc(100% - 40px); left: 20px; right: 20px; flex-direction: column;
             }
@@ -442,15 +412,15 @@
 <body>
     <nav class="navbar">
         <div class="nav-container">
-            <a href="../index.html" class="logo"><span>🎨</span><span>Resume Builder Pro</span></a>
+            <a href="../index.html" class="logo"><span>📸</span><span>Resume Builder Pro</span></a>
             <a href="../templates.html" class="back-btn">← Back to Templates</a>
         </div>
     </nav>
 
     <div class="hud-header">
         <div class="hud-container">
-            <div class="hud-title"><span>🎨</span><span>Watercolor Artistic Template</span></div>
-            <div class="hud-subtitle">Create an artistic resume with soft watercolor effects</div>
+            <div class="hud-title"><span>📸</span><span>Grid Portfolio Template</span></div>
+            <div class="hud-subtitle">Create a visual portfolio resume with colorful grid layout</div>
             <div class="hud-stats">
                 <div class="hud-stat">
                     <div class="hud-stat-icon">📝</div>
@@ -462,8 +432,8 @@
                 <div class="hud-stat">
                     <div class="hud-stat-icon">💼</div>
                     <div>
-                        <div class="hud-stat-label">Work Experience</div>
-                        <div class="hud-stat-value" id="expCount">0</div>
+                        <div class="hud-stat-label">Projects</div>
+                        <div class="hud-stat-value" id="projectCount">0</div>
                     </div>
                 </div>
                 <div class="hud-stat">
@@ -493,21 +463,21 @@
 
     <div class="container">
         <div class="form-section">
-            <h1 class="form-title">🎨 Watercolor Artistic</h1>
+            <h1 class="form-title">📸 Grid Portfolio</h1>
             
             <div class="form-group">
                 <label class="form-label">Full Name *</label>
-                <input type="text" class="form-input" id="fullName" placeholder="Emma Rose" required>
+                <input type="text" class="form-input" id="fullName" placeholder="Jake Thompson" required>
             </div>
 
             <div class="form-group">
                 <label class="form-label">Job Title *</label>
-                <input type="text" class="form-input" id="jobTitle" placeholder="Watercolor Artist" required>
+                <input type="text" class="form-input" id="jobTitle" placeholder="Photographer" required>
             </div>
 
             <div class="form-group">
                 <label class="form-label">Email</label>
-                <input type="email" class="form-input" id="email" placeholder="emma@art.com">
+                <input type="email" class="form-input" id="email" placeholder="jake@photography.com">
             </div>
 
             <div class="form-group">
@@ -516,58 +486,58 @@
             </div>
 
             <div class="form-group">
-                <label class="form-label">Website / Portfolio</label>
-                <input type="text" class="form-input" id="website" placeholder="emma.art">
+                <label class="form-label">Location</label>
+                <input type="text" class="form-input" id="location" placeholder="New York, NY">
             </div>
 
             <hr class="section-divider">
 
-            <h2 class="section-header">📝 Artist Statement</h2>
+            <h2 class="section-header">📝 About / Summary</h2>
             <div class="form-group">
-                <textarea class="form-input" id="summary" placeholder="Write your artistic statement or professional summary..."></textarea>
+                <textarea class="form-input" id="summary" placeholder="Write a brief professional summary..."></textarea>
             </div>
 
             <hr class="section-divider">
 
-            <h2 class="section-header">🖼️ Exhibitions / Experience</h2>
-            <div id="experienceContainer">
+            <h2 class="section-header">📸 Projects / Portfolio</h2>
+            <div id="projectContainer">
                 <div class="entry-box">
                     <div class="form-group">
-                        <label class="form-label">Title / Position</label>
-                        <input type="text" class="form-input exp-title" placeholder="Solo Exhibition">
+                        <label class="form-label">Project Title</label>
+                        <input type="text" class="form-input project-title" placeholder="Commercial Photography Campaign">
                     </div>
                     <div class="form-group">
-                        <label class="form-label">Gallery / Organization</label>
-                        <input type="text" class="form-input exp-company" placeholder="Art Gallery NYC">
+                        <label class="form-label">Client / Company</label>
+                        <input type="text" class="form-input project-client" placeholder="Brand XYZ">
                     </div>
                     <div class="form-group">
-                        <label class="form-label">Year / Period</label>
-                        <input type="text" class="form-input exp-years" placeholder="2023">
+                        <label class="form-label">Year</label>
+                        <input type="text" class="form-input project-year" placeholder="2023">
                     </div>
                     <div class="form-group">
                         <label class="form-label">Description</label>
-                        <textarea class="form-input exp-desc" placeholder="Describe your work or achievements..."></textarea>
+                        <textarea class="form-input project-desc" placeholder="Describe the project..."></textarea>
                     </div>
                 </div>
             </div>
-            <button class="add-btn" onclick="addExperience()">+ Add Exhibition/Experience</button>
+            <button class="add-btn" onclick="addProject()">+ Add Project</button>
 
             <hr class="section-divider">
 
-            <h2 class="section-header">🎓 Education</h2>
+            <h2 class="section-header">🎓 Education / Training</h2>
             <div id="educationContainer">
                 <div class="entry-box">
                     <div class="form-group">
-                        <label class="form-label">Degree</label>
-                        <input type="text" class="form-input edu-degree" placeholder="BFA Fine Arts">
+                        <label class="form-label">Degree / Certificate</label>
+                        <input type="text" class="form-input edu-degree" placeholder="BFA Photography">
                     </div>
                     <div class="form-group">
                         <label class="form-label">Institution</label>
-                        <input type="text" class="form-input edu-institution" placeholder="Art Institute">
+                        <input type="text" class="form-input edu-institution" placeholder="School of Visual Arts">
                     </div>
                     <div class="form-group">
-                        <label class="form-label">Years</label>
-                        <input type="text" class="form-input edu-years" placeholder="2016-2020">
+                        <label class="form-label">Year</label>
+                        <input type="text" class="form-input edu-year" placeholder="2018-2022">
                     </div>
                 </div>
             </div>
@@ -575,10 +545,26 @@
 
             <hr class="section-divider">
 
-            <h2 class="section-header">🎨 Techniques / Skills</h2>
+            <h2 class="section-header">⚡ Skills / Specializations</h2>
             <div class="form-group">
                 <label class="form-label">Skills (comma separated)</label>
-                <textarea class="form-input" id="skills" placeholder="Watercolor, Acrylic, Mixed Media, Illustration"></textarea>
+                <textarea class="form-input" id="skills" placeholder="Portrait, Landscape, Commercial, Adobe Photoshop, Lighting"></textarea>
+            </div>
+
+            <hr class="section-divider">
+
+            <h2 class="section-header">📊 Professional Stats (Optional)</h2>
+            <div class="form-group">
+                <label class="form-label">Years of Experience</label>
+                <input type="text" class="form-input" id="yearsExp" placeholder="8+ Years">
+            </div>
+            <div class="form-group">
+                <label class="form-label">Total Projects / Clients</label>
+                <input type="text" class="form-input" id="projectsCompleted" placeholder="200+ Projects">
+            </div>
+            <div class="form-group">
+                <label class="form-label">Awards / Recognition (Optional)</label>
+                <input type="text" class="form-input" id="awards" placeholder="Best Portfolio 2023">
             </div>
         </div>
 
@@ -608,14 +594,14 @@
             const summary = document.getElementById('summary').value;
             if (summary) sectionsComplete++;
             
-            const experiences = document.querySelectorAll('#experienceContainer .entry-box');
-            let hasExperience = false, expFilledCount = 0;
-            experiences.forEach(exp => {
-                const title = exp.querySelector('.exp-title').value;
-                const company = exp.querySelector('.exp-company').value;
-                if (title || company) { hasExperience = true; expFilledCount++; }
+            const projects = document.querySelectorAll('#projectContainer .entry-box');
+            let hasProject = false, projectFilledCount = 0;
+            projects.forEach(proj => {
+                const title = proj.querySelector('.project-title').value;
+                const client = proj.querySelector('.project-client').value;
+                if (title || client) { hasProject = true; projectFilledCount++; }
             });
-            if (hasExperience) sectionsComplete++;
+            if (hasProject) sectionsComplete++;
             
             const educations = document.querySelectorAll('#educationContainer .entry-box');
             let hasEducation = false, eduFilledCount = 0;
@@ -631,7 +617,7 @@
             if (skillArray.length > 0) sectionsComplete++;
             
             document.getElementById('sectionCount').textContent = sectionsComplete + ' / 5';
-            document.getElementById('expCount').textContent = expFilledCount;
+            document.getElementById('projectCount').textContent = projectFilledCount;
             document.getElementById('eduCount').textContent = eduFilledCount;
             document.getElementById('skillCount').textContent = skillArray.length;
             
@@ -645,60 +631,79 @@
             const jobTitle = document.getElementById('jobTitle').value;
             const email = document.getElementById('email').value;
             const phone = document.getElementById('phone').value;
-            const website = document.getElementById('website').value;
+            const location = document.getElementById('location').value;
             const summary = document.getElementById('summary').value;
             const skills = document.getElementById('skills').value;
+            const yearsExp = document.getElementById('yearsExp').value;
+            const projectsCompleted = document.getElementById('projectsCompleted').value;
+            const awards = document.getElementById('awards').value;
             updateHUDStats();
 
             let html = '';
 
-            // Watercolor blobs
-            html += '<div class="watercolor-blob blob-pink-top"></div>';
-            html += '<div class="watercolor-blob blob-blue-bottom"></div>';
-            html += '<div class="watercolor-blob blob-peach-middle"></div>';
-
-            // Header
-            html += '<div class="watercolor-header">';
-            html += '<div class="watercolor-name-pill">';
-            if (fullName) html += `<div class="watercolor-name">${fullName}</div>`;
-            if (jobTitle) html += `<div class="watercolor-title">${jobTitle}</div>`;
-            html += '</div></div>';
-
-            // Contact Line
-            if (email || phone || website) {
-                html += '<div class="watercolor-contact">';
+            // Header with Contact
+            html += '<div class="grid-header">';
+            if (fullName) html += `<div class="grid-name">${fullName}</div>`;
+            if (jobTitle) html += `<div class="grid-title">${jobTitle}</div>`;
+            if (email || phone || location) {
+                html += '<div class="grid-contact">';
                 const contacts = [];
                 if (email) contacts.push(`📧 ${email}`);
                 if (phone) contacts.push(`📱 ${phone}`);
-                if (website) contacts.push(`🎨 ${website}`);
+                if (location) contacts.push(`📍 ${location}`);
                 html += contacts.join(' • ');
                 html += '</div>';
             }
+            html += '</div>';
 
-            // Summary
+            // Summary (NO EMPTY GRID BLOCKS)
             if (summary) {
-                html += '<div class="watercolor-card pink">';
-                html += '<div class="watercolor-card-title">Artist Statement</div>';
-                html += `<div class="watercolor-item-description">${summary.replace(/\n/g, '<br>')}</div>`;
+                html += '<div class="grid-info-card">';
+                html += '<div class="grid-card-title red">ABOUT</div>';
+                html += `<div class="grid-card-content">${summary.replace(/\n/g, '<br>')}</div>`;
                 html += '</div>';
             }
 
-            // Experience
-            const experiences = document.querySelectorAll('#experienceContainer .entry-box');
-            const cardColors = ['blue', 'peach', 'pink'];
+            // Stats Grid
+            if (yearsExp || projectsCompleted || awards) {
+                html += '<div class="grid-stats" style="grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));">';
+                if (yearsExp) {
+                    html += '<div class="grid-stat-box">';
+                    html += '<div class="grid-stat-label" style="color: #3498db;">EXPERIENCE</div>';
+                    html += `<div class="grid-stat-value">${yearsExp}</div>`;
+                    html += '</div>';
+                }
+                if (projectsCompleted) {
+                    html += '<div class="grid-stat-box">';
+                    html += '<div class="grid-stat-label" style="color: #2ecc71;">PROJECTS</div>';
+                    html += `<div class="grid-stat-value">${projectsCompleted}</div>`;
+                    html += '</div>';
+                }
+                if (awards) {
+                    html += '<div class="grid-stat-box">';
+                    html += '<div class="grid-stat-label" style="color: #f39c12;">AWARDS</div>';
+                    html += `<div class="grid-stat-value">${awards}</div>`;
+                    html += '</div>';
+                }
+                html += '</div>';
+            }
+
+            // Projects
+            const projects = document.querySelectorAll('#projectContainer .entry-box');
+            const colors = ['blue', 'green', 'orange', 'purple', 'red'];
             let colorIndex = 0;
-            experiences.forEach(exp => {
-                const title = exp.querySelector('.exp-title').value;
-                const company = exp.querySelector('.exp-company').value;
-                const years = exp.querySelector('.exp-years').value;
-                const desc = exp.querySelector('.exp-desc').value;
-                if (title || company) {
-                    html += `<div class="watercolor-card ${cardColors[colorIndex % 3]}">`;
-                    html += '<div class="watercolor-card-title">Exhibitions</div>';
-                    html += '<div class="watercolor-item">';
-                    if (title) html += `<div class="watercolor-item-title">${title}</div>`;
-                    if (company || years) html += `<div class="watercolor-item-subtitle">${company}${company && years ? ' • ' : ''}${years}</div>`;
-                    if (desc) html += `<div class="watercolor-item-description">${desc.replace(/\n/g, '<br>')}</div>`;
+            projects.forEach(proj => {
+                const title = proj.querySelector('.project-title').value;
+                const client = proj.querySelector('.project-client').value;
+                const year = proj.querySelector('.project-year').value;
+                const desc = proj.querySelector('.project-desc').value;
+                if (title || client) {
+                    html += '<div class="grid-info-card">';
+                    html += `<div class="grid-card-title ${colors[colorIndex % 5]}">PORTFOLIO PROJECT</div>`;
+                    html += '<div class="grid-card-content">';
+                    if (title) html += `<strong>${title}</strong><br>`;
+                    if (client || year) html += `${client}${client && year ? ' • ' : ''}${year}<br>`;
+                    if (desc) html += `${desc.replace(/\n/g, '<br>')}`;
                     html += '</div></div>';
                     colorIndex++;
                 }
@@ -709,28 +714,28 @@
             educations.forEach(edu => {
                 const degree = edu.querySelector('.edu-degree').value;
                 const institution = edu.querySelector('.edu-institution').value;
-                const years = edu.querySelector('.edu-years').value;
+                const year = edu.querySelector('.edu-year').value;
                 if (degree || institution) {
-                    html += `<div class="watercolor-card ${cardColors[colorIndex % 3]}">`;
-                    html += '<div class="watercolor-card-title">Education</div>';
-                    html += '<div class="watercolor-item">';
-                    if (degree) html += `<div class="watercolor-item-title">${degree}</div>`;
-                    if (institution || years) html += `<div class="watercolor-item-subtitle">${institution}${institution && years ? ' • ' : ''}${years}</div>`;
+                    html += '<div class="grid-info-card">';
+                    html += `<div class="grid-card-title ${colors[colorIndex % 5]}">EDUCATION</div>`;
+                    html += '<div class="grid-card-content">';
+                    if (degree) html += `<strong>${degree}</strong><br>`;
+                    if (institution || year) html += `${institution}${institution && year ? ' • ' : ''}${year}`;
                     html += '</div></div>';
                     colorIndex++;
                 }
             });
 
-            // Skills
+            // Skills Grid
             if (skills) {
                 const skillArray = skills.split(',').map(s => s.trim()).filter(s => s);
                 if (skillArray.length > 0) {
-                    html += `<div class="watercolor-card ${cardColors[colorIndex % 3]}">`;
-                    html += '<div class="watercolor-card-title">Techniques</div>';
-                    html += '<div class="watercolor-skills">';
+                    html += '<div class="grid-info-card">';
+                    html += `<div class="grid-card-title ${colors[colorIndex % 5]}">SKILLS & SPECIALIZATIONS</div>`;
+                    html += '<div class="grid-skills">';
                     skillArray.forEach((skill, index) => {
-                        const pillColor = ['pink', 'blue', 'peach'][index % 3];
-                        html += `<div class="watercolor-skill-pill ${pillColor}">${skill}</div>`;
+                        const bgColors = ['#e74c3c', '#3498db', '#2ecc71', '#f39c12', '#9b59b6'];
+                        html += `<div class="grid-skill-box" style="background: ${bgColors[index % 5]}">${skill}</div>`;
                     });
                     html += '</div></div>';
                 }
@@ -739,27 +744,27 @@
             document.getElementById('resumePreview').innerHTML = html || '<div class="placeholder-text">👈 Fill in your information to see live preview</div>';
         }
 
-        function addExperience() {
-            const container = document.getElementById('experienceContainer');
+        function addProject() {
+            const container = document.getElementById('projectContainer');
             const entry = document.createElement('div');
             entry.className = 'entry-box';
             entry.innerHTML = `
                 <button class="remove-btn" onclick="this.parentElement.remove(); updatePreview();">×</button>
                 <div class="form-group">
-                    <label class="form-label">Title / Position</label>
-                    <input type="text" class="form-input exp-title" placeholder="Solo Exhibition" oninput="updatePreview()">
+                    <label class="form-label">Project Title</label>
+                    <input type="text" class="form-input project-title" placeholder="Campaign Name" oninput="updatePreview()">
                 </div>
                 <div class="form-group">
-                    <label class="form-label">Gallery / Organization</label>
-                    <input type="text" class="form-input exp-company" placeholder="Art Gallery NYC" oninput="updatePreview()">
+                    <label class="form-label">Client / Company</label>
+                    <input type="text" class="form-input project-client" placeholder="Brand XYZ" oninput="updatePreview()">
                 </div>
                 <div class="form-group">
-                    <label class="form-label">Year / Period</label>
-                    <input type="text" class="form-input exp-years" placeholder="2023" oninput="updatePreview()">
+                    <label class="form-label">Year</label>
+                    <input type="text" class="form-input project-year" placeholder="2023" oninput="updatePreview()">
                 </div>
                 <div class="form-group">
                     <label class="form-label">Description</label>
-                    <textarea class="form-input exp-desc" placeholder="Describe your work..." oninput="updatePreview()"></textarea>
+                    <textarea class="form-input project-desc" placeholder="Describe project..." oninput="updatePreview()"></textarea>
                 </div>
             `;
             container.appendChild(entry);
@@ -772,16 +777,16 @@
             entry.innerHTML = `
                 <button class="remove-btn" onclick="this.parentElement.remove(); updatePreview();">×</button>
                 <div class="form-group">
-                    <label class="form-label">Degree</label>
-                    <input type="text" class="form-input edu-degree" placeholder="BFA Fine Arts" oninput="updatePreview()">
+                    <label class="form-label">Degree / Certificate</label>
+                    <input type="text" class="form-input edu-degree" placeholder="BFA Photography" oninput="updatePreview()">
                 </div>
                 <div class="form-group">
                     <label class="form-label">Institution</label>
-                    <input type="text" class="form-input edu-institution" placeholder="Art Institute" oninput="updatePreview()">
+                    <input type="text" class="form-input edu-institution" placeholder="School of Visual Arts" oninput="updatePreview()">
                 </div>
                 <div class="form-group">
-                    <label class="form-label">Years</label>
-                    <input type="text" class="form-input edu-years" placeholder="2016-2020" oninput="updatePreview()">
+                    <label class="form-label">Year</label>
+                    <input type="text" class="form-input edu-year" placeholder="2018-2022" oninput="updatePreview()">
                 </div>
             `;
             container.appendChild(entry);
@@ -800,7 +805,7 @@
 
             const A4_WIDTH_PX = 794, A4_HEIGHT_PX = 1123;
             const renderContainer = document.createElement('div');
-            renderContainer.style.cssText = `position:absolute;left:-9999px;top:0;width:${A4_WIDTH_PX}px;background:white;box-sizing:border-box;font-family:'Georgia',serif;`;
+            renderContainer.style.cssText = `position:absolute;left:-9999px;top:0;width:${A4_WIDTH_PX}px;background:white;box-sizing:border-box;font-family:Arial,sans-serif;`;
             const resumeClone = document.getElementById('resumePreview').cloneNode(true);
             resumeClone.style.cssText = 'width:100%;font-size:12.5px;line-height:1.4;';
             renderContainer.appendChild(resumeClone);
@@ -833,7 +838,7 @@
                         const pdf = new jsPDF({ orientation: 'portrait', unit: 'mm', format: 'a4', compress: true });
                         const imgData = canvas.toDataURL('image/jpeg', 0.95);
                         pdf.addImage(imgData, 'JPEG', 0, 0, 210, 297, '', 'FAST');
-                        const fileName = `${fullName.replace(/\s+/g, '_')}_Resume_Watercolor.pdf`;
+                        const fileName = `${fullName.replace(/\s+/g, '_')}_Resume_Portfolio.pdf`;
                         pdf.save(fileName);
                         downloadBtn.innerHTML = originalText;
                         downloadBtn.disabled = false;

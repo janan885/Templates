@@ -3,13 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Watercolor Artistic Template - Resume Builder Pro</title>
+    <title>Profile Card Modern Template - Resume Builder Pro</title>
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
 
         body {
-            font-family: 'Georgia', 'Palatino', serif;
-            background: linear-gradient(-45deg, #ffb6c1, #add8e6, #ffdab9, #e6e6fa);
+            font-family: 'Poppins', 'Arial', sans-serif;
+            background: linear-gradient(-45deg, #667eea, #764ba2, #f093fb, #4facfe);
             background-size: 400% 400%;
             animation: gradientBG 15s ease infinite;
             min-height: 100vh;
@@ -26,7 +26,7 @@
             position: fixed; top: 0; left: 0; width: 100%;
             background: rgba(255, 255, 255, 0.95);
             backdrop-filter: blur(10px);
-            box-shadow: 0 5px 20px rgba(255, 105, 180, 0.2);
+            box-shadow: 0 5px 20px rgba(102, 126, 234, 0.2);
             z-index: 1000; padding: 15px 0;
         }
 
@@ -38,7 +38,7 @@
         .logo {
             display: flex; align-items: center; gap: 10px;
             font-size: 1.5em; font-weight: 800;
-            background: linear-gradient(135deg, #ff69b4, #add8e6);
+            background: linear-gradient(135deg, #667eea, #764ba2);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             text-decoration: none;
@@ -46,18 +46,22 @@
 
         .back-btn {
             padding: 10px 25px;
-            background: linear-gradient(135deg, #ff69b4, #add8e6);
+            background: linear-gradient(135deg, #667eea, #764ba2);
             color: white; border: none; border-radius: 25px;
             font-weight: 600; font-size: 1em; text-decoration: none;
             transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
         }
 
-        .back-btn:hover { transform: translateY(-2px); box-shadow: 0 5px 15px rgba(255, 105, 180, 0.4); }
+        .back-btn:hover { 
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(102, 126, 234, 0.5);
+        }
 
         .hud-header {
-            background: linear-gradient(135deg, #ff69b4, #add8e6);
+            background: linear-gradient(135deg, #667eea, #764ba2);
             color: white; padding: 20px 0; margin-top: 80px;
-            box-shadow: 0 5px 20px rgba(255, 105, 180, 0.3);
+            box-shadow: 0 5px 20px rgba(102, 126, 234, 0.3);
         }
 
         .hud-container { max-width: 1400px; margin: 0 auto; padding: 0 40px; }
@@ -71,8 +75,8 @@
         .hud-stats { display: flex; gap: 25px; flex-wrap: wrap; }
 
         .hud-stat {
-            background: rgba(255, 255, 255, 0.25); backdrop-filter: blur(10px);
-            padding: 12px 20px; border-radius: 20px;
+            background: rgba(255, 255, 255, 0.2); backdrop-filter: blur(10px);
+            padding: 12px 20px; border-radius: 15px;
             display: flex; align-items: center; gap: 10px; font-size: 0.9em;
         }
 
@@ -81,7 +85,7 @@
         .hud-stat-value { font-weight: 700; font-size: 1.1em; }
 
         .hud-progress {
-            margin-top: 15px; background: rgba(255, 255, 255, 0.25);
+            margin-top: 15px; background: rgba(255, 255, 255, 0.2);
             border-radius: 15px; padding: 10px 15px;
             display: flex; align-items: center; gap: 15px;
         }
@@ -111,13 +115,13 @@
             background: white; 
             padding: 30px; 
             border-radius: 20px;
-            box-shadow: 0 10px 40px rgba(255, 105, 180, 0.2);
+            box-shadow: 0 10px 40px rgba(102, 126, 234, 0.2);
             height: fit-content;
         }
 
         .form-title { 
             font-size: 2em;
-            background: linear-gradient(135deg, #ff69b4, #add8e6);
+            background: linear-gradient(135deg, #667eea, #764ba2);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             margin-bottom: 20px; font-weight: 800;
@@ -132,69 +136,84 @@
 
         .form-input {
             width: 100%; padding: 12px 15px; 
-            border: 2px solid #ffc0cb;
+            border: 2px solid #e0e0e0;
             background: white;
-            border-radius: 15px;
+            border-radius: 10px;
             color: #333;
             font-size: 1em; transition: all 0.3s ease;
-            font-family: 'Georgia', serif;
         }
 
         .form-input:focus {
             outline: none; 
-            border-color: #ff69b4;
-            box-shadow: 0 0 0 3px rgba(255, 105, 180, 0.1);
+            border-color: #667eea;
+            box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
         }
 
         textarea.form-input { resize: vertical; min-height: 100px; }
-        .section-divider { margin: 30px 0; border: none; border-top: 2px dashed #ffc0cb; }
+        .section-divider { 
+            margin: 30px 0; 
+            border: none; 
+            height: 2px;
+            background: linear-gradient(90deg, #667eea, #764ba2);
+        }
 
         .section-header {
-            font-size: 1.3em; color: #ff69b4; margin-bottom: 15px;
+            font-size: 1.3em; 
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 15px;
             font-weight: 700; display: flex; align-items: center; gap: 10px;
         }
 
         .add-btn {
             padding: 10px 20px;
-            background: linear-gradient(135deg, #ff69b4, #add8e6);
-            color: white; border: none; border-radius: 20px;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white; border: none; border-radius: 25px;
             font-weight: 600; cursor: pointer; transition: all 0.3s ease; margin-top: 10px;
+            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
         }
 
         .add-btn:hover { 
             transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(255, 105, 180, 0.4);
+            box-shadow: 0 6px 20px rgba(102, 126, 234, 0.5);
         }
 
         .entry-box {
-            background: linear-gradient(135deg, rgba(255, 182, 193, 0.1), rgba(173, 216, 230, 0.1));
+            background: #f8f9ff;
             padding: 20px; 
-            border-radius: 20px;
+            border-radius: 15px;
             margin-bottom: 15px; 
-            border: 2px dashed rgba(255, 192, 203, 0.5); 
+            border-left: 4px solid #667eea; 
             position: relative;
         }
 
         .remove-btn {
             position: absolute; top: 10px; right: 10px;
-            background: #ff69b4; color: white; border: none;
+            background: linear-gradient(135deg, #f093fb, #f5576c);
+            color: white; border: none;
             width: 30px; height: 30px; border-radius: 50%;
             cursor: pointer; font-weight: bold;
+            box-shadow: 0 3px 10px rgba(245, 87, 108, 0.4);
+            transition: all 0.3s ease;
         }
 
-        .remove-btn:hover { background: #ff1493; }
+        .remove-btn:hover { 
+            transform: scale(1.1);
+            box-shadow: 0 5px 15px rgba(245, 87, 108, 0.6);
+        }
 
         .preview-section {
             background: white; 
             padding: 30px; 
             border-radius: 20px;
-            box-shadow: 0 10px 40px rgba(173, 216, 230, 0.3);
+            box-shadow: 0 10px 40px rgba(102, 126, 234, 0.2);
             position: sticky; top: 100px; max-height: calc(100vh - 120px); overflow-y: auto;
         }
 
         .preview-title {
             font-size: 1.5em;
-            background: linear-gradient(135deg, #ff69b4, #add8e6);
+            background: linear-gradient(135deg, #667eea, #764ba2);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             margin-bottom: 20px;
@@ -203,199 +222,166 @@
 
         .preview-container {
             background: white;
-            border: 2px solid #ffc0cb;
-            border-radius: 20px;
+            border: 2px solid #e0e0e0;
+            border-radius: 15px;
             overflow: hidden;
         }
 
-        /* Watercolor Artistic Resume Styles */
+        /* Profile Card Modern Resume Styles */
         .resume-preview {
-            font-family: 'Georgia', 'Palatino', serif;
-            font-size: 1em;
-            background: white;
-            color: #333;
-            padding: 35px;
-            position: relative;
-            overflow: hidden;
-        }
-
-        /* Watercolor blobs */
-        .watercolor-blob {
-            position: absolute;
-            border-radius: 50%;
-            opacity: 0.4;
-            z-index: 0;
-        }
-
-        .blob-pink-top {
-            top: -20px;
-            right: -20px;
-            width: 150px;
-            height: 150px;
-            background: radial-gradient(circle, rgba(255, 182, 193, 0.6), transparent);
-        }
-
-        .blob-blue-bottom {
-            bottom: -30px;
-            left: -30px;
-            width: 180px;
-            height: 180px;
-            background: radial-gradient(circle, rgba(173, 216, 230, 0.6), transparent);
-        }
-
-        .blob-peach-middle {
-            top: 50%;
-            right: -40px;
-            width: 120px;
-            height: 120px;
-            background: radial-gradient(circle, rgba(255, 218, 185, 0.6), transparent);
-        }
-
-        /* Header Pill */
-        .watercolor-header {
-            text-align: center;
-            margin-bottom: 25px;
-            position: relative;
-            z-index: 1;
-        }
-
-        .watercolor-name-pill {
-            display: inline-block;
-            background: linear-gradient(135deg, rgba(255, 182, 193, 0.3), rgba(173, 216, 230, 0.3));
-            padding: 18px 35px;
-            border-radius: 50px;
-        }
-
-        .watercolor-name {
-            font-size: 2.2em;
-            font-weight: 700;
-            color: #333;
-            margin-bottom: 8px;
-        }
-
-        .watercolor-title {
+            font-family: 'Poppins', 'Arial', sans-serif;
             font-size: 1.1em;
-            color: #ff69b4;
-            font-style: italic;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            padding: 45px;
+            position: relative;
+            line-height: 1.6;
         }
 
-        /* Contact Line */
-        .watercolor-contact {
+        /* Profile Photo */
+        .profile-photo-container {
             text-align: center;
-            font-size: 0.9em;
-            color: #888;
             margin-bottom: 25px;
+        }
+
+        .profile-photo {
+            width: 130px;
+            height: 130px;
+            background: white;
+            border-radius: 50%;
+            margin: 0 auto 25px;
+            border: 5px solid rgba(255, 255, 255, 0.3);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3.5em;
+            color: #667eea;
+            overflow: hidden;
             position: relative;
-            z-index: 1;
         }
 
-        /* Watercolor Cards */
-        .watercolor-card {
-            background: rgba(255, 182, 193, 0.1);
-            padding: 18px;
-            border-radius: 20px;
-            border: 2px dashed rgba(255, 182, 193, 0.5);
-            margin-bottom: 18px;
-            position: relative;
-            z-index: 1;
+        .profile-photo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
         }
 
-        .watercolor-card.blue {
-            background: rgba(173, 216, 230, 0.1);
-            border-color: rgba(173, 216, 230, 0.5);
+        .profile-photo-placeholder {
+            font-size: 3em;
         }
 
-        .watercolor-card.peach {
-            background: rgba(255, 218, 185, 0.1);
-            border-color: rgba(255, 218, 185, 0.5);
-        }
-
-        .watercolor-card-title {
-            font-size: 0.85em;
-            font-weight: 700;
-            margin-bottom: 12px;
+        .profile-name {
+            font-size: 2.5em;
+            font-weight: 800;
+            margin-bottom: 10px;
             text-transform: uppercase;
-            letter-spacing: 1px;
+            letter-spacing: 2px;
+            line-height: 1.2;
         }
 
-        .watercolor-card-title::before {
-            content: '~ ';
+        .profile-title {
+            font-size: 1.3em;
+            opacity: 0.95;
+            margin-bottom: 20px;
+            font-weight: 500;
+            line-height: 1.4;
         }
 
-        .watercolor-card-title::after {
-            content: ' ~';
+        /* Contact Pills */
+        .profile-contact {
+            display: flex;
+            gap: 12px;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-bottom: 30px;
         }
 
-        .watercolor-card.pink .watercolor-card-title {
-            color: #ff69b4;
+        .contact-pill {
+            background: rgba(255, 255, 255, 0.25);
+            backdrop-filter: blur(10px);
+            padding: 10px 20px;
+            border-radius: 25px;
+            font-size: 0.95em;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            line-height: 1.5;
         }
 
-        .watercolor-card.blue .watercolor-card-title {
-            color: #4682b4;
+        /* White Content Card */
+        .content-card {
+            background: white;
+            border-radius: 20px;
+            padding: 35px;
+            color: #333;
+            line-height: 1.7;
         }
 
-        .watercolor-card.peach .watercolor-card-title {
-            color: #ff8c69;
+        .card-section {
+            margin-bottom: 30px;
         }
 
-        .watercolor-item {
-            margin-bottom: 12px;
-        }
-
-        .watercolor-item:last-child {
+        .card-section:last-child {
             margin-bottom: 0;
         }
 
-        .watercolor-item-title {
-            font-weight: 700;
-            color: #333;
-            font-size: 1em;
-            margin-bottom: 5px;
-        }
-
-        .watercolor-item-subtitle {
-            color: #888;
+        .card-section-title {
             font-size: 0.9em;
+            font-weight: 700;
+            color: #667eea;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+        }
+
+        .card-item {
+            margin-bottom: 18px;
+        }
+
+        .card-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .card-item-title {
+            font-weight: 700;
+            font-size: 1.1em;
+            color: #333;
+            margin-bottom: 6px;
+            line-height: 1.4;
+        }
+
+        .card-item-subtitle {
+            color: #888;
+            font-size: 1em;
             margin-bottom: 10px;
+            line-height: 1.5;
         }
 
-        .watercolor-item-description {
+        .card-item-description {
             color: #555;
-            line-height: 1.7;
-            font-size: 0.95em;
+            line-height: 1.8;
+            font-size: 1em;
         }
 
-        /* Skill Pills */
-        .watercolor-skills {
+        /* Skill Tags */
+        .skill-tags {
             display: flex;
             gap: 10px;
             flex-wrap: wrap;
         }
 
-        .watercolor-skill-pill {
-            padding: 8px 18px;
+        .skill-tag {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            padding: 10px 18px;
             border-radius: 20px;
-            font-size: 0.85em;
+            font-size: 0.95em;
             font-weight: 600;
-        }
-
-        .watercolor-skill-pill.pink {
-            background: rgba(255, 182, 193, 0.3);
-            color: #ff69b4;
-        }
-
-        .watercolor-skill-pill.blue {
-            background: rgba(173, 216, 230, 0.3);
-            color: #4682b4;
-        }
-
-        .watercolor-skill-pill.peach {
-            background: rgba(255, 218, 185, 0.3);
-            color: #ff8c69;
+            box-shadow: 0 3px 10px rgba(102, 126, 234, 0.3);
+            line-height: 1.4;
         }
 
         .placeholder-text {
-            text-align: center; color: #ff69b4; padding: 40px; font-style: italic;
+            text-align: center; color: #999; padding: 40px; font-style: italic;
         }
 
         .action-buttons {
@@ -405,20 +391,43 @@
 
         .action-btn {
             padding: 15px 30px;
-            background: linear-gradient(135deg, #ff69b4, #add8e6);
+            background: linear-gradient(135deg, #667eea, #764ba2);
             color: white; 
             border: none; border-radius: 30px;
             font-weight: 700; font-size: 1em; cursor: pointer;
-            box-shadow: 0 5px 20px rgba(255, 105, 180, 0.4);
+            box-shadow: 0 5px 20px rgba(102, 126, 234, 0.4);
             transition: all 0.3s ease;
         }
 
         .action-btn:hover {
             transform: translateY(-3px);
-            box-shadow: 0 8px 30px rgba(255, 105, 180, 0.5);
+            box-shadow: 0 8px 30px rgba(102, 126, 234, 0.6);
         }
 
         .action-btn:disabled { opacity: 0.6; cursor: not-allowed; }
+
+        /* Photo upload styling */
+        .photo-upload-btn {
+            display: inline-block;
+            padding: 8px 20px;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            border-radius: 20px;
+            cursor: pointer;
+            font-size: 0.9em;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 3px 10px rgba(102, 126, 234, 0.3);
+        }
+
+        .photo-upload-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.5);
+        }
+
+        input[type="file"] {
+            display: none;
+        }
 
         @media (max-width: 1024px) {
             .container { grid-template-columns: 1fr; }
@@ -432,6 +441,8 @@
             .hud-stat { min-width: calc(50% - 5px); padding: 10px 15px; }
             .form-section, .preview-section { padding: 20px; }
             .resume-preview { padding: 25px; font-size: 0.95em; }
+            .profile-photo { width: 100px; height: 100px; }
+            .profile-name { font-size: 1.8em; }
             .action-buttons {
                 width: calc(100% - 40px); left: 20px; right: 20px; flex-direction: column;
             }
@@ -442,15 +453,15 @@
 <body>
     <nav class="navbar">
         <div class="nav-container">
-            <a href="../index.html" class="logo"><span>🎨</span><span>Resume Builder Pro</span></a>
+            <a href="../index.html" class="logo"><span>📸</span><span>Resume Builder Pro</span></a>
             <a href="../templates.html" class="back-btn">← Back to Templates</a>
         </div>
     </nav>
 
     <div class="hud-header">
         <div class="hud-container">
-            <div class="hud-title"><span>🎨</span><span>Watercolor Artistic Template</span></div>
-            <div class="hud-subtitle">Create an artistic resume with soft watercolor effects</div>
+            <div class="hud-title"><span>📸</span><span>Profile Card Modern Template</span></div>
+            <div class="hud-subtitle">Create a modern card resume with profile photo</div>
             <div class="hud-stats">
                 <div class="hud-stat">
                     <div class="hud-stat-icon">📝</div>
@@ -462,7 +473,7 @@
                 <div class="hud-stat">
                     <div class="hud-stat-icon">💼</div>
                     <div>
-                        <div class="hud-stat-label">Work Experience</div>
+                        <div class="hud-stat-label">Experience</div>
                         <div class="hud-stat-value" id="expCount">0</div>
                     </div>
                 </div>
@@ -493,21 +504,31 @@
 
     <div class="container">
         <div class="form-section">
-            <h1 class="form-title">🎨 Watercolor Artistic</h1>
+            <h1 class="form-title">📸 Profile Card</h1>
             
             <div class="form-group">
+                <label class="form-label">Profile Photo (Optional)</label>
+                <label for="photoUpload" class="photo-upload-btn">📷 Upload Photo</label>
+                <input type="file" id="photoUpload" accept="image/*">
+                <div style="font-size: 0.85em; color: #888; margin-top: 8px;">Square images work best (e.g. 500×500px)</div>
+            </div>
+
+            <div class="form-group">
                 <label class="form-label">Full Name *</label>
-                <input type="text" class="form-input" id="fullName" placeholder="Emma Rose" required>
+                <input type="text" class="form-input" id="fullName" placeholder="Carlos Rivera" required>
             </div>
 
             <div class="form-group">
                 <label class="form-label">Job Title *</label>
-                <input type="text" class="form-input" id="jobTitle" placeholder="Watercolor Artist" required>
+                <input type="text" class="form-input" id="jobTitle" placeholder="Marketing Specialist" required>
             </div>
 
+            <hr class="section-divider">
+
+            <h2 class="section-header">📧 Contact Information</h2>
             <div class="form-group">
                 <label class="form-label">Email</label>
-                <input type="email" class="form-input" id="email" placeholder="emma@art.com">
+                <input type="email" class="form-input" id="email" placeholder="carlos@email.com">
             </div>
 
             <div class="form-group">
@@ -516,41 +537,34 @@
             </div>
 
             <div class="form-group">
-                <label class="form-label">Website / Portfolio</label>
-                <input type="text" class="form-input" id="website" placeholder="emma.art">
+                <label class="form-label">Location</label>
+                <input type="text" class="form-input" id="location" placeholder="New York, NY">
             </div>
 
             <hr class="section-divider">
 
-            <h2 class="section-header">📝 Artist Statement</h2>
-            <div class="form-group">
-                <textarea class="form-input" id="summary" placeholder="Write your artistic statement or professional summary..."></textarea>
-            </div>
-
-            <hr class="section-divider">
-
-            <h2 class="section-header">🖼️ Exhibitions / Experience</h2>
+            <h2 class="section-header">💼 Work Experience</h2>
             <div id="experienceContainer">
                 <div class="entry-box">
                     <div class="form-group">
-                        <label class="form-label">Title / Position</label>
-                        <input type="text" class="form-input exp-title" placeholder="Solo Exhibition">
+                        <label class="form-label">Position</label>
+                        <input type="text" class="form-input exp-title" placeholder="Senior Marketing Specialist">
                     </div>
                     <div class="form-group">
-                        <label class="form-label">Gallery / Organization</label>
-                        <input type="text" class="form-input exp-company" placeholder="Art Gallery NYC">
+                        <label class="form-label">Company</label>
+                        <input type="text" class="form-input exp-company" placeholder="Tech Company">
                     </div>
                     <div class="form-group">
-                        <label class="form-label">Year / Period</label>
-                        <input type="text" class="form-input exp-years" placeholder="2023">
+                        <label class="form-label">Years</label>
+                        <input type="text" class="form-input exp-years" placeholder="2020-2024">
                     </div>
                     <div class="form-group">
                         <label class="form-label">Description</label>
-                        <textarea class="form-input exp-desc" placeholder="Describe your work or achievements..."></textarea>
+                        <textarea class="form-input exp-desc" placeholder="Describe your key responsibilities and achievements..."></textarea>
                     </div>
                 </div>
             </div>
-            <button class="add-btn" onclick="addExperience()">+ Add Exhibition/Experience</button>
+            <button class="add-btn" onclick="addExperience()">+ Add Experience</button>
 
             <hr class="section-divider">
 
@@ -559,15 +573,15 @@
                 <div class="entry-box">
                     <div class="form-group">
                         <label class="form-label">Degree</label>
-                        <input type="text" class="form-input edu-degree" placeholder="BFA Fine Arts">
+                        <input type="text" class="form-input edu-degree" placeholder="MBA Marketing">
                     </div>
                     <div class="form-group">
                         <label class="form-label">Institution</label>
-                        <input type="text" class="form-input edu-institution" placeholder="Art Institute">
+                        <input type="text" class="form-input edu-institution" placeholder="Business School">
                     </div>
                     <div class="form-group">
                         <label class="form-label">Years</label>
-                        <input type="text" class="form-input edu-years" placeholder="2016-2020">
+                        <input type="text" class="form-input edu-years" placeholder="2018-2020">
                     </div>
                 </div>
             </div>
@@ -575,10 +589,10 @@
 
             <hr class="section-divider">
 
-            <h2 class="section-header">🎨 Techniques / Skills</h2>
+            <h2 class="section-header">⚡ Skills</h2>
             <div class="form-group">
                 <label class="form-label">Skills (comma separated)</label>
-                <textarea class="form-input" id="skills" placeholder="Watercolor, Acrylic, Mixed Media, Illustration"></textarea>
+                <textarea class="form-input" id="skills" placeholder="Digital Marketing, SEO, Analytics, Content Strategy"></textarea>
             </div>
         </div>
 
@@ -599,14 +613,30 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
     <script>
+        let uploadedPhotoURL = null;
+
+        document.getElementById('photoUpload').addEventListener('change', function(e) {
+            const file = e.target.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = function(event) {
+                    uploadedPhotoURL = event.target.result;
+                    updatePreview();
+                };
+                reader.readAsDataURL(file);
+            }
+        });
+
         function updateHUDStats() {
             let sectionsComplete = 0;
             const fullName = document.getElementById('fullName').value;
             const jobTitle = document.getElementById('jobTitle').value;
             if (fullName && jobTitle) sectionsComplete++;
             
-            const summary = document.getElementById('summary').value;
-            if (summary) sectionsComplete++;
+            const email = document.getElementById('email').value;
+            const phone = document.getElementById('phone').value;
+            const location = document.getElementById('location').value;
+            if (email || phone || location) sectionsComplete++;
             
             const experiences = document.querySelectorAll('#experienceContainer .entry-box');
             let hasExperience = false, expFilledCount = 0;
@@ -645,96 +675,100 @@
             const jobTitle = document.getElementById('jobTitle').value;
             const email = document.getElementById('email').value;
             const phone = document.getElementById('phone').value;
-            const website = document.getElementById('website').value;
-            const summary = document.getElementById('summary').value;
+            const location = document.getElementById('location').value;
             const skills = document.getElementById('skills').value;
             updateHUDStats();
 
             let html = '';
 
-            // Watercolor blobs
-            html += '<div class="watercolor-blob blob-pink-top"></div>';
-            html += '<div class="watercolor-blob blob-blue-bottom"></div>';
-            html += '<div class="watercolor-blob blob-peach-middle"></div>';
+            // Profile Photo & Header
+            html += '<div class="profile-photo-container">';
+            html += '<div class="profile-photo">';
+            if (uploadedPhotoURL) {
+                html += `<img src="${uploadedPhotoURL}" alt="Profile Photo">`;
+            } else {
+                html += '<span class="profile-photo-placeholder">👤</span>';
+            }
+            html += '</div>';
+            if (fullName) html += `<div class="profile-name">${fullName}</div>`;
+            if (jobTitle) html += `<div class="profile-title">${jobTitle}</div>`;
+            html += '</div>';
 
-            // Header
-            html += '<div class="watercolor-header">';
-            html += '<div class="watercolor-name-pill">';
-            if (fullName) html += `<div class="watercolor-name">${fullName}</div>`;
-            if (jobTitle) html += `<div class="watercolor-title">${jobTitle}</div>`;
-            html += '</div></div>';
-
-            // Contact Line
-            if (email || phone || website) {
-                html += '<div class="watercolor-contact">';
-                const contacts = [];
-                if (email) contacts.push(`📧 ${email}`);
-                if (phone) contacts.push(`📱 ${phone}`);
-                if (website) contacts.push(`🎨 ${website}`);
-                html += contacts.join(' • ');
+            // Contact Pills
+            if (email || phone || location) {
+                html += '<div class="profile-contact">';
+                if (email) html += `<div class="contact-pill">📧 ${email}</div>`;
+                if (phone) html += `<div class="contact-pill">📱 ${phone}</div>`;
+                if (location) html += `<div class="contact-pill">📍 ${location}</div>`;
                 html += '</div>';
             }
 
-            // Summary
-            if (summary) {
-                html += '<div class="watercolor-card pink">';
-                html += '<div class="watercolor-card-title">Artist Statement</div>';
-                html += `<div class="watercolor-item-description">${summary.replace(/\n/g, '<br>')}</div>`;
-                html += '</div>';
-            }
+            // White Content Card
+            html += '<div class="content-card">';
 
             // Experience
             const experiences = document.querySelectorAll('#experienceContainer .entry-box');
-            const cardColors = ['blue', 'peach', 'pink'];
-            let colorIndex = 0;
+            let hasExp = false;
+            let expHtml = '';
             experiences.forEach(exp => {
                 const title = exp.querySelector('.exp-title').value;
                 const company = exp.querySelector('.exp-company').value;
                 const years = exp.querySelector('.exp-years').value;
                 const desc = exp.querySelector('.exp-desc').value;
                 if (title || company) {
-                    html += `<div class="watercolor-card ${cardColors[colorIndex % 3]}">`;
-                    html += '<div class="watercolor-card-title">Exhibitions</div>';
-                    html += '<div class="watercolor-item">';
-                    if (title) html += `<div class="watercolor-item-title">${title}</div>`;
-                    if (company || years) html += `<div class="watercolor-item-subtitle">${company}${company && years ? ' • ' : ''}${years}</div>`;
-                    if (desc) html += `<div class="watercolor-item-description">${desc.replace(/\n/g, '<br>')}</div>`;
-                    html += '</div></div>';
-                    colorIndex++;
+                    hasExp = true;
+                    expHtml += '<div class="card-item">';
+                    if (title) expHtml += `<div class="card-item-title">${title}</div>`;
+                    if (company || years) expHtml += `<div class="card-item-subtitle">${company}${company && years ? ' • ' : ''}${years}</div>`;
+                    if (desc) expHtml += `<div class="card-item-description">${desc.replace(/\n/g, '<br>')}</div>`;
+                    expHtml += '</div>';
                 }
             });
+            if (hasExp) {
+                html += '<div class="card-section">';
+                html += '<div class="card-section-title">💼 Experience</div>';
+                html += expHtml;
+                html += '</div>';
+            }
 
             // Education
             const educations = document.querySelectorAll('#educationContainer .entry-box');
+            let hasEdu = false;
+            let eduHtml = '';
             educations.forEach(edu => {
                 const degree = edu.querySelector('.edu-degree').value;
                 const institution = edu.querySelector('.edu-institution').value;
                 const years = edu.querySelector('.edu-years').value;
                 if (degree || institution) {
-                    html += `<div class="watercolor-card ${cardColors[colorIndex % 3]}">`;
-                    html += '<div class="watercolor-card-title">Education</div>';
-                    html += '<div class="watercolor-item">';
-                    if (degree) html += `<div class="watercolor-item-title">${degree}</div>`;
-                    if (institution || years) html += `<div class="watercolor-item-subtitle">${institution}${institution && years ? ' • ' : ''}${years}</div>`;
-                    html += '</div></div>';
-                    colorIndex++;
+                    hasEdu = true;
+                    eduHtml += '<div class="card-item">';
+                    if (degree) eduHtml += `<div class="card-item-title">${degree}</div>`;
+                    if (institution || years) eduHtml += `<div class="card-item-subtitle">${institution}${institution && years ? ' • ' : ''}${years}</div>`;
+                    eduHtml += '</div>';
                 }
             });
+            if (hasEdu) {
+                html += '<div class="card-section">';
+                html += '<div class="card-section-title">🎓 Education</div>';
+                html += eduHtml;
+                html += '</div>';
+            }
 
             // Skills
             if (skills) {
                 const skillArray = skills.split(',').map(s => s.trim()).filter(s => s);
                 if (skillArray.length > 0) {
-                    html += `<div class="watercolor-card ${cardColors[colorIndex % 3]}">`;
-                    html += '<div class="watercolor-card-title">Techniques</div>';
-                    html += '<div class="watercolor-skills">';
-                    skillArray.forEach((skill, index) => {
-                        const pillColor = ['pink', 'blue', 'peach'][index % 3];
-                        html += `<div class="watercolor-skill-pill ${pillColor}">${skill}</div>`;
+                    html += '<div class="card-section">';
+                    html += '<div class="card-section-title">⚡ Skills</div>';
+                    html += '<div class="skill-tags">';
+                    skillArray.forEach(skill => {
+                        html += `<div class="skill-tag">${skill}</div>`;
                     });
                     html += '</div></div>';
                 }
             }
+
+            html += '</div>'; // Close content-card
 
             document.getElementById('resumePreview').innerHTML = html || '<div class="placeholder-text">👈 Fill in your information to see live preview</div>';
         }
@@ -746,20 +780,20 @@
             entry.innerHTML = `
                 <button class="remove-btn" onclick="this.parentElement.remove(); updatePreview();">×</button>
                 <div class="form-group">
-                    <label class="form-label">Title / Position</label>
-                    <input type="text" class="form-input exp-title" placeholder="Solo Exhibition" oninput="updatePreview()">
+                    <label class="form-label">Position</label>
+                    <input type="text" class="form-input exp-title" placeholder="Marketing Manager" oninput="updatePreview()">
                 </div>
                 <div class="form-group">
-                    <label class="form-label">Gallery / Organization</label>
-                    <input type="text" class="form-input exp-company" placeholder="Art Gallery NYC" oninput="updatePreview()">
+                    <label class="form-label">Company</label>
+                    <input type="text" class="form-input exp-company" placeholder="Company Name" oninput="updatePreview()">
                 </div>
                 <div class="form-group">
-                    <label class="form-label">Year / Period</label>
-                    <input type="text" class="form-input exp-years" placeholder="2023" oninput="updatePreview()">
+                    <label class="form-label">Years</label>
+                    <input type="text" class="form-input exp-years" placeholder="2020-2024" oninput="updatePreview()">
                 </div>
                 <div class="form-group">
                     <label class="form-label">Description</label>
-                    <textarea class="form-input exp-desc" placeholder="Describe your work..." oninput="updatePreview()"></textarea>
+                    <textarea class="form-input exp-desc" placeholder="Key responsibilities..." oninput="updatePreview()"></textarea>
                 </div>
             `;
             container.appendChild(entry);
@@ -773,11 +807,11 @@
                 <button class="remove-btn" onclick="this.parentElement.remove(); updatePreview();">×</button>
                 <div class="form-group">
                     <label class="form-label">Degree</label>
-                    <input type="text" class="form-input edu-degree" placeholder="BFA Fine Arts" oninput="updatePreview()">
+                    <input type="text" class="form-input edu-degree" placeholder="Bachelor's Degree" oninput="updatePreview()">
                 </div>
                 <div class="form-group">
                     <label class="form-label">Institution</label>
-                    <input type="text" class="form-input edu-institution" placeholder="Art Institute" oninput="updatePreview()">
+                    <input type="text" class="form-input edu-institution" placeholder="University Name" oninput="updatePreview()">
                 </div>
                 <div class="form-group">
                     <label class="form-label">Years</label>
@@ -800,9 +834,9 @@
 
             const A4_WIDTH_PX = 794, A4_HEIGHT_PX = 1123;
             const renderContainer = document.createElement('div');
-            renderContainer.style.cssText = `position:absolute;left:-9999px;top:0;width:${A4_WIDTH_PX}px;background:white;box-sizing:border-box;font-family:'Georgia',serif;`;
+            renderContainer.style.cssText = `position:absolute;left:-9999px;top:0;width:${A4_WIDTH_PX}px;background:linear-gradient(135deg, #667eea, #764ba2);box-sizing:border-box;font-family:'Poppins',sans-serif;`;
             const resumeClone = document.getElementById('resumePreview').cloneNode(true);
-            resumeClone.style.cssText = 'width:100%;font-size:12.5px;line-height:1.4;';
+            resumeClone.style.cssText = 'width:100%;font-size:13.5px;line-height:1.7;';
             renderContainer.appendChild(resumeClone);
             document.body.appendChild(renderContainer);
 
@@ -812,7 +846,7 @@
                 let scaleFactor = 1;
                 if (contentHeight > availableHeight) {
                     scaleFactor = availableHeight / contentHeight;
-                    resumeClone.style.fontSize = (12.5 * scaleFactor) + 'px';
+                    resumeClone.style.fontSize = (13.5 * scaleFactor) + 'px';
                 }
                 renderContainer.style.minHeight = A4_HEIGHT_PX + 'px';
                 renderContainer.style.maxHeight = A4_HEIGHT_PX + 'px';
@@ -824,7 +858,7 @@
                         useCORS: true,
                         allowTaint: true,
                         logging: false,
-                        backgroundColor: '#ffffff',
+                        backgroundColor: '#667eea',
                         width: A4_WIDTH_PX,
                         height: A4_HEIGHT_PX
                     }).then(canvas => {
@@ -833,7 +867,7 @@
                         const pdf = new jsPDF({ orientation: 'portrait', unit: 'mm', format: 'a4', compress: true });
                         const imgData = canvas.toDataURL('image/jpeg', 0.95);
                         pdf.addImage(imgData, 'JPEG', 0, 0, 210, 297, '', 'FAST');
-                        const fileName = `${fullName.replace(/\s+/g, '_')}_Resume_Watercolor.pdf`;
+                        const fileName = `${fullName.replace(/\s+/g, '_')}_Resume_Profile.pdf`;
                         pdf.save(fileName);
                         downloadBtn.innerHTML = originalText;
                         downloadBtn.disabled = false;
