@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Admin — Orders</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --gold: #C9A84C;
+    --ink: #0D0D0D;
+    --cream: #FAF7F2;
+    --paper: #F2EDE4;
+    --smoke: #6B6560;
+    --border: rgba(201,168,76,0.2);
+    --green: #27ae60;
+    --red: #e74c3c;
+    --orange: #e67e22;
+  }
+
+  body {
+    background: #111;
+    font-family: 'DM Sans', sans-serif;
+    min-height: 100vh;
+    color: var(--ink);
+  }
+
+  /* Top bar */
+  .topbar {
+    background: var(--ink);
+    padding: 18px 32px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid rgba(201,168,76,0.15);
+  }
+
+  .topbar-left {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+  }
+
+  .admin-badge {
+    background: var(--gold);
+    color: var(--ink);
+    font-size: 9px;
+    font-weight: 800;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    padding: 4px 10px;
+    border-radius: 2px;
+  }
+
+  .topbar-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 20px;
+    font-weight: 900;
+    color: white;
+  }
+
+  .order-count-badge {
+    background: rgba(201,168,76,0.12);
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    padding: 5px 14px;
+    font-size: 12px;
+    color: var(--gold);
+    font-weight: 600;
+  }
+
+  .clear-btn {
+    background: rgba(231,76,60,0.1);
+    border: 1px solid rgba(231,76,60,0.3);
+    color: #e74c3c;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 11px;
+    font-weight: 600;
+    padding: 7px 14px;
+    border-radius: 3px;
+    cursor: pointer;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    transition: all 0.2s;
+  }
+
+  .clear-btn:hover { background: rgba(231,76,60,0.2); }
+
+  /* Main */
+  .main { padding: 28px 32px; max-width: 1200px; margin: 0 auto; }
+
+  /* Stats */
+  .stats-row {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 14px;
+    margin-bottom: 28px;
+  }
+
+  .stat-card {
+    background: var(--cream);
+    border-radius: 5px;
+    padding: 20px 24px;
+    border: 1px solid rgba(201,168,76,0.1);
+  }
+
+  .stat-label {
+    font-size: 10px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--smoke);
+    margin-bottom: 6px;
+  }
+
+  .stat-value {
+    font-family: 'Playfair Display', serif;
+    font-size: 30px;
+    font-weight: 900;
+    color: var(--ink);
+  }
+
+  .stat-value.gold { color: var(--gold); }
+
+  /* No orders */
+  .empty-state {
+    background: var(--cream);
+    border-radius: 6px;
+    padding: 60px;
+    text-align: center;
+    border: 1px solid rgba(201,168,76,0.1);
+  }
+
+  .empty-icon { font-size: 48px; margin-bottom: 16px; }
+  .empty-title { font-family: 'Playfair Display', serif; font-size: 22px; color: var(--ink); margin-bottom: 8px; }
+  .empty-sub { font-size: 13px; color: var(--smoke); }
+
+  /* Orders grid */
+  .orders-grid {
+    display: grid;
+    gap: 16px;
+  }
+
+  .order-card {
+    background: var(--cream);
+    border-radius: 5px;
+    border: 1px solid rgba(201,168,76,0.1);
+    overflow: hidden;
+    transition: box-shadow 0.2s;
+  }
+
+  .order-card:hover { box-shadow: 0 4px 20px rgba(0,0,0,0.08); }
+
+  .order-header {
+    background: var(--ink);
+    padding: 14px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .order-id {
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--gold);
+    letter-spacing: 0.05em;
+  }
+
+  .order-time {
+    font-size: 11px;
+    color: var(--smoke);
+  }
+
+  .status-badge {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    padding: 4px 12px;
+    border-radius: 20px;
+    cursor: pointer;
+    border: none;
+    font-family: 'DM Sans', sans-serif;
+    transition: all 0.2s;
+  }
+
+  .status-Pending  { background: rgba(230,126,34,0.15); color: var(--orange); border: 1px solid rgba(230,126,34,0.3); }
+  .status-Verified { background: rgba(39,174,96,0.12); color: var(--green);  border: 1px solid rgba(39,174,96,0.3); }
+  .status-Rejected { background: rgba(231,76,60,0.12);  color: var(--red);    border: 1px solid rgba(231,76,60,0.3); }
+
+  .order-body {
+    padding: 20px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr auto;
+    gap: 20px;
+    align-items: start;
+  }
+
+  .info-block {}
+
+  .info-label {
+    font-size: 10px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--smoke);
+    margin-bottom: 4px;
+  }
+
+  .info-value {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--ink);
+  }
+
+  .method-chip {
+    display: inline-block;
+    padding: 3px 10px;
+    border-radius: 3px;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+  }
+
+  .chip-MEEZAN    { background: #e8f4fd; color: #2980b9; }
+  .chip-HBL       { background: #fdecea; color: #c0392b; }
+  .chip-EASYPAISA { background: #e8f8f0; color: #1e8449; }
+  .chip-JAZZCASH  { background: #fff8e1; color: #d68910; }
+
+  /* Receipt thumbnail */
+  .receipt-thumb {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 4px;
+    border: 2px solid var(--border);
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+
+  .receipt-thumb:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 16px rgba(0,0,0,0.15);
+  }
+
+  .receipt-placeholder {
+    width: 80px;
+    height: 80px;
+    border-radius: 4px;
+    border: 2px dashed #DDD8CE;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 11px;
+    color: var(--smoke);
+    text-align: center;
+  }
+
+  .action-btns {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  .act-btn {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 11px;
+    font-weight: 600;
+    padding: 7px 14px;
+    border-radius: 3px;
+    border: none;
+    cursor: pointer;
+    text-align: center;
+    transition: all 0.2s;
+    letter-spacing: 0.04em;
+  }
+
+  .btn-verify  { background: rgba(39,174,96,0.1); color: var(--green); border: 1px solid rgba(39,174,96,0.3); }
+  .btn-verify:hover  { background: rgba(39,174,96,0.2); }
+  .btn-reject  { background: rgba(231,76,60,0.1);  color: var(--red);   border: 1px solid rgba(231,76,60,0.3); }
+  .btn-reject:hover  { background: rgba(231,76,60,0.2); }
+  .btn-delete  { background: transparent; color: var(--smoke); border: 1px solid #DDD8CE; }
+  .btn-delete:hover  { border-color: var(--red); color: var(--red); }
+
+  /* Lightbox */
+  .lightbox {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.93);
+    z-index: 200;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .lightbox.open { display: flex; }
+
+  .lightbox img {
+    max-width: 90vw;
+    max-height: 90vh;
+    border-radius: 4px;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+  }
+
+  .lightbox-close {
+    position: fixed;
+    top: 20px;
+    right: 24px;
+    color: white;
+    font-size: 28px;
+    cursor: pointer;
+    background: none;
+    border: none;
+    line-height: 1;
+  }
+
+  @media (max-width: 720px) {
+    .topbar { padding: 14px 16px; }
+    .main { padding: 16px; }
+    .stats-row { grid-template-columns: 1fr 1fr; }
+    .order-body { grid-template-columns: 1fr 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<!-- Top bar -->
+<div class="topbar">
+  <div class="topbar-left">
+    <span class="admin-badge">Admin</span>
+    <span class="topbar-title">Orders Dashboard</span>
+  </div>
+  <div style="display:flex;gap:12px;align-items:center;">
+    <span class="order-count-badge" id="countBadge">0 Orders</span>
+    <button class="clear-btn" onclick="clearAll()">Clear All</button>
+  </div>
+</div>
+
+<!-- Main -->
+<div class="main">
+
+  <!-- Stats -->
+  <div class="stats-row">
+    <div class="stat-card">
+      <div class="stat-label">Total Orders</div>
+      <div class="stat-value" id="statTotal">0</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-label">Pending</div>
+      <div class="stat-value gold" id="statPending">0</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-label">Verified</div>
+      <div class="stat-value" style="color:var(--green)" id="statVerified">0</div>
+    </div>
+  </div>
+
+  <!-- Orders -->
+  <div id="ordersContainer"></div>
+</div>
+
+<!-- Lightbox -->
+<div class="lightbox" id="lightbox" onclick="closeLightbox()">
+  <button class="lightbox-close" onclick="closeLightbox()">✕</button>
+  <img id="lightboxImg" src="" alt="Receipt">
+</div>
+
+<script>
+  function loadOrders() {
+    return JSON.parse(localStorage.getItem('resumeOrders') || '[]');
+  }
+
+  function saveOrders(orders) {
+    localStorage.setItem('resumeOrders', JSON.stringify(orders));
+  }
+
+  function render() {
+    const orders = loadOrders();
+    const container = document.getElementById('ordersContainer');
+
+    // Stats
+    document.getElementById('statTotal').textContent   = orders.length;
+    document.getElementById('statPending').textContent = orders.filter(o => o.status === 'Pending').length;
+    document.getElementById('statVerified').textContent = orders.filter(o => o.status === 'Verified').length;
+    document.getElementById('countBadge').textContent  = orders.length + ' Order' + (orders.length !== 1 ? 's' : '');
+
+    if (orders.length === 0) {
+      container.innerHTML = `
+        <div class="empty-state">
+          <div class="empty-icon">📭</div>
+          <div class="empty-title">No orders yet</div>
+          <div class="empty-sub">When customers submit payment, their orders will appear here.</div>
+        </div>`;
+      return;
+    }
+
+    container.innerHTML = `<div class="orders-grid">${orders.map((o, i) => `
+      <div class="order-card" id="card-${i}">
+        <div class="order-header">
+          <div>
+            <div class="order-id">${o.id}</div>
+            <div class="order-time">${o.time}</div>
+          </div>
+          <button class="status-badge status-${o.status}" onclick="cycleStatus(${i})">${o.status}</button>
+        </div>
+        <div class="order-body">
+          <div>
+            <div class="info-block" style="margin-bottom:14px">
+              <div class="info-label">Customer Name</div>
+              <div class="info-value">${o.name}</div>
+            </div>
+            <div class="info-block">
+              <div class="info-label">Phone</div>
+              <div class="info-value">${o.phone}</div>
+            </div>
+          </div>
+          <div>
+            <div class="info-block" style="margin-bottom:14px">
+              <div class="info-label">Payment Method</div>
+              <div><span class="method-chip chip-${o.method}">${o.method}</span></div>
+              <div class="info-value" style="font-size:12px;margin-top:4px;color:var(--smoke)">${o.account}</div>
+            </div>
+            <div class="info-block">
+              <div class="info-label">Location</div>
+              <div class="info-value">${o.location}</div>
+            </div>
+          </div>
+          <div>
+            <div class="info-label" style="margin-bottom:8px">Receipt</div>
+            ${o.receipt
+              ? `<img class="receipt-thumb" src="${o.receipt}" alt="Receipt" onclick="openLightbox('${o.receipt}')">`
+              : `<div class="receipt-placeholder">No Image</div>`
+            }
+          </div>
+          <div class="action-btns">
+            <button class="act-btn btn-verify"  onclick="setStatus(${i},'Verified')">✓ Verify</button>
+            <button class="act-btn btn-reject"  onclick="setStatus(${i},'Rejected')">✕ Reject</button>
+            <button class="act-btn btn-delete"  onclick="deleteOrder(${i})">🗑 Delete</button>
+          </div>
+        </div>
+      </div>`).join('')}
+    </div>`;
+  }
+
+  function setStatus(i, status) {
+    const orders = loadOrders();
+    orders[i].status = status;
+    saveOrders(orders);
+    render();
+  }
+
+  function cycleStatus(i) {
+    const statuses = ['Pending', 'Verified', 'Rejected'];
+    const orders = loadOrders();
+    const curr = statuses.indexOf(orders[i].status);
+    orders[i].status = statuses[(curr + 1) % statuses.length];
+    saveOrders(orders);
+    render();
+  }
+
+  function deleteOrder(i) {
+    if (!confirm('Delete this order?')) return;
+    const orders = loadOrders();
+    orders.splice(i, 1);
+    saveOrders(orders);
+    render();
+  }
+
+  function clearAll() {
+    if (!confirm('Delete ALL orders? This cannot be undone.')) return;
+    localStorage.removeItem('resumeOrders');
+    render();
+  }
+
+  function openLightbox(src) {
+    document.getElementById('lightboxImg').src = src;
+    document.getElementById('lightbox').classList.add('open');
+  }
+
+  function closeLightbox() {
+    document.getElementById('lightbox').classList.remove('open');
+  }
+
+  // Auto-refresh every 10 seconds
+  render();
+  setInterval(render, 10000);
+</script>
+
+</body>
+</html>
